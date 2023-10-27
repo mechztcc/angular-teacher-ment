@@ -1,4 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.mt {
+  margin-top: 5%;
+}
+
+.p-3 {
+  padding: 5%;
+}
+
+.rounded {
+  border-radius: 10px;
+}
