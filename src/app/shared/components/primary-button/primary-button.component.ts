@@ -10,13 +10,13 @@ export class PrimaryButtonComponent {
   @Input() label: string;
   @Input() isLoading: boolean = false;
 
-  @Output() click: EventEmitter<any> = new EventEmitter();
+  @Output() clicked: EventEmitter<any> = new EventEmitter();
 
   icons = {
     load: faCircleNotch,
   };
 
   onClick() {
-    this.click.emit();
+    this.clicked.emit();
   }
 }
