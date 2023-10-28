@@ -9,6 +9,11 @@ import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 export class FormCreateAccountComponent {
   icons = {
     password: faLock,
-    email: faEnvelope
+    email: faEnvelope,
   };
+
+  isLoading: boolean = false;
+  onSubmit() {
+    this.isLoading = !this.isLoading;
+  }
 }

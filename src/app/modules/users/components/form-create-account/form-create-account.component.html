@@ -1,5 +1,14 @@
 <form class="shadow-sm rounded-sm px-5">
-    <app-input-floating-text [label]="'Name'"></app-input-floating-text>
-    <app-input-floating-text [label]="'E-mail'" [prependIcon]="icons.email"></app-input-floating-text>
-    <app-input-floating-text [label]="'Password'" [type]="'password'" [appendIcon]="icons.password"></app-input-floating-text>
+  <app-input-floating-text [label]="'Name'"></app-input-floating-text>
+  <app-input-floating-text
+    [label]="'E-mail'"
+    [prependIcon]="icons.email"
+  ></app-input-floating-text>
+  <app-input-floating-text
+    [label]="'Password'"
+    [type]="'password'"
+    [appendIcon]="icons.password"
+  ></app-input-floating-text>
+
+  <app-primary-button [label]="'Create Account'" [isLoading]="false" (click)="onSubmit()"></app-primary-button>
 </form>
