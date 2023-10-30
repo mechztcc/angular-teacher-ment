@@ -7,6 +7,7 @@ import { FormCreateAccountComponent } from './components/form-create-account/for
 import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CreateAccountPageComponent, FormCreateAccountComponent],
@@ -16,6 +17,8 @@ import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/pr
     InputFloatingTextModule,
     FontAwesomeModule,
     PrimaryButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
 })
 export class UsersModule {}
