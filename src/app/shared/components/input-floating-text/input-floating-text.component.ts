@@ -2,16 +2,15 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
   Output,
-  SimpleChanges,
   forwardRef,
 } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import {
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-  ValidationErrors,
-} from '@angular/forms';
+  faDotCircle,
+  faTrash,
+  faTrashAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -36,6 +35,10 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
 
   @Output() valueChange = new EventEmitter<string>();
 
+  icons = {
+    close: faTrash,
+  };
+
   get emailErrors() {
     return this.formField?.errors?.['email'] && !this.formField?.pristine;
   }
@@ -43,7 +46,7 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
     return this.formField?.errors?.['min'] && !this.formField?.pristine;
   }
   get requiredErrors() {
-    return this.formField?.errors?.['required']  && !this.formField?.pristine;
+    return this.formField?.errors?.['required'] && !this.formField?.pristine;
   }
 
   public options;
@@ -74,4 +77,5 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
     this.valueChange.emit(this.value);
     this.writeValue(this.value);
   }
+
 }

@@ -1,10 +1,34 @@
 <form
   [formGroup]="form"
-  class="shadow-sm rounded-sm px-10 h-full w-full flex flex-col justify-center"
+  class="shadow-sm rounded-sm px-10 h-full w-full flex flex-col justify-center text-center"
 >
+  <div class="flex justify-center mb-10">
+    <img
+      class="h-28 w-28 rounded-lg"
+      src="https://img.freepik.com/free-vector/wavy-letter-logo-abstract-style_1017-1306.jpg?w=826&t=st=1698676744~exp=1698677344~hmac=5f2722c7f9dc5ed64f0dccd9ef30adc9170f8b970b6239d3a58e32e17ffd911c"
+      alt=""
+    />
+  </div>
+
+  <h1 class="text-5xl font-bold">Create an account</h1>
+  <span>Its easy! Just take a minute and provide the details.</span>
+
+  <button class="my-4 border-gray-300 border p-3 rounded-lg shadow-sm">
+    <fa-icon [icon]="icons.google" class="text-red-400"></fa-icon>
+    <span class="ml-3">Continue with Google</span>
+  </button>
+
+  <div class="grid grid-cols-3">
+    <hr class="mt-3" />
+    <span class="text-center">or</span>
+    <hr class="mt-3" />
+  </div>
+
   <app-input-floating-text
+    class="mt-4"
     [label]="'Name'"
     formControlName="name"
+    [formField]="formControls['name']"
   ></app-input-floating-text>
 
   <app-input-floating-text
@@ -17,10 +41,17 @@
   <app-input-floating-text
     [label]="'Password'"
     [type]="'password'"
-    [appendIcon]="icons.password"
+    [prependIcon]="icons.password"
     formControlName="password"
     [formField]="formControls['password']"
   ></app-input-floating-text>
+
+  <div class="flex align-middle justify-center">
+    <fa-icon [icon]="icons.ok" class="self-center mx-3 text-green-400"></fa-icon>
+    <span class="text-blue-400 my-4">
+      Yes! I understand and agree the Terms Of Service.
+    </span>
+  </div>
 
   <app-primary-button
     [label]="'Create Account'"
@@ -28,5 +59,7 @@
     (clicked)="onSubmit()"
   ></app-primary-button>
 
-  <span class="mt-5 text-gray-500 text-center">Already have an account?</span>
+  <span class="mt-5 text-gray-500 text-center cursor-pointer"
+    >Already have an <b class="text-blue-400">account?</b></span
+  >
 </form>

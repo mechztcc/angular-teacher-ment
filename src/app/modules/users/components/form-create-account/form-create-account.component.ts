@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import {
+  faCheckCircle,
+  faEnvelope,
+  faLock,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-form-create-account',
@@ -11,6 +16,8 @@ export class FormCreateAccountComponent implements OnInit {
   icons = {
     password: faLock,
     email: faEnvelope,
+    google: faGoogle,
+    ok: faCheckCircle,
   };
 
   get formControls() {
