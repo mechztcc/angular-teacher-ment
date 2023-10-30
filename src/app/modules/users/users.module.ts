@@ -8,9 +8,11 @@ import { InputFloatingTextModule } from 'src/app/shared/components/input-floatin
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { FormLoginComponent } from './components/form-login/form-login.component';
 
 @NgModule({
-  declarations: [CreateAccountPageComponent, FormCreateAccountComponent],
+  declarations: [CreateAccountPageComponent, FormCreateAccountComponent, LoginPageComponent, FormLoginComponent],
   imports: [
     CommonModule,
     UsersRoutingModule,

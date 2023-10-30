@@ -6,12 +6,7 @@ import {
   forwardRef,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import {
-  faDotCircle,
-  faTrash,
-  faTrashAlt,
-} from '@fortawesome/free-solid-svg-icons';
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-input-floating-text',

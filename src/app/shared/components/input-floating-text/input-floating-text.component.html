@@ -1,5 +1,5 @@
 <div class="relative mt-3 border rounded-lg flex items-center justify-between">
-  <div class="ml-2" [class.invisible]="!prependIcon">
+  <div class="ml-2" *ngIf="prependIcon">
     <button class="rounded-lg shadow-sm bg-gray-50 px-2 py-1" type="button" (click)="onPrepend()">
       <fa-icon [icon]="prependIcon" class="text-gray-400"></fa-icon>
     </button>
@@ -25,7 +25,7 @@
 
 </div>
 
-<div class="flex flex-col">
+<div class="flex flex-col text-start mt-1">
   <small class="text-red-500" *ngIf="emailErrors">{{ label }} is Inválid</small>
   <small class="text-red-500" *ngIf="requiredErrors"
     >{{ label }} is Required</small

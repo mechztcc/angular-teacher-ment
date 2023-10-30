@@ -10,8 +10,8 @@
     />
   </div>
 
-  <h1 class="text-5xl font-bold">Create an account</h1>
-  <span>Its easy! Just take a minute and provide the details.</span>
+  <h1 class="text-5xl font-bold">Login into your account</h1>
+  <span>Please! Enter your details.</span>
 
   <button class="my-4 border-gray-300 border p-3 rounded-lg shadow-sm">
     <fa-icon [icon]="icons.google" class="text-red-400"></fa-icon>
@@ -25,15 +25,7 @@
   </div>
 
   <app-input-floating-text
-    class="mt-4"
-    [label]="'Name'"
-    formControlName="name"
-    [formField]="formControls['name']"
-  ></app-input-floating-text>
-
-  <app-input-floating-text
     [label]="'E-mail'"
-    [prependIcon]="icons.email"
     formControlName="email"
     [formField]="formControls['email']"
   ></app-input-floating-text>
@@ -47,28 +39,11 @@
     [formField]="formControls['password']"
   ></app-input-floating-text>
 
-  <div class="flex align-middle justify-center">
-    <fa-icon
-      [icon]="icons.ok"
-      class="self-center mx-3 text-green-400"
-    ></fa-icon>
-    <span class="text-blue-400 my-4">
-      Yes! I understand and agree the Terms Of Service.
-    </span>
-  </div>
+  <app-primary-button [label]="'Login'"></app-primary-button>
 
-  <app-primary-button
-    [label]="'Create Account'"
-    [isLoading]="isLoading"
-    (clicked)="onSubmit()"
-  ></app-primary-button>
-
-  <span
-    class="mt-5 text-gray-500 text-center cursor-pointer"
-    routerLink="/users/login"
-  >
-    Already have an
-    <b class="text-blue-400">account?</b>
-    Login
+  <span class="mt-5 text-gray-500 text-center cursor-pointer" routerLink="/users/create-account">
+    Do not have an
+    <b class="text-blue-400">account? </b>
+    Register
   </span>
 </form>

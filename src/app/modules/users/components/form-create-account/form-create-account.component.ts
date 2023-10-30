@@ -4,6 +4,7 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import {
   faCheckCircle,
   faEnvelope,
+  faEye,
   faLock,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,7 +15,7 @@ import {
 })
 export class FormCreateAccountComponent implements OnInit {
   icons = {
-    password: faLock,
+    password: faEye,
     email: faEnvelope,
     google: faGoogle,
     ok: faCheckCircle,
