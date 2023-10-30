@@ -1,0 +1,56 @@
+<div
+  class="flex flex-col justify-start min-h-screen bg-blue-400 p-5 shadow-lg"
+  style="max-width: 300px"
+>
+  <div class="flex flex-col">
+    <div class="flex justify-center mb-10">
+      <img
+        class="h-28 w-28 rounded-3xl shadow-lg"
+        src="https://img.freepik.com/free-vector/wavy-letter-logo-abstract-style_1017-1306.jpg?w=826&t=st=1698676744~exp=1698677344~hmac=5f2722c7f9dc5ed64f0dccd9ef30adc9170f8b970b6239d3a58e32e17ffd911c"
+        alt=""
+      />
+    </div>
+
+    <hr class="mb-10" />
+
+    <div class="flex flex-col">
+      <small class="text-white mb-3">overview</small>
+
+      <button
+        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
+      >
+        <fa-icon [icon]="icons.teams" class="mr-3"></fa-icon>
+        Teams
+      </button>
+
+      <button
+        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+      >
+        <fa-icon [icon]="icons.questions" class="mr-3"></fa-icon>
+        Questions
+      </button>
+
+      <button
+        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+      >
+        <fa-icon [icon]="icons.calendar" class="mr-3"></fa-icon>
+        Calendar
+      </button>
+
+      <button
+        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+      >
+        <fa-icon [icon]="icons.configuration" class="mr-3"></fa-icon>
+        Configuration
+      </button>
+    </div>
+  </div>
+
+  <hr class="my-5" />
+
+  <div class="flex flex-col">
+    <small class="text-white">Notifications</small>
+    <app-notification-sidebar></app-notification-sidebar>
+    <app-notification-sidebar></app-notification-sidebar>
+  </div>
+</div>
