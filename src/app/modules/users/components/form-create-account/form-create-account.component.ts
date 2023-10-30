@@ -13,6 +13,9 @@ export class FormCreateAccountComponent implements OnInit {
     email: faEnvelope,
   };
 
+  get formControls() {
+    return this.form.controls;
+  }
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {}
@@ -28,12 +31,15 @@ export class FormCreateAccountComponent implements OnInit {
         Validators.compose([Validators.required, Validators.minLength(5)]),
       ],
       email: ['', Validators.email],
-      password: ['', Validators.minLength(6)],
+      password: [
+        '',
+        Validators.compose([Validators.min(5), Validators.required]),
+      ],
     });
   }
 
   isLoading: boolean = false;
   onSubmit() {
-    console.log(this.form);
+    console.log(this.formControls['password']);
   }
 }

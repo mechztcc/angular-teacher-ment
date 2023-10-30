@@ -24,4 +24,5 @@
   </div>
 </div>
 
-<small class="text-red-500" *ngIf="hasError">Email is invalid!</small>
+<small class="text-red-500" *ngIf="hasError">{{ label }} is Inválid</small>
+<small *ngIf="hasError"> Password must be 6 char.</small>

@@ -2,10 +2,16 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnChanges,
   Output,
+  SimpleChanges,
   forwardRef,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+  ValidationErrors,
+} from '@angular/forms';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -25,7 +31,7 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
   @Input() type: string = 'text';
   @Input() appendIcon: IconDefinition = null;
   @Input() prependIcon: IconDefinition = null;
-  @Input() hasError: boolean = false;
+  @Input() hasError: ValidationErrors;
   @Input() disabled: boolean = false;
 
   @Output() valueChange = new EventEmitter<string>();
@@ -43,12 +49,10 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
-
   }
 
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
-
   }
 
   setDisabledState?(isDisabled: boolean): void {
