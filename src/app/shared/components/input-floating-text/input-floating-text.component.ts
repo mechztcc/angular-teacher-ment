@@ -33,6 +33,8 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
   @Input() formField: any;
   @Input() disabled: boolean = false;
 
+  @Input() isPass: boolean = false;
+
   @Output() valueChange = new EventEmitter<string>();
 
   icons = {
@@ -54,6 +56,13 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
   public onTouched = () => {};
 
   value: any;
+
+  onPrepend() {
+    if (!this.isPass) {
+      return;
+    }
+    this.type == 'text' ? (this.type = 'password') : (this.type = 'text');
+  }
 
   writeValue(obj: any): void {
     this.value = obj;
@@ -77,5 +86,4 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
     this.valueChange.emit(this.value);
     this.writeValue(this.value);
   }
-
 }

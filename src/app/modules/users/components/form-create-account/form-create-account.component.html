@@ -41,13 +41,17 @@
   <app-input-floating-text
     [label]="'Password'"
     [type]="'password'"
+    [isPass]="true"
     [prependIcon]="icons.password"
     formControlName="password"
     [formField]="formControls['password']"
   ></app-input-floating-text>
 
   <div class="flex align-middle justify-center">
-    <fa-icon [icon]="icons.ok" class="self-center mx-3 text-green-400"></fa-icon>
+    <fa-icon
+      [icon]="icons.ok"
+      class="self-center mx-3 text-green-400"
+    ></fa-icon>
     <span class="text-blue-400 my-4">
       Yes! I understand and agree the Terms Of Service.
     </span>
