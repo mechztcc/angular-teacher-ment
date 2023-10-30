@@ -31,10 +31,20 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
   @Input() type: string = 'text';
   @Input() appendIcon: IconDefinition = null;
   @Input() prependIcon: IconDefinition = null;
-  @Input() hasError: ValidationErrors;
+  @Input() formField: any;
   @Input() disabled: boolean = false;
 
   @Output() valueChange = new EventEmitter<string>();
+
+  get emailErrors() {
+    return this.formField?.errors?.['email'] && !this.formField?.pristine;
+  }
+  get minErros() {
+    return this.formField?.errors?.['min'] && !this.formField?.pristine;
+  }
+  get requiredErrors() {
+    return this.formField?.errors?.['required']  && !this.formField?.pristine;
+  }
 
   public options;
   public onChange = (value: string) => {};
