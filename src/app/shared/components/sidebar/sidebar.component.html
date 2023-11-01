@@ -1,14 +1,20 @@
 <div
+  *ngIf="show"
+  [@fade]
   class="flex flex-col justify-start min-h-screen bg-blue-400 p-5 shadow-lg"
-  style="max-width: 300px"
+  style="max-width: 300px; min-width: 300px;"
 >
-  <div class="flex flex-col">
-    <div class="flex justify-center mb-10">
+  <div class="flex flex-col mt-3">
+    <div class="flex justify-start mb-10">
       <img
-        class="h-28 w-28 rounded-3xl shadow-lg"
-        src="https://img.freepik.com/free-vector/wavy-letter-logo-abstract-style_1017-1306.jpg?w=826&t=st=1698676744~exp=1698677344~hmac=5f2722c7f9dc5ed64f0dccd9ef30adc9170f8b970b6239d3a58e32e17ffd911c"
+        class="h-12 w-12 rounded-3xl shadow-lg border-2"
+        src="https://img.freepik.com/free-photo/3d-rendering-robotic-dog_23-2150780868.jpg"
         alt=""
       />
+      <div class="flex flex-col ml-3">
+        <span class="text-white font-bold self-center">Claudia Silva</span>
+        <small class="text-white">Teacher</small>
+      </div>
     </div>
 
     <hr class="mb-10" />
@@ -62,7 +68,7 @@
   <hr class="my-5" />
   <div class="flex flex-col">
     <app-light-dark-mode></app-light-dark-mode>
-    <div class="flex mt-2 cursor-pointer">
+    <div class="flex mt-2 cursor-pointer" routerLink="/users/login">
       <fa-icon [icon]="icons.exit" class="text-white"></fa-icon>
       <span class="text-white ml-3 font-bold">Exit</span>
     </div>

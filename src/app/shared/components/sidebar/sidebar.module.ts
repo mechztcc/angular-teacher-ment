@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NotificationSidebarModule } from '../notification-sidebar/notification-sidebar.module';
 import { NewFeaturesComponent } from '../new-features/new-features.component';
 import { LightDarkModeComponent } from '../light-dark-mode/light-dark-mode.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [SidebarComponent],
@@ -13,7 +14,8 @@ import { LightDarkModeComponent } from '../light-dark-mode/light-dark-mode.compo
     FontAwesomeModule,
     NotificationSidebarModule,
     NewFeaturesComponent,
-    LightDarkModeComponent
+    LightDarkModeComponent,
+    RouterModule
   ],
   exports: [SidebarComponent],
 })

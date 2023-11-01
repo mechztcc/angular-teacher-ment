@@ -7,11 +7,13 @@ import {
   faMoon,
   faSlidersH,
 } from '@fortawesome/free-solid-svg-icons';
+import { fade } from '../../animations/fade.animation';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
+  animations: [fade]
 })
 export class SidebarComponent {
   icons = {
@@ -22,4 +24,11 @@ export class SidebarComponent {
     calendar: faCalendar,
     light: faMoon,
   };
+
+  constructor() {}
+
+  get show() {
+    const url = window.location.href.split('/');
+    return !url.includes('users');
+  }
 }
