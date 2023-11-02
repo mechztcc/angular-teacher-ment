@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarModule } from './shared/components/sidebar/sidebar.module';
+import { NotificationsDeliveryModule } from './shared/components/notifications-delivery/notifications-delivery.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { SidebarModule } from './shared/components/sidebar/sidebar.module';
     BrowserAnimationsModule,
     FontAwesomeModule,
     SidebarModule,
+    NotificationsDeliveryModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
