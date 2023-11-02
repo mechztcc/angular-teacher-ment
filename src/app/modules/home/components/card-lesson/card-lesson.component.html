@@ -3,11 +3,17 @@
     <div class="col-span-4">
       <div class="flex flex-col">
         <div class="flex">
-          <fa-icon [icon]="icons.team" class="text-blue-400"></fa-icon>
+          <fa-icon
+            [icon]="icons.team"
+            [ngClass]="{ 'text-blue-400': index == 1, 'text-red-400': index == 2, 'text-purple-400': index == 3, }"
+          ></fa-icon>
           <span class="mx-2">Team Name</span>
         </div>
         <div class="flex">
-          <fa-icon [icon]="icons.book" class="text-blue-400"></fa-icon>
+          <fa-icon
+            [icon]="icons.book"
+            [ngClass]="{ 'text-blue-400': index == 1, 'text-red-400': index == 2, 'text-purple-400': index == 3, }"
+          ></fa-icon>
           <small class="mx-2">Lesson theme</small>
         </div>
       </div>
@@ -16,12 +22,26 @@
       <div class="flex justify-between">
         <span>Progress</span>
         <div class="flex">
-          <span>14%</span>
-          <fa-icon [icon]="icons.timer" class="text-blue-400 ml-1"></fa-icon>
+          <span>60%</span>
+          <fa-icon
+            [icon]="icons.timer"
+            class="ml-1"
+            [ngClass]="{ 'text-blue-400': index == 1, 'text-red-400': index == 2, 'text-purple-400': index == 3, }"
+          ></fa-icon>
         </div>
       </div>
       <div class="w-full bg-gray-200 rounded-full h-2">
-        <div class="bg-blue-400 h-2 rounded-full w-20"></div>
+        <div
+          [@growRight]
+          class="h-2 rounded-full"
+          style="width: 60%;"
+          [ngClass]="{ 'bg-blue-400': index == 1, 'bg-red-400': index == 2, 'bg-purple-400': index == 3,}"
+        ></div>
+      </div>
+
+      <div class="flex justify-end">
+        <span class="text-gray-500">23:45 hours left</span>
+
       </div>
     </div>
   </div>

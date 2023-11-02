@@ -9,6 +9,8 @@ import { CardsInformationsComponent } from './components/cards-informations/card
 import { OpenedLessonsComponent } from './components/opened-lessons/opened-lessons.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CardLessonComponent } from './components/card-lesson/card-lesson.component';
+import { CreateNewTeamComponent } from './components/create-new-team/create-new-team.component';
+import { CardCreateNewTeamComponent } from './components/card-create-new-team/card-create-new-team.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { CardLessonComponent } from './components/card-lesson/card-lesson.compon
     CardsInformationsComponent,
     OpenedLessonsComponent,
     CardLessonComponent,
+    CreateNewTeamComponent,
+    CardCreateNewTeamComponent,
   ],
   imports: [
     CommonModule,
