@@ -1,0 +1,28 @@
+<div class="border rounded shadow-sm hover:shadow-md cursor-pointer p-3 mt-2">
+  <div class="grid grid-cols-8 w-full">
+    <div class="col-span-4">
+      <div class="flex flex-col">
+        <div class="flex">
+          <fa-icon [icon]="icons.team" class="text-blue-400"></fa-icon>
+          <span class="mx-2">Team Name</span>
+        </div>
+        <div class="flex">
+          <fa-icon [icon]="icons.book" class="text-blue-400"></fa-icon>
+          <small class="mx-2">Lesson theme</small>
+        </div>
+      </div>
+    </div>
+    <div class="col-span-4">
+      <div class="flex justify-between">
+        <span>Progress</span>
+        <div class="flex">
+          <span>14%</span>
+          <fa-icon [icon]="icons.timer" class="text-blue-400 ml-1"></fa-icon>
+        </div>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-2">
+        <div class="bg-blue-400 h-2 rounded-full w-20"></div>
+      </div>
+    </div>
+  </div>
+</div>
