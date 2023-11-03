@@ -39,7 +39,7 @@
     [formField]="formControls['password']"
   ></app-input-floating-text>
 
-  <app-primary-button [label]="'Login'" routerLink="/"></app-primary-button>
+  <app-primary-button [label]="'Login'" (click)="onSuccess()"></app-primary-button>
 
   <span class="mt-5 text-gray-500 text-center cursor-pointer" routerLink="/users/create-account">
     Do not have an

@@ -5,8 +5,6 @@ import { fade } from 'src/app/shared/animations/fade.animation';
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
-  animations: [fade]
+  animations: [fade],
 })
-export class LoginPageComponent {
-
-}
+export class LoginPageComponent {}
