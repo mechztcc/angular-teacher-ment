@@ -8,10 +8,14 @@ import {
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, catchError, map, throwError } from 'rxjs';
+import { NotificationsDeliveryService } from '../services/notifications-delivery.service';
 
 @Injectable()
 export class HttpHandlerInterceptor implements HttpInterceptor {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private notifier: NotificationsDeliveryService
+  ) {}
 
   intercept(
     request: HttpRequest<unknown>,
@@ -27,6 +31,9 @@ export class HttpHandlerInterceptor implements HttpInterceptor {
       }),
       catchError((response: HttpErrorResponse) => {
         scrollTo(0, 0);
+        if (response.error) {
+          this.notifier.error(response.error.message);
+        }
 
         return throwError(() => new Error());
       })

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import {
   faCheckCircle,
   faEnvelope,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
+import { NotificationsDeliveryService } from 'src/app/shared/services/notifications-delivery.service';
 import { UsersService } from '../../shared/services/users/users.service';
 
 @Component({
@@ -28,7 +30,12 @@ export class FormCreateAccountComponent implements OnInit {
 
   isLoading: boolean = false;
 
-  constructor(private fb: FormBuilder, private usersService: UsersService) {}
+  constructor(
+    private fb: FormBuilder,
+    private usersService: UsersService,
+    private notifier: NotificationsDeliveryService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -59,11 +66,17 @@ export class FormCreateAccountComponent implements OnInit {
       name: this.formControls['name'].value,
       email: this.formControls['email'].value,
       password: this.formControls['password'].value,
+      role: 'TEACHER',
     };
 
     this.usersService
       .createAccount(payload)
-      .subscribe(console.log)
+      .subscribe((data) => {
+        this.notifier.success(
+          'Account created with success! Now you will be redirected to Login page.'
+        );
+        this.router.navigate(['/users/login']);
+      })
       .add(() => {
         this.isLoading = false;
       });
