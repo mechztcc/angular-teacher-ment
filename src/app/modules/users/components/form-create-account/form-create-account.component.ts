@@ -5,8 +5,8 @@ import {
   faCheckCircle,
   faEnvelope,
   faEye,
-  faLock,
 } from '@fortawesome/free-solid-svg-icons';
+import { UsersService } from '../../shared/services/users/users.service';
 
 @Component({
   selector: 'app-form-create-account',
@@ -26,7 +26,9 @@ export class FormCreateAccountComponent implements OnInit {
   }
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  isLoading: boolean = false;
+
+  constructor(private fb: FormBuilder, private usersService: UsersService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -46,8 +48,24 @@ export class FormCreateAccountComponent implements OnInit {
     });
   }
 
-  isLoading: boolean = false;
   onSubmit() {
-    console.log(this.formControls['password']);
+    if (this.form.invalid) {
+      return;
+    }
+
+    this.isLoading = true;
+
+    const payload = {
+      name: this.formControls['name'].value,
+      email: this.formControls['email'].value,
+      password: this.formControls['password'].value,
+    };
+
+    this.usersService
+      .createAccount(payload)
+      .subscribe(console.log)
+      .add(() => {
+        this.isLoading = false;
+      });
   }
 }
