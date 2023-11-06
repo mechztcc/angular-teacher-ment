@@ -7,6 +7,6 @@ export class SessionsService {
   constructor() {}
 
   save(name: string, value: unknown) {
-    localStorage.setItem(name, JSON.stringify(value));
+    localStorage.setItem(name, String(value));
   }
 }

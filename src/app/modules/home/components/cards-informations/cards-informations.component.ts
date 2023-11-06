@@ -5,7 +5,7 @@ import { fade } from 'src/app/shared/animations/fade.animation';
   selector: 'app-cards-informations',
   templateUrl: './cards-informations.component.html',
   styleUrls: ['./cards-informations.component.scss'],
-  animations: [fade]
+  animations: [fade],
 })
 export class CardsInformationsComponent {
   @Input() count: number;

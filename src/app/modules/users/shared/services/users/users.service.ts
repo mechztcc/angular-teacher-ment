@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ICreateAccount } from '../../types/create-account.interface';
 import { ILoginResponse } from '../../types/login-response.interface';
 import { ILogin } from '../../types/login.interface';
+import { IFindInformationsResponse } from 'src/app/modules/home/shared/types/find-informations-response.interface';
 
 const api = '/users';
 
@@ -21,7 +22,7 @@ export class UsersService {
     return this.http.post<any>(`/auth`, payload);
   }
 
-  dashboardInformations(): Observable<any> {
-    return this.http.get<any>(`${api}/info`);
+  dashboardInformations(): Observable<IFindInformationsResponse> {
+    return this.http.get<any>(`${api}/informations`);
   }
 }

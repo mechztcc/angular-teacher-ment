@@ -2,21 +2,21 @@
   <div class="col-span-1 md:col-span-1 lg:col-span-2 lg:col-start-2">
     <app-cards-informations
       [label]="'Lessons'"
-      [count]="20"
+      [count]="0"
       [type]="1"
     ></app-cards-informations>
   </div>
   <div class="col-span-1 md:col-span-1 lg:col-span-2">
     <app-cards-informations
       [label]="'Teams'"
-      [count]="13"
+      [count]="informations.teamsCount"
       [type]="2"
     ></app-cards-informations>
   </div>
   <div class="col-span-1 md:col-span-1 lg:col-span-2">
     <app-cards-informations
       [label]="'Students'"
-      [count]="180"
+      [count]="0"
       [type]="3"
     ></app-cards-informations>
   </div>
@@ -30,6 +30,6 @@
 
 <div class="grid grid-cols-1 lg:grid-cols-8 mt-10">
   <div class="lg:col-start-2 lg:col-span-6">
-    <app-opened-lessons ></app-opened-lessons>
+    <app-opened-lessons></app-opened-lessons>
   </div>
 </div>
