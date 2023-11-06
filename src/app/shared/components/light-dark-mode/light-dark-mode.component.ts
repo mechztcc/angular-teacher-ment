@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   standalone: true,
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './light-dark-mode.component.html',
   styleUrls: ['./light-dark-mode.component.scss'],
 })
-export class LightDarkModeComponent {}
+export class LightDarkModeComponent {
+  constructor(public theme: ThemeService) {}
+}

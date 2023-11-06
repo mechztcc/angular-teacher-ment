@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { SearchContentComponent } from './components/search-content/search-content.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
+import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
+import { CardCreateNewTeamComponent } from './components/card-create-new-team/card-create-new-team.component';
+import { CardLessonComponent } from './components/card-lesson/card-lesson.component';
 import { CardsInformationsComponent } from './components/cards-informations/cards-informations.component';
 import { OpenedLessonsComponent } from './components/opened-lessons/opened-lessons.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CardLessonComponent } from './components/card-lesson/card-lesson.component';
-import { CreateNewTeamComponent } from './components/create-new-team/create-new-team.component';
-import { CardCreateNewTeamComponent } from './components/card-create-new-team/card-create-new-team.component';
+import { SearchContentComponent } from './components/search-content/search-content.component';
+import { HomeRoutingModule } from './home-routing.module';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,6 @@ import { CardCreateNewTeamComponent } from './components/card-create-new-team/ca
     CardsInformationsComponent,
     OpenedLessonsComponent,
     CardLessonComponent,
-    CreateNewTeamComponent,
     CardCreateNewTeamComponent,
   ],
   imports: [
@@ -27,6 +26,7 @@ import { CardCreateNewTeamComponent } from './components/card-create-new-team/ca
     HomeRoutingModule,
     InputFloatingTextModule,
     FontAwesomeModule,
+    PrimaryButtonModule,
   ],
 })
 export class HomeModule {}

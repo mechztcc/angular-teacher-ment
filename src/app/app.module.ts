@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { NotificationsDeliveryModule } from './shared/components/notifications-delivery/notifications-delivery.module';
 import { SidebarModule } from './shared/components/sidebar/sidebar.module';
 import { HttpHandlerInterceptor } from './shared/interceptors/http.interceptor';
+import { ModalRenderModule } from './shared/components/modal-render/modal-render.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { HttpHandlerInterceptor } from './shared/interceptors/http.interceptor';
     SidebarModule,
     NotificationsDeliveryModule,
     HttpClientModule,
+    ModalRenderModule,
   ],
   providers: [
     {
