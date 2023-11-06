@@ -1,0 +1,13 @@
+<div class="rounded shadow-md p-3 border">
+  <div
+    class="w-10 rounded-full flex justify-center mb-3"
+    [ngClass]="{ 'bg-blue-400': type == 1, 'bg-red-400': type == 2, 'bg-purple-400': type == 3,}"
+  >
+    <fa-icon [icon]="icons.bolt" class="text-white"></fa-icon>
+    <span class="text-white font-bold ml-1">1</span>
+  </div>
+
+  <h3 class="text-sm font-semibold">Quanto é 2 x 2?</h3>
+  <hr class="mt-3" />
+  <small>Last update: 22/10/2023</small>
+</div>
