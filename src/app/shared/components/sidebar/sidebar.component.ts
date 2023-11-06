@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import {
+  faArrowLeft,
+  faArrowRight,
   faBookmark,
   faCalendar,
   faDoorOpen,
   faGraduationCap,
   faMoon,
+  faQuoteRight,
   faSlidersH,
 } from '@fortawesome/free-solid-svg-icons';
 import { fade } from '../../animations/fade.animation';
@@ -13,7 +16,7 @@ import { fade } from '../../animations/fade.animation';
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  animations: [fade]
+  animations: [fade],
 })
 export class SidebarComponent {
   icons = {
@@ -23,7 +26,13 @@ export class SidebarComponent {
     exit: faDoorOpen,
     calendar: faCalendar,
     light: faMoon,
+    cote: faQuoteRight,
+    left: faArrowLeft,
+    dark: faMoon,
+    right: faArrowRight
   };
+
+  isHidden: boolean = false;
 
   constructor() {}
 

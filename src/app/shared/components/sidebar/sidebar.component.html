@@ -1,9 +1,17 @@
 <div
-  *ngIf="show"
+  *ngIf="show && isHidden"
   [@fade]
-  class="flex flex-col justify-start min-h-screen bg-blue-400 p-5 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px]"
-  style="max-width: 300px; min-width: 300px;"
+  class="flex flex-col justify-start min-h-screen bg-blue-400 p-5 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px] fixed top-0 z-10"
+  style="max-width: 300px; min-width: 300px"
 >
+  <div
+    class="flex bg-white rounded-lg p-3 shadow-md"
+    (click)="isHidden = !isHidden"
+  >
+    <button class="w-full">
+      <fa-icon [icon]="icons.left"></fa-icon>
+    </button>
+  </div>
   <div class="flex flex-col mt-3">
     <div class="flex justify-start mb-10">
       <img
@@ -73,4 +81,75 @@
       <span class="text-white ml-3 font-bold">Exit</span>
     </div>
   </div>
+</div>
+
+<div
+  *ngIf="!isHidden"
+  [@fade]
+  class="top-0 z-10 fixed min-h-screen bg-blue-400 p-2 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px]"
+>
+  <div
+    class="flex bg-white rounded-lg p-3 shadow-mda cursor-pointer mt-3"
+    (click)="isHidden = !isHidden"
+  >
+    <button class="w-full">
+      <fa-icon [icon]="icons.right"></fa-icon>
+    </button>
+  </div>
+
+  <div class="flex flex-col mt-3">
+    <div class="flex justify-start mb-10">
+      <img
+        class="h-12 w-12 rounded-3xl shadow-lg border-2"
+        src="https://img.freepik.com/free-photo/3d-rendering-robotic-dog_23-2150780868.jpg"
+        alt=""
+      />
+    </div>
+  </div>
+
+  <hr class="mb-10" />
+
+  <div class="flex flex-col">
+    <small class="text-white mb-3">overview</small>
+
+    <button
+      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
+    >
+      <fa-icon [icon]="icons.teams"></fa-icon>
+    </button>
+
+    <button
+      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+    >
+      <fa-icon [icon]="icons.questions"></fa-icon>
+    </button>
+
+    <button
+      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+    >
+      <fa-icon [icon]="icons.calendar"></fa-icon>
+    </button>
+
+    <button
+      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+    >
+      <fa-icon [icon]="icons.configuration"></fa-icon>
+    </button>
+    <button
+      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+    >
+      <fa-icon [icon]="icons.cote"></fa-icon>
+    </button>
+    <button
+      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+    >
+      <fa-icon [icon]="icons.exit"></fa-icon>
+    </button>
+    <button
+      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+    >
+      <fa-icon [icon]="icons.dark"></fa-icon>
+    </button>
+  </div>
+
 </div>
