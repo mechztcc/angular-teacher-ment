@@ -1,4 +1,7 @@
-<div class="rounded bg-blue-400 p-3 h-full">
+<div
+  class="rounded shadow-md p-3 h-full"
+  [ngClass]="{ 'bg-blue-400': type == 1, 'bg-red-400': type == 2, 'bg-purple-400': type == 3,}"
+>
   <div class="grid grid-cols-2 md:grid-cols-3">
     <div class="flex flex-col justify-center">
       <h1 class="text-5xl text-white font-bold">{{ count }}</h1>
