@@ -47,7 +47,6 @@ export class HttpHandlerInterceptor implements HttpInterceptor {
       request = request.clone({
         setHeaders: {
           Authorization: `${token}`,
-          ['Content-Type']: 'text/plain',
         },
       });
     }

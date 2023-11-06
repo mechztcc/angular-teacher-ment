@@ -9,6 +9,7 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 export class PrimaryButtonComponent {
   @Input() label: string;
   @Input() isLoading: boolean = false;
+  @Input() type: string = 'button';
 
   @Output() clicked: EventEmitter<any> = new EventEmitter();
 

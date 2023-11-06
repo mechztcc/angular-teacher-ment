@@ -20,4 +20,8 @@ export class UsersService {
   login(payload: ILogin): Observable<ILoginResponse> {
     return this.http.post<any>(`/auth`, payload);
   }
+
+  dashboardInformations(): Observable<any> {
+    return this.http.get<any>(`${api}/info`);
+  }
 }

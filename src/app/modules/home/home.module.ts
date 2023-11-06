@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
@@ -27,6 +28,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     InputFloatingTextModule,
     FontAwesomeModule,
     PrimaryButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class HomeModule {}

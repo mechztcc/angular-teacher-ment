@@ -12,11 +12,13 @@
 </div>
 
 <ng-template #template>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <app-input-floating-text
+      [label]="'Team Name'"
+      [prependIcon]="icons.name"
+      formControlName="name"
+    ></app-input-floating-text>
 
-  <form>
-    <app-input-floating-text [label]="'Team Name'" [prependIcon]="icons.name"></app-input-floating-text>
-
-    <app-primary-button [label]="'Create'"></app-primary-button>
+    <app-primary-button [label]="'Create'" [type]="'submit'" [isLoading]="isLoading"></app-primary-button>
   </form>
-
 </ng-template>
