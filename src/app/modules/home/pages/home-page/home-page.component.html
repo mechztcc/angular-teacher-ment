@@ -1,19 +1,19 @@
-<div class="grid grid-cols-1 md:grid-cols-8 mt-20 gap-10">
-  <div class="col-span-1 md:col-span-2 md:col-start-2">
+<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-8 mt-20 gap-10">
+  <div class="col-span-1 md:col-span-1 lg:col-span-2 lg:col-start-2">
     <app-cards-informations
       [label]="'Lessons'"
       [count]="20"
       [type]="1"
     ></app-cards-informations>
   </div>
-  <div class="col-span-1 md:col-span-2">
+  <div class="col-span-1 md:col-span-1 lg:col-span-2">
     <app-cards-informations
       [label]="'Teams'"
       [count]="13"
       [type]="2"
     ></app-cards-informations>
   </div>
-  <div class="col-span-1 md:col-span-2">
+  <div class="col-span-1 md:col-span-1 lg:col-span-2">
     <app-cards-informations
       [label]="'Students'"
       [count]="180"
@@ -22,15 +22,14 @@
   </div>
 </div>
 
-<div class="grid grid-cols-8 mt-10">
-  <div class="col-start-6 col-span-2">
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-8 mt-10">
+  <div class="md:col-span-2 md:col-start-2 lg:col-start-6 lg:col-span-2">
     <app-card-create-new-team [@fade]></app-card-create-new-team>
   </div>
 </div>
 
-<div class="grid grid-cols-8 mt-10">
-  <div class="col-start-2 col-span-6">
+<div class="grid grid-cols-1 lg:grid-cols-8 mt-10">
+  <div class="lg:col-start-2 lg:col-span-6">
     <app-opened-lessons ></app-opened-lessons>
   </div>
-
 </div>

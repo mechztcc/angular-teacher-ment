@@ -1,28 +1,30 @@
-<div
-  class="rounded-lg border h-28 p-2 flex justify-between hover:shadow-lg shadow-sm"
-  [@fade]
-  [ngClass]="{ 'bg-blue-400': type == 1, 'bg-red-400': type == 2, 'bg-purple-400': type == 3,}"
->
-  <div class="flex flex-col justify-center">
-    <h1 class="text-5xl text-white font-bold">{{ count }}</h1>
-    <h3 class="text-white">{{ label }}</h3>
+<div class="rounded bg-blue-400 p-3 h-full">
+  <div class="grid grid-cols-2 md:grid-cols-3">
+    <div class="flex flex-col justify-center">
+      <h1 class="text-5xl text-white font-bold">{{ count }}</h1>
+      <h3 class="text-white">{{ label }}</h3>
+    </div>
+    <div class="col-span-1 md:col-span-2">
+      <div class="flex items-center justify-end">
+        <img
+          *ngIf="type == 1"
+          class="rounded-lg img"
+          src="https://img.freepik.com/free-vector/knowledge-concept-illustration_114360-3901.jpg?w=826&t=st=1698839778~exp=1698840378~hmac=a75c871b964f5248420d0ce10bf7853f140e4d5261bfecc1354811f6b025a1ef"
+          alt=""
+        />
+        <img
+          *ngIf="type == 2"
+          class="rounded-lg img"
+          src="https://img.freepik.com/free-vector/ecommerce-web-page-concept-illustration_114360-8204.jpg?w=1380&t=st=1698840504~exp=1698841104~hmac=93f73fd0574808211c6fb516272119d7f7054428288a3154c7d1f2266be422ac"
+          alt=""
+        />
+        <img
+          *ngIf="type == 3"
+          class="rounded-lg img"
+          src="https://img.freepik.com/free-vector/flat-hand-drawn-seniors-using-technology-illustration_23-2148868806.jpg?w=1380&t=st=1698840534~exp=1698841134~hmac=1cb61b83bfd8a7019257ea54eb2e1eebeaad19ee94a982aff9a2c2a0285384bb"
+          alt=""
+        />
+      </div>
+    </div>
   </div>
-  <img
-    *ngIf="type == 1"
-    class="rounded-lg"
-    src="https://img.freepik.com/free-vector/knowledge-concept-illustration_114360-3901.jpg?w=826&t=st=1698839778~exp=1698840378~hmac=a75c871b964f5248420d0ce10bf7853f140e4d5261bfecc1354811f6b025a1ef"
-    alt=""
-  />
-  <img
-    *ngIf="type == 2"
-    class="rounded-lg"
-    src="https://img.freepik.com/free-vector/ecommerce-web-page-concept-illustration_114360-8204.jpg?w=1380&t=st=1698840504~exp=1698841104~hmac=93f73fd0574808211c6fb516272119d7f7054428288a3154c7d1f2266be422ac"
-    alt=""
-  />
-  <img
-    *ngIf="type == 3"
-    class="rounded-lg"
-    src="https://img.freepik.com/free-vector/flat-hand-drawn-seniors-using-technology-illustration_23-2148868806.jpg?w=1380&t=st=1698840534~exp=1698841134~hmac=1cb61b83bfd8a7019257ea54eb2e1eebeaad19ee94a982aff9a2c2a0285384bb"
-    alt=""
-  />
 </div>
