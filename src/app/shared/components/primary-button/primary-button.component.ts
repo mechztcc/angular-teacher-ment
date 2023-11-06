@@ -10,6 +10,7 @@ export class PrimaryButtonComponent {
   @Input() label: string;
   @Input() isLoading: boolean = false;
   @Input() type: string = 'button';
+  @Input() size: string = 'lg';
 
   @Output() clicked: EventEmitter<any> = new EventEmitter();
 

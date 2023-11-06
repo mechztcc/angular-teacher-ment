@@ -6,10 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ModalRenderModule } from './shared/components/modal-render/modal-render.module';
 import { NotificationsDeliveryModule } from './shared/components/notifications-delivery/notifications-delivery.module';
 import { SidebarModule } from './shared/components/sidebar/sidebar.module';
 import { HttpHandlerInterceptor } from './shared/interceptors/http.interceptor';
-import { ModalRenderModule } from './shared/components/modal-render/modal-render.module';
 
 @NgModule({
   declarations: [AppComponent],

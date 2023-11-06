@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ITeam } from '../../types/team.interface';
 
 const api = '/teams';
 
@@ -12,5 +13,9 @@ export class TeamsService {
 
   onCreate(payload: any): Observable<any> {
     return this.http.post<any>(`${api}`, payload);
+  }
+
+  index(): Observable<any> {
+    return this.http.get<ITeam[]>(`${api}/owner`);
   }
 }

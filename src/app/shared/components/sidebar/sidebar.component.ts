@@ -6,6 +6,7 @@ import {
   faCalendar,
   faDoorOpen,
   faGraduationCap,
+  faHouse,
   faMoon,
   faQuoteRight,
   faSlidersH,
@@ -29,7 +30,8 @@ export class SidebarComponent {
     cote: faQuoteRight,
     left: faArrowLeft,
     dark: faMoon,
-    right: faArrowRight
+    right: faArrowRight,
+    house: faHouse
   };
 
   isHidden: boolean = false;

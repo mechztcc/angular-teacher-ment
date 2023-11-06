@@ -1,1 +1,34 @@
-<p>list-teams-page works!</p>
+<div class="grid grid-cols-6 md:grid-cols-8 mt-20">
+  <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-6">
+    <div class="grid grid-cols-2">
+      <div class="col-span-1">
+        <h3 class="text-3xl mt-3 font-semibold">Teams</h3>
+        <span class="text-gray-500"
+          >Manage all your teams and tasks in the same place!</span
+        >
+      </div>
+      <div class="col-span-1">
+        <div class="flex justify-end">
+          <app-input-floating-text
+            [label]="'Search'"
+            [prependIcon]="icons.search"
+          ></app-input-floating-text>
+          <app-primary-button
+            class="ml-2"
+            [label]="'Create Team'"
+            [size]="'md'"
+          ></app-primary-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-6 gap-5 mt-10">
+      <div class="md:col-span-6" *ngIf="teams.length == 0">
+        <app-not-found-content></app-not-found-content>
+      </div>
+      <div class="md:col-span-3" *ngFor="let team of teams">
+        <app-card-teams-list [team]="team"></app-card-teams-list>
+      </div>
+    </div>
+  </div>
+</div>
