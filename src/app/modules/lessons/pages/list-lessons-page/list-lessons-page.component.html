@@ -1,1 +1,15 @@
-<p>list-lessons-page works!</p>
+<div class="grid grid-cols-8 md:grid-cols-8 gap-5 mt-5">
+  <div class="col-span-6 col-start-2">
+    <div class="grid col-span-1 md:grid-cols-3">
+      <div class="col-span-1 md:col-span-3">
+        <div class="flex justify-between items-center">
+          <h1 class="text-3xl">Lessons</h1>
+          <app-primary-button [label]="'Create Lesson'"></app-primary-button>
+        </div>
+      </div>
+      <div class="col-span-1 md:col-spana-1">
+        <app-card-lesson></app-card-lesson>
+      </div>
+    </div>
+  </div>
+</div>

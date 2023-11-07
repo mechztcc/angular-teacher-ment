@@ -1,0 +1,36 @@
+<div class="rounded shadow-md p-3">
+  <div class="grid grid-cols-1 gap-2">
+    <div class="col-span-1">
+      <div class="flex justify-start">
+        <div class="rounded-xl bg-red-400 text-white w-20 flex justify-center font-semibold">
+            <fa-icon [icon]="icons.level"></fa-icon>
+            <span class="ml-2">Hard</span>
+          </div>
+          <div class="rounded-xl bg-green-400 text-white w-20 flex justify-center font-semibold mx-2">
+            <fa-icon [icon]="icons.medal"></fa-icon>
+            <span class="ml-2">2</span>
+          </div>
+      </div>
+    </div>
+    <div class="col-span-1 mt-3">
+      <div class="flex">
+        <fa-icon [icon]="icons.book" class="text-blue-400"></fa-icon>
+        <h1 class="ml-2 font-semibold">Name</h1>
+      </div>
+      <h1>Brazilian History</h1>
+    </div>
+    <div class="col-span-1">
+      <div class="flex">
+        <fa-icon [icon]="icons.users" class="text-blue-400"></fa-icon>
+        <h1 class="ml-2 font-semibold">Team</h1>
+      </div>
+      <h1>Team Name</h1>
+    </div>
+
+    <hr class="my-2" />
+    <div class="flex justify-end">
+      <fa-icon [icon]="icons.calendar" class="text-gray-500 mr-2"></fa-icon>
+      <span>Created at 22/12/2022</span>
+    </div>
+  </div>
+</div>

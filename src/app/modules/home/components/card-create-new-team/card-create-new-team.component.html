@@ -3,22 +3,5 @@
 >
   <h3 class="text-3xl font-semibold text-gray-600">Create Team!</h3>
   <small>Manage all your teams and tasks in the same place!</small>
-  <button
-    class="bg-blue-400 rounded shadow-sm text-white p-1 mt-2"
-    (click)="modalRender.onOpen(template)"
-  >
-    Create
-  </button>
+  <app-create-team ></app-create-team>
 </div>
-
-<ng-template #template>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <app-input-floating-text
-      [label]="'Team Name'"
-      [prependIcon]="icons.name"
-      formControlName="name"
-    ></app-input-floating-text>
-
-    <app-primary-button [label]="'Create'" [type]="'submit'" [isLoading]="isLoading"></app-primary-button>
-  </form>
-</ng-template>

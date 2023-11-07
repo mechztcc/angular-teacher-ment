@@ -1,0 +1,23 @@
+<app-primary-button
+  class="ml-2"
+  [label]="'Create Team'"
+  [size]="'md'"
+  (click)="modalRender.onOpen(template)"
+></app-primary-button>
+
+<ng-template #template>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <app-input-floating-text
+      [label]="'Team Name'"
+      [prependIcon]="icons.name"
+      formControlName="name"
+    ></app-input-floating-text>
+
+    <app-primary-button
+      [label]="'Create'"
+      [type]="'submit'"
+      [isLoading]="isLoading"
+      [size]="'lg'"
+    ></app-primary-button>
+  </form>
+</ng-template>

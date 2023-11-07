@@ -1,17 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
+import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
 import { NotFoundContentModule } from 'src/app/shared/components/not-found-content/not-found-content.module';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
 import { CardTeamsListComponent } from './components/card-teams-list/card-teams-list.component';
+import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ListTeamsPageComponent } from './pages/list-teams-page/list-teams-page.component';
 import { TeamsRoutingModule } from './teams-routing.module';
-import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
-import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
 
 @NgModule({
-  declarations: [ListTeamsPageComponent, CardTeamsListComponent],
+  declarations: [
+    ListTeamsPageComponent,
+    CardTeamsListComponent,
+    CreateTeamComponent,
+  ],
+  exports: [CreateTeamComponent],
   imports: [
     CommonModule,
     TeamsRoutingModule,
@@ -19,7 +26,9 @@ import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
     FontAwesomeModule,
     NotFoundContentModule,
     InputFloatingTextModule,
-    BadgeModule
+    BadgeModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
 })
 export class TeamsModule {}
