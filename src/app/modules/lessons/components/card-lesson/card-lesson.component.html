@@ -32,16 +32,16 @@
     </div>
     <hr class="my-2">
     <div class="col-span-1 mt-3">
-      <div class="flex">
-        <fa-icon [icon]="icons.book" class="text-blue-400"></fa-icon>
-        <h1 class="ml-2 font-semibold">Name</h1>
+      <div class="flex items-end">
+        <app-badge [icon]="icons.book" [type]="1"></app-badge>
+        <h1 class="ml-2 font-semibold text-blue-400">Name</h1>
       </div>
       <h1>{{ lesson.name }}</h1>
     </div>
     <div class="col-span-1">
-      <div class="flex">
-        <fa-icon [icon]="icons.users" class="text-blue-400"></fa-icon>
-        <h1 class="ml-2 font-semibold">Team</h1>
+      <div class="flex items-end">
+        <app-badge [icon]="icons.users" [type]="1"></app-badge>
+        <h1 class="ml-2 font-semibold text-blue-400">Team</h1>
       </div>
       <h1>{{ lesson.team.name }}</h1>
     </div>
@@ -55,7 +55,6 @@
       </div>
       <div class="flex">
         <fa-icon [icon]="icons.pen" class="text-gray-400 mx-2"></fa-icon>
-        <fa-icon [icon]="icons.add" class="text-gray-400"></fa-icon>
       </div>
     </div>
   </div>
