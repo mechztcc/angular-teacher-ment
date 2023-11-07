@@ -1,13 +1,49 @@
 <div class="rounded shadow-md p-3 border">
-  <div
-    class="w-10 rounded-full flex justify-center mb-3"
-    [ngClass]="{ 'bg-blue-400': type == 1, 'bg-red-400': type == 2, 'bg-purple-400': type == 3,}"
-  >
-    <fa-icon [icon]="icons.bolt" class="text-white"></fa-icon>
-    <span class="text-white font-bold ml-1">1</span>
+  <div class="flex justify-between">
+    <app-badge
+      [type]="question.type"
+      [label]="question.type"
+      [icon]="icons.bolt"
+    ></app-badge>
+    <div class="flex">
+      <fa-icon [icon]="icons.image" class="text-gray-400"></fa-icon>
+      <span class="font-bold text-green-400 ml-1">{{ question.type }}</span>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3">
+    <div class="col-span-1 md:col-span-2 lg:col-span-1">
+      <div
+        class="rounded-full text-white font-semibold px-2 mx-1 text-center"
+        [ngClass]="{ 'bg-blue-400': question.type == 1, 'bg-red-400': question.type == 2, 'bg-purple-400': question.type == 3,}"
+      >
+        <span>Português</span>
+      </div>
+    </div>
+    <div class="col-span-1 md:col-span-2 lg:col-span-1">
+      <div
+        class="rounded-full text-white font-semibold px-2 text-center"
+        [ngClass]="{ 'bg-blue-400': question.type == 1, 'bg-red-400': question.type == 2, 'bg-purple-400': question.type == 3,}"
+      >
+        <span>Português</span>
+      </div>
+    </div>
   </div>
 
-  <h3 class="text-sm font-semibold">Quanto é 2 x 2?</h3>
-  <hr class="mt-3" />
-  <small>Last update: 22/10/2023</small>
+  <h3 class="text-sm font-semibold mt-3">{{ question.title }}</h3>
+
+  <div class="flex mt-1">
+    <app-badge [label]="'A'" [type]="5"></app-badge>
+    <app-badge [label]="'B'"></app-badge>
+    <app-badge [label]="'C'"></app-badge>
+    <app-badge [label]="'D'"></app-badge>
+    <app-badge [label]="'E'"></app-badge>
+  </div>
+  <hr class="my-3" />
+  <div class="flex justify-between">
+    <small>
+      <fa-icon [icon]="icons.calendar" class="text-gray-400"></fa-icon>
+      Last update: 22/10/2023
+    </small>
+    <fa-icon [icon]="icons.edit" class="text-gray-400 cursor-pointer"></fa-icon>
+  </div>
 </div>

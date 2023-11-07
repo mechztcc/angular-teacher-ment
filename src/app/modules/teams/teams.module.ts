@@ -8,6 +8,7 @@ import { CardTeamsListComponent } from './components/card-teams-list/card-teams-
 import { ListTeamsPageComponent } from './pages/list-teams-page/list-teams-page.component';
 import { TeamsRoutingModule } from './teams-routing.module';
 import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
+import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
 
 @NgModule({
   declarations: [ListTeamsPageComponent, CardTeamsListComponent],
@@ -17,7 +18,8 @@ import { InputFloatingTextModule } from 'src/app/shared/components/input-floatin
     PrimaryButtonModule,
     FontAwesomeModule,
     NotFoundContentModule,
-    InputFloatingTextModule
+    InputFloatingTextModule,
+    BadgeModule
   ],
 })
 export class TeamsModule {}

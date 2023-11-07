@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { faBolt, faCalendar, faImage, faPen } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-card-question',
@@ -7,8 +7,11 @@ import { faBolt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./card-question.component.scss'],
 })
 export class CardQuestionComponent {
-  @Input() type: number;
+  @Input() question: { title: string; type: number; topic: string };
   icons = {
     bolt: faBolt,
+    edit: faPen,
+    calendar: faCalendar,
+    image: faImage
   };
 }
