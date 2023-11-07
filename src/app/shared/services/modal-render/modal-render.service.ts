@@ -1,5 +1,4 @@
 import { Injectable, TemplateRef, ViewContainerRef } from '@angular/core';
-import { IModalRefOptions } from '../../types/modal-render-options.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -9,15 +8,14 @@ export class ModalRenderService {
   templateRef: TemplateRef<any>;
   isAlive: boolean = false;
 
-  options = {
-    width: 'lg',
-  };
+  title: string;
 
   constructor() {}
 
-  onOpen(template: TemplateRef<any>, options?: IModalRefOptions) {
+  onOpen(template: TemplateRef<any>, title: string) {
     this.isAlive = true;
     this.templateRef = template;
+    this.title = title;
   }
 
   onClose() {

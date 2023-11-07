@@ -4,20 +4,11 @@
       <div class="col-span-1 md:col-span-3 mb-10">
         <div class="flex justify-between items-center">
           <h1 class="text-3xl">Lessons</h1>
-          <app-primary-button [label]="'Create Lesson'"></app-primary-button>
+          <app-create-lesson></app-create-lesson>
         </div>
       </div>
-      <div class="col-span-1 md:col-span-1">
-        <app-card-lesson></app-card-lesson>
-      </div>
-      <div class="col-span-1 md:col-span-1">
-        <app-card-lesson></app-card-lesson>
-      </div>
-      <div class="col-span-1 md:col-span-1">
-        <app-card-lesson></app-card-lesson>
-      </div>
-      <div class="col-span-1 md:col-span-1">
-        <app-card-lesson></app-card-lesson>
+      <div class="col-span-1 md:col-span-1" *ngFor="let lesson of lessons">
+        <app-card-lesson [lesson]="lesson"></app-card-lesson>
       </div>
     </div>
   </div>

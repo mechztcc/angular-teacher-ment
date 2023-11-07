@@ -1,0 +1,35 @@
+<app-primary-button
+  [label]="'Create Lesson'"
+  (click)="modalRender.onOpen(template, 'Create Lesson')"
+></app-primary-button>
+
+<ng-template #template>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <app-input-floating-text
+      [label]="'Lesson Name'"
+      [prependIcon]="icons.book"
+      formControlName="name"
+    ></app-input-floating-text>
+
+    <label
+      for="countries"
+      class="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
+      >Select an Team</label
+    >
+    <select
+      formControlName="teamId"
+      id="countries"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+    >
+      <option selected>Choose a country</option>
+      <option [value]="team.id" *ngFor="let team of availableTeams">{{ team.name }}</option>
+    </select>
+
+    <app-primary-button
+      [label]="'Create'"
+      [type]="'submit'"
+      [isLoading]="isLoading"
+      [size]="'lg'"
+    ></app-primary-button>
+  </form>
+</ng-template>

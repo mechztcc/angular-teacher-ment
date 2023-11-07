@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {
   faBook,
+  faBookmark,
   faCalendar,
   faChartSimple,
+  faLock,
+  faLockOpen,
   faMedal,
+  faPen,
   faStar,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
+import { ILessonInterface } from '../../shared/types/lesson.interface';
 
 @Component({
   selector: 'app-card-lesson',
@@ -14,12 +19,18 @@ import {
   styleUrls: ['./card-lesson.component.scss'],
 })
 export class CardLessonComponent {
+  @Input() lesson: ILessonInterface;
+
   icons = {
     book: faBook,
     users: faUsers,
     calendar: faCalendar,
     level: faChartSimple,
     star: faStar,
-    medal: faMedal
+    medal: faMedal,
+    question: faBookmark,
+    pen: faPen,
+    lock: faLock,
+    open: faLockOpen
   };
 }
