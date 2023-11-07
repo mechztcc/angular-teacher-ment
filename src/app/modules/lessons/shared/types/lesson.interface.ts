@@ -6,5 +6,6 @@ export interface ILessonInterface {
     id: number;
     name: string;
   };
+  questions: [];
   createdAt: string;
 }

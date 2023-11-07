@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {
   faBook,
+  faBookMedical,
   faBookmark,
   faCalendar,
   faChartSimple,
@@ -31,6 +32,7 @@ export class CardLessonComponent {
     question: faBookmark,
     pen: faPen,
     lock: faLock,
-    open: faLockOpen
+    open: faLockOpen,
+    add: faBookMedical
   };
 }

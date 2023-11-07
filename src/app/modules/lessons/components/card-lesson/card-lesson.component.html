@@ -11,8 +11,8 @@
         <div
           class="rounded-xl bg-green-400 text-white w-20 flex justify-center font-semibold mx-2"
         >
-          <fa-icon [icon]="icons.medal"></fa-icon>
-          <span class="ml-2">2</span>
+          <fa-icon [icon]="icons.book"></fa-icon>
+          <span class="ml-2">{{ lesson.questions.length }}</span>
         </div>
         <div
           *ngIf="lesson.isOpened"
@@ -30,6 +30,7 @@
         </div>
       </div>
     </div>
+    <hr class="my-2">
     <div class="col-span-1 mt-3">
       <div class="flex">
         <fa-icon [icon]="icons.book" class="text-blue-400"></fa-icon>
@@ -52,7 +53,10 @@
         <fa-icon [icon]="icons.calendar" class="text-gray-400 mr-2"></fa-icon>
         <span>Created at {{ lesson.createdAt | date : "dd/MM/yy" }}</span>
       </div>
-      <fa-icon [icon]="icons.pen" class="text-gray-400"></fa-icon>
+      <div class="flex">
+        <fa-icon [icon]="icons.pen" class="text-gray-400 mx-2"></fa-icon>
+        <fa-icon [icon]="icons.add" class="text-gray-400"></fa-icon>
+      </div>
     </div>
   </div>
 </div>
