@@ -6,7 +6,11 @@
           class="rounded-xl bg-red-400 text-white w-20 flex justify-center font-semibold"
         >
           <fa-icon [icon]="icons.level"></fa-icon>
-          <span class="ml-2">Hard</span>
+          <span class="ml-2" *ngIf="lesson.level == 1">Easy</span>
+          <span class="ml-2" *ngIf="lesson.level == 2">Normal</span>
+          <span class="ml-2" *ngIf="lesson.level == 3">Hard</span>
+          <span class="ml-2" *ngIf="lesson.level == 4">Difficult</span>
+          <span class="ml-2" *ngIf="lesson.level == 5">Expert</span>
         </div>
         <div
           class="rounded-xl bg-green-400 text-white w-20 flex justify-center font-semibold mx-2"
