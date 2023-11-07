@@ -24,6 +24,11 @@ const routes: Routes = [
         (m) => m.QuestionsModule
       ),
   },
+  {
+    path: 'lessons',
+    loadChildren: () =>
+      import('./modules/lessons/lessons.module').then((m) => m.LessonsModule),
+  },
 ];
 
 @NgModule({
