@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {
   faArrowLeft,
   faArrowRight,
+  faBook,
   faBookmark,
   faCalendar,
   faDoorOpen,
@@ -31,7 +32,8 @@ export class SidebarComponent {
     left: faArrowLeft,
     dark: faMoon,
     right: faArrowRight,
-    house: faHouse
+    house: faHouse,
+    book: faBook
   };
 
   isHidden: boolean = false;

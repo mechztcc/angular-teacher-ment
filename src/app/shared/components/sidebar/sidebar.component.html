@@ -56,6 +56,14 @@
       </button>
 
       <button
+        routerLink="/questions"
+        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+      >
+        <fa-icon [icon]="icons.book" class="mr-3"></fa-icon>
+        Lessons
+      </button>
+
+      <button
         class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
       >
         <fa-icon [icon]="icons.calendar" class="mr-3"></fa-icon>
@@ -143,6 +151,11 @@
       class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
     >
       <fa-icon [icon]="icons.questions"></fa-icon>
+    </button>
+    <button
+      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
+    >
+      <fa-icon [icon]="icons.book"></fa-icon>
     </button>
 
     <button
