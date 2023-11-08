@@ -7,6 +7,9 @@
           <app-create-lesson></app-create-lesson>
         </div>
       </div>
+      <div class="col-span-1 md:col-span-3" *ngIf="lessons.length == 0">
+        <app-not-found-content></app-not-found-content>
+      </div>
       <div class="col-span-1 md:col-span-1" *ngFor="let lesson of lessons">
         <app-card-lesson [lesson]="lesson"></app-card-lesson>
       </div>

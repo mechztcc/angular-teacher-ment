@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
 import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
 import { InputSelectModule } from 'src/app/shared/components/input-select/input-select.module';
+import { NotFoundContentModule } from 'src/app/shared/components/not-found-content/not-found-content.module';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
 import { CardLessonComponent } from './components/card-lesson/card-lesson.component';
 import { CreateLessonComponent } from './components/create-lesson/create-lesson.component';
@@ -29,6 +30,7 @@ import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons
     PrimaryButtonModule,
     InputFloatingTextModule,
     InputSelectModule,
+    NotFoundContentModule,
   ],
 })
 export class LessonsModule {}

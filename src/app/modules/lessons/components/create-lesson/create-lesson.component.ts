@@ -48,7 +48,7 @@ export class CreateLessonComponent implements OnInit {
     this.form = this.fb.group({
       name: ['', Validators.required],
       teamId: ['', Validators.required],
-      level: [1, Validators.compose([Validators.max(5), Validators.required])],
+      level: [0, Validators.required],
     });
   }
 
@@ -65,6 +65,9 @@ export class CreateLessonComponent implements OnInit {
   }
 
   onSubmit() {
+
+    console.log(this.form);
+    
     if (this.form.invalid) {
       return;
     }

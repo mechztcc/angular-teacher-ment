@@ -3,14 +3,11 @@
     <div class="col-span-1">
       <div class="flex justify-start">
         <div
-          class="rounded-xl bg-red-400 text-white w-20 flex justify-center font-semibold"
+          class="rounded-xl text-white w-20 flex justify-center font-semibold"
+          [ngClass]="{'bg-red-400': lesson.difficulty.level == 5, 'bg-orange-400': lesson.difficulty.level == 4, 'bg-yellow-400': lesson.difficulty.level == 3, 'bg-green-400': lesson.difficulty.level == 2 || lesson.difficulty.level == 1,}"
         >
           <fa-icon [icon]="icons.level"></fa-icon>
-          <span class="ml-2" *ngIf="lesson.level == 1">Easy</span>
-          <span class="ml-2" *ngIf="lesson.level == 2">Normal</span>
-          <span class="ml-2" *ngIf="lesson.level == 3">Hard</span>
-          <span class="ml-2" *ngIf="lesson.level == 4">Difficult</span>
-          <span class="ml-2" *ngIf="lesson.level == 5">Expert</span>
+          <span class="ml-2">{{ lesson.difficulty.name }}</span>
         </div>
         <div
           class="rounded-xl bg-green-400 text-white w-20 flex justify-center font-semibold mx-2"
@@ -34,7 +31,7 @@
         </div>
       </div>
     </div>
-    <hr class="my-2">
+    <hr class="my-2" />
     <div class="col-span-1 mt-3">
       <div class="flex items-end">
         <app-badge [icon]="icons.book" [type]="1"></app-badge>
