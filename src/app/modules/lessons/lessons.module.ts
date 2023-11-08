@@ -12,6 +12,7 @@ import { CardLessonComponent } from './components/card-lesson/card-lesson.compon
 import { CreateLessonComponent } from './components/create-lesson/create-lesson.component';
 import { LessonsRoutingModule } from './lessons-routing.module';
 import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons-page.component';
+import { BadgeLevelModule } from 'src/app/shared/components/badge-level/badge-level.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons
     InputFloatingTextModule,
     InputSelectModule,
     NotFoundContentModule,
+    BadgeLevelModule,
   ],
 })
 export class LessonsModule {}

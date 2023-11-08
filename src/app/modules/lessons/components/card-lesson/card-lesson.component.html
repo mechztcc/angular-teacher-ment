@@ -2,33 +2,10 @@
   <div class="grid grid-cols-1 gap-2">
     <div class="col-span-1">
       <div class="flex justify-start">
-        <div
-          class="rounded-xl text-white w-20 flex justify-center font-semibold"
-          [ngClass]="{'bg-red-400': lesson.difficulty.level == 5, 'bg-orange-400': lesson.difficulty.level == 4, 'bg-yellow-400': lesson.difficulty.level == 3, 'bg-green-400': lesson.difficulty.level == 2 || lesson.difficulty.level == 1,}"
-        >
-          <fa-icon [icon]="icons.level"></fa-icon>
-          <span class="ml-2">{{ lesson.difficulty.name }}</span>
-        </div>
-        <div
-          class="rounded-xl bg-green-400 text-white w-20 flex justify-center font-semibold mx-2"
-        >
-          <fa-icon [icon]="icons.book"></fa-icon>
-          <span class="ml-2">{{ lesson.QuestionsOnLessons.length }}</span>
-        </div>
-        <div
-          *ngIf="lesson.isOpened"
-          class="rounded-xl bg-green-400 text-white w-20 flex justify-center font-semibold"
-        >
-          <fa-icon [icon]="icons.open"></fa-icon>
-          <span class="ml-1">Open</span>
-        </div>
-        <div
-          *ngIf="!lesson.isOpened"
-          class="rounded-xl bg-orange-400 text-white w-20 flex justify-center font-semibold"
-        >
-          <fa-icon [icon]="icons.lock"></fa-icon>
-          <span class="ml-1">Closed</span>
-        </div>
+        <app-badge-level [level]="lesson.difficulty.level" [label]="lesson.difficulty.name"></app-badge-level>
+        <app-badge [icon]="icons.book" [label]="lesson.QuestionsOnLessons.length" [type]="'success'"></app-badge>
+        <app-badge [icon]="icons.lock" [label]="'Closed'" [type]="'warning'" *ngIf="!lesson.isOpened"></app-badge>
+        <app-badge [icon]="icons.open" [label]="'Running'" [type]="'purple'" *ngIf="lesson.isOpened"></app-badge>
       </div>
     </div>
     <hr class="my-2" />

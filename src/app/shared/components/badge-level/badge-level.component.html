@@ -1,0 +1,4 @@
+<app-badge [icon]="icons.level" [label]="label" [type]="'error'" *ngIf="level == 5"></app-badge>
+<app-badge [icon]="icons.level" [label]="label" [type]="'warning'" *ngIf="level == 4 || level == 3"></app-badge>
+<app-badge [icon]="icons.level" [label]="label" [type]="'default'" *ngIf="level == 2"></app-badge>
+<app-badge [icon]="icons.level" [label]="label" [type]="'success'" *ngIf="level == 1"></app-badge>
