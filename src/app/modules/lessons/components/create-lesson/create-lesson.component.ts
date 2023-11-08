@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faBook, faChartSimple } from '@fortawesome/free-solid-svg-icons';
+import { DifficultyService } from 'src/app/modules/difficulties/shared/services/difficulty.service';
 import { TeamsService } from 'src/app/modules/teams/shared/services/teams.service';
 import { ModalRenderService } from 'src/app/shared/services/modal-render/modal-render.service';
 import { NotificationsDeliveryService } from 'src/app/shared/services/notifications-delivery.service';
 import { LessonsService } from '../../shared/services/lessons.service';
+import { IDifficulty } from 'src/app/modules/difficulties/shared/types/difficulty.interface';
 
 @Component({
   selector: 'app-create-lesson',
@@ -14,7 +16,7 @@ import { LessonsService } from '../../shared/services/lessons.service';
 export class CreateLessonComponent implements OnInit {
   icons = {
     book: faBook,
-    level: faChartSimple
+    level: faChartSimple,
   };
 
   form: FormGroup;
@@ -25,18 +27,21 @@ export class CreateLessonComponent implements OnInit {
   isLoading: boolean = false;
 
   availableTeams: any[] = [];
+  difficulties: IDifficulty[] = [];
 
   constructor(
     public modalRender: ModalRenderService,
     private fb: FormBuilder,
     private lessonsService: LessonsService,
     private teamsService: TeamsService,
-    private notifier: NotificationsDeliveryService
+    private notifier: NotificationsDeliveryService,
+    private difficultiesService: DifficultyService
   ) {}
 
   ngOnInit(): void {
     this.initForm();
     this.findTeams();
+    this.findDifficulties();
   }
 
   initForm() {
@@ -53,6 +58,12 @@ export class CreateLessonComponent implements OnInit {
     });
   }
 
+  findDifficulties() {
+    this.difficultiesService.index().subscribe((data) => {
+      this.difficulties = data;
+    });
+  }
+
   onSubmit() {
     if (this.form.invalid) {
       return;
@@ -61,7 +72,7 @@ export class CreateLessonComponent implements OnInit {
     const payload = {
       name: this.formsControls['name'].value,
       teamId: Number(this.formsControls['teamId'].value),
-      level: Number(this.formsControls['level'].value),
+      difficultyId: Number(this.formsControls['level'].value),
     };
 
     this.isLoading = true;

@@ -19,11 +19,13 @@
       formControlName="teamId"
     ></app-input-select>
 
-    <app-input-floating-text
-      [label]="'Level of dificulty'"
+    <app-input-select
+      [selections]="difficulties"
+      [field]="'id'"
+      [label]="'name'"
+      [name]="'Select an Difficulty'"
       formControlName="level"
-      [prependIcon]="icons.level"
-    ></app-input-floating-text>
+    ></app-input-select>
 
     <app-primary-button
       [label]="'Create'"
