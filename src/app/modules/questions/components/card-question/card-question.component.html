@@ -1,7 +1,6 @@
 <div class="rounded shadow-md p-3 border">
   <div class="flex justify-between">
     <app-badge
-      [type]="question.type"
       [label]="question.type"
       [icon]="icons.bolt"
     ></app-badge>
@@ -32,7 +31,7 @@
   <h3 class="text-sm font-semibold mt-3">{{ question.title }}</h3>
 
   <div class="flex mt-1">
-    <app-badge [label]="'A'" [type]="5"></app-badge>
+    <app-badge [label]="'A'" [type]="'success'"></app-badge>
     <app-badge [label]="'B'"></app-badge>
     <app-badge [label]="'C'"></app-badge>
     <app-badge [label]="'D'"></app-badge>

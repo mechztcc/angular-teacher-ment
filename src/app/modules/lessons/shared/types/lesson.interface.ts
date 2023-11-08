@@ -9,6 +9,6 @@ export interface ILessonInterface {
     id: number;
     name: string;
   };
-  questions: [];
+  QuestionsOnLessons: any[];
   createdAt: string;
 }

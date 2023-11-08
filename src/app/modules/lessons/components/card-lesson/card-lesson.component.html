@@ -13,7 +13,7 @@
           class="rounded-xl bg-green-400 text-white w-20 flex justify-center font-semibold mx-2"
         >
           <fa-icon [icon]="icons.book"></fa-icon>
-          <span class="ml-2">{{ lesson.questions.length }}</span>
+          <span class="ml-2">{{ lesson.QuestionsOnLessons.length }}</span>
         </div>
         <div
           *ngIf="lesson.isOpened"
@@ -34,14 +34,14 @@
     <hr class="my-2" />
     <div class="col-span-1 mt-3">
       <div class="flex items-end">
-        <app-badge [icon]="icons.book" [type]="1"></app-badge>
+        <app-badge [icon]="icons.book"></app-badge>
         <h1 class="ml-2 font-semibold text-blue-400">Name</h1>
       </div>
       <h1>{{ lesson.name }}</h1>
     </div>
     <div class="col-span-1">
       <div class="flex items-end">
-        <app-badge [icon]="icons.users" [type]="1"></app-badge>
+        <app-badge [icon]="icons.users"></app-badge>
         <h1 class="ml-2 font-semibold text-blue-400">Team</h1>
       </div>
       <h1>{{ lesson.team.name }}</h1>

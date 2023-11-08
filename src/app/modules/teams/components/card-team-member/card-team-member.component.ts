@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faChartSimple, faGamepad, faGem } from '@fortawesome/free-solid-svg-icons';
+import { faChartSimple, faGamepad, faGem, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-card-team-member',
@@ -9,6 +9,7 @@ import { faChartSimple, faGamepad, faGem } from '@fortawesome/free-solid-svg-ico
 export class CardTeamMemberComponent {
   icons = {
     level: faGamepad,
-    gem: faGem
+    gem: faGem,
+    cap: faGraduationCap
   };
 }

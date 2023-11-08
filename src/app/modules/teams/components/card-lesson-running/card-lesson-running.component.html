@@ -6,13 +6,11 @@
           <app-badge
             [icon]="icons.level"
             [label]="lesson.difficulty.name"
-            [type]="lesson.difficulty.level"
           ></app-badge>
-          <app-badge [icon]="icons.book" [label]="lesson.questions?.length ?? 0" [type]="1"></app-badge>
+          <app-badge [icon]="icons.book" [label]="lesson.QuestionsOnLessons?.length ?? 0" ></app-badge>
           <app-badge
             [icon]="icons.clock"
             [label]="'End Today'"
-            [type]="2"
           ></app-badge>
         </div>
         <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
@@ -25,7 +23,7 @@
       </div>
     </div>
     <div class="col-span-1 md:col-span-1">
-      <h3>Name</h3>
+      <h3 class="font-semibold text-gray-500">Name</h3>
       <span>{{ lesson.name }}</span>
     </div>
     <div class="col-span-1 md:col-span-2">

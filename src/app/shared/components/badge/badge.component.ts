@@ -8,7 +8,7 @@ import { IconDefinition, faBolt } from '@fortawesome/free-solid-svg-icons';
 })
 export class BadgeComponent {
   @Input() label: string | number;
-  @Input() type: number = 4;
+  @Input() type: string = 'default';
   @Input() icon: IconDefinition;
 
   icons = {
