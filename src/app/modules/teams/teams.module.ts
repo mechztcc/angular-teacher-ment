@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BadgeLevelModule } from 'src/app/shared/components/badge-level/badge-level.module';
 import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
 import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
 import { NotFoundContentModule } from 'src/app/shared/components/not-found-content/not-found-content.module';
@@ -36,6 +37,7 @@ import { TeamsRoutingModule } from './teams-routing.module';
     ReactiveFormsModule,
     FormsModule,
     BadgeModule,
+    BadgeLevelModule,
   ],
 })
 export class TeamsModule {}
