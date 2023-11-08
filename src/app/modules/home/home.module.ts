@@ -33,5 +33,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     ReactiveFormsModule,
     TeamsModule,
   ],
+  exports: [CardLessonComponent],
 })
 export class HomeModule {}

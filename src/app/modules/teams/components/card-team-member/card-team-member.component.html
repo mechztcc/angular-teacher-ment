@@ -13,16 +13,8 @@
       <h3 class="text-2xl font-semibold">Alberto Paiva</h3>
       <span>Student</span>
       <br>
-      <div class="bg-blue-400 rounded-full text-white inline-block px-2 mr-1 my-1">
-        <fa-icon [icon]="icons.level" class="mx-1"></fa-icon>
-        <span>nv: 32</span>
-      </div>
-      <div
-        class="bg-purple-400 rounded-full text-white inline-block px-2 my-1"
-      >
-        <fa-icon [icon]="icons.gem" class="mx-1"></fa-icon>
-        <span>Diamond</span>
-      </div>
+      <app-badge [icon]="icons.level" [label]="'NVL: 32'" [type]="2"></app-badge>
+      <app-badge [icon]="icons.gem" [label]="'Diamond'" [type]="3"></app-badge>
     </div>
   </div>
 </div>
