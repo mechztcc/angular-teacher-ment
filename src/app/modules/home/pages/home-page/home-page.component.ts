@@ -11,9 +11,11 @@ import { IFindInformationsResponse } from '../../shared/types/find-informations-
 })
 export class HomePageComponent implements OnInit {
   informations: IFindInformationsResponse = {
-    teamsCount: 0,
+    lessonsCount: 0,
     studentsCount: 0,
+    teamsCount: 0,
   };
+  isLoading: boolean = false;
 
   constructor(private usersService: UsersService) {}
 
@@ -22,8 +24,14 @@ export class HomePageComponent implements OnInit {
   }
 
   findInformations() {
-    this.usersService.dashboardInformations().subscribe((data) => {
-      this.informations = data;
-    });
+    this.isLoading = true;
+    this.usersService
+      .dashboardInformations()
+      .subscribe((data) => {
+        this.informations = data;
+      })
+      .add(() => {
+        this.isLoading = false;
+      });
   }
 }

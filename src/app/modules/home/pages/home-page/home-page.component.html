@@ -1,8 +1,8 @@
 <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-8 mt-20 gap-10">
-  <div class="col-span-1 md:col-span-1 lg:col-span-2 lg:col-start-2">
+  <div class="col-span-1 md:col-span-1 lg:col-span-2 lg:col-start-2" *ngIf="!isLoading">
     <app-cards-informations
       [label]="'Lessons'"
-      [count]="0"
+      [count]="informations.lessonsCount"
       [type]="1"
     ></app-cards-informations>
   </div>
