@@ -8,7 +8,7 @@ import {
   faPlusCircle,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
-import { ITeam } from '../../types/team.interface';
+import { ITeam } from '../../shared/types/team.interface';
 
 @Component({
   selector: 'app-card-teams-list',

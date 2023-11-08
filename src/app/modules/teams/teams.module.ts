@@ -11,12 +11,16 @@ import { CardTeamsListComponent } from './components/card-teams-list/card-teams-
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ListTeamsPageComponent } from './pages/list-teams-page/list-teams-page.component';
 import { TeamsRoutingModule } from './teams-routing.module';
+import { TeamDetailsPageComponent } from './pages/team-details-page/team-details-page.component';
+import { CardTeamMemberComponent } from './components/card-team-member/card-team-member.component';
 
 @NgModule({
   declarations: [
     ListTeamsPageComponent,
     CardTeamsListComponent,
     CreateTeamComponent,
+    TeamDetailsPageComponent,
+    CardTeamMemberComponent,
   ],
   exports: [CreateTeamComponent],
   imports: [

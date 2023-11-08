@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamsService } from '../../shared/services/teams.service';
-import { ITeam } from '../../types/team.interface';
+import { ITeam } from '../../shared/types/team.interface';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
