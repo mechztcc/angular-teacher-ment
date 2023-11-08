@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faChartSimple } from '@fortawesome/free-solid-svg-icons';
 import { TeamsService } from 'src/app/modules/teams/shared/services/teams.service';
 import { ModalRenderService } from 'src/app/shared/services/modal-render/modal-render.service';
 import { NotificationsDeliveryService } from 'src/app/shared/services/notifications-delivery.service';
@@ -14,6 +14,7 @@ import { LessonsService } from '../../shared/services/lessons.service';
 export class CreateLessonComponent implements OnInit {
   icons = {
     book: faBook,
+    level: faChartSimple
   };
 
   form: FormGroup;
@@ -42,7 +43,7 @@ export class CreateLessonComponent implements OnInit {
     this.form = this.fb.group({
       name: ['', Validators.required],
       teamId: ['', Validators.required],
-      level: [1, Validators.compose([Validators.max(5), Validators.required])]
+      level: [1, Validators.compose([Validators.max(5), Validators.required])],
     });
   }
 
@@ -69,6 +70,7 @@ export class CreateLessonComponent implements OnInit {
       .onCreate(payload)
       .subscribe(() => {
         this.notifier.success('Lesson created with success!');
+        this.form.reset();
         this.modalRender.onClose();
       })
       .add(() => {

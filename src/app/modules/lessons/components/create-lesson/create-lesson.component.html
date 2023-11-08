@@ -11,21 +11,19 @@
       formControlName="name"
     ></app-input-floating-text>
 
-    <label
-      for="countries"
-      class="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
-      >Select an Team</label
-    >
-    <select
+    <app-input-select
+      [selections]="availableTeams"
+      [field]="'id'"
+      [label]="'name'"
+      [name]="'Select an Team'"
       formControlName="teamId"
-      id="countries"
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-    >
-      <option selected>Choose a country</option>
-      <option [value]="team.id" *ngFor="let team of availableTeams">{{ team.name }}</option>
-    </select>
+    ></app-input-select>
 
-    <app-input-floating-text [label]="'Level of dificulty'" formControlName="level"></app-input-floating-text>
+    <app-input-floating-text
+      [label]="'Level of dificulty'"
+      formControlName="level"
+      [prependIcon]="icons.level"
+    ></app-input-floating-text>
 
     <app-primary-button
       [label]="'Create'"
