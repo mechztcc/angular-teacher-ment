@@ -7,9 +7,10 @@ import { CardQuestionComponent } from './components/card-question/card-question.
 import { QuestionsPageComponent } from './pages/questions-page/questions-page.component';
 import { QuestionsRoutingModule } from './questions-routing.module';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
+import { CreateQuestionComponent } from './components/create-question/create-question.component';
 
 @NgModule({
-  declarations: [QuestionsPageComponent, CardQuestionComponent],
+  declarations: [QuestionsPageComponent, CardQuestionComponent, CreateQuestionComponent],
   imports: [
     CommonModule,
     QuestionsRoutingModule,
