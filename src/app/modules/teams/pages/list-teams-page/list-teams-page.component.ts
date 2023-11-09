@@ -13,8 +13,8 @@ export class ListTeamsPageComponent implements OnInit {
   isLoading: boolean = false;
 
   icons = {
-    search: faMagnifyingGlass
-  }
+    search: faMagnifyingGlass,
+  };
 
   constructor(private teamsService: TeamsService) {}
 

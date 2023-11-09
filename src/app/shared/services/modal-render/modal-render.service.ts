@@ -23,8 +23,6 @@ export class ModalRenderService {
   }
 
   onCloseFromView(event: any) {
-    console.log(event.target.classList);
-    
     const isFrame = Array(event.target.classList);
     if (isFrame[0]['value'].includes('frame')) {
       this.isAlive = false;

@@ -14,8 +14,8 @@ export class TeamDetailsPageComponent implements OnInit {
 
   icons = {
     users: faUsers,
-    book: faBook
-  }
+    book: faBook,
+  };
 
   constructor(
     private teamsService: TeamsService,
@@ -31,6 +31,8 @@ export class TeamDetailsPageComponent implements OnInit {
     this.teamsService
       .findDetails(id)
       .subscribe((data) => {
+        console.log(data);
+
         this.details = data;
       })
       .add(() => {});
