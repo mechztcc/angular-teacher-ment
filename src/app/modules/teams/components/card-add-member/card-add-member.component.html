@@ -13,14 +13,20 @@
       [prependIcon]="icons.users"
       formControlName="email"
       [formField]="formControls['email']"
+      [disabled]="user ? true : false"
     ></app-input-floating-text>
 
     <app-card-team-member
       class="my-5"
-      [check]="true"
       [user]="user"
       *ngIf="user"
+      (emitter)="user = null"
     ></app-card-team-member>
+
+    <div class="flex text-orange-400 justify-center my-2 items-center" *ngIf="errorMsg">
+        <fa-icon [icon]="icons.user"></fa-icon>
+        <span class="mx-1">{{ errorMsg }}</span>
+    </div>
 
     <app-primary-button
       *ngIf="!user"

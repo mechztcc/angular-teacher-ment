@@ -1,9 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   faCircleCheck,
+  faEnvelope,
   faGamepad,
   faGem,
-  faGraduationCap
+  faGraduationCap,
+  faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 import { IUser } from 'src/app/modules/users/shared/types/user.interface';
 
@@ -13,8 +15,6 @@ import { IUser } from 'src/app/modules/users/shared/types/user.interface';
   styleUrls: ['./card-team-member.component.scss'],
 })
 export class CardTeamMemberComponent {
-  @Input() check: boolean = false;
-
   @Input() user: IUser = {
     email: 'default@email.com',
     name: 'default name',
@@ -23,10 +23,18 @@ export class CardTeamMemberComponent {
     createdAt: new Date().toISOString(),
   };
 
+  @Output() emitter: EventEmitter<boolean> = new EventEmitter();
+
   icons = {
     level: faGamepad,
     gem: faGem,
     cap: faGraduationCap,
     check: faCircleCheck,
+    remove: faTrash,
+    email: faEnvelope
   };
+
+  onRemove() {
+    this.emitter.emit(true);
+  }
 }

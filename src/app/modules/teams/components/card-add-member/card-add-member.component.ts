@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { faPlusCircle, faUsers } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPlusCircle,
+  faUser,
+  faUsers,
+} from '@fortawesome/free-solid-svg-icons';
 import { UsersService } from 'src/app/modules/users/shared/services/users/users.service';
 import { IUser } from 'src/app/modules/users/shared/types/user.interface';
 import { ModalRenderService } from 'src/app/shared/services/modal-render/modal-render.service';
@@ -17,6 +21,7 @@ export class CardAddMemberComponent implements OnInit {
   icons = {
     add: faPlusCircle,
     users: faUsers,
+    user: faUser,
   };
 
   form: FormGroup;
@@ -26,6 +31,8 @@ export class CardAddMemberComponent implements OnInit {
 
   user: IUser;
   isLoading: boolean = false;
+
+  errorMsg: string;
 
   constructor(
     private fb: FormBuilder,
@@ -59,6 +66,12 @@ export class CardAddMemberComponent implements OnInit {
       .subscribe((data) => {
         if (data.id) {
           this.user = data;
+          this.errorMsg = null;
+        }
+
+        if (data['message']) {
+          this.user = null;
+          this.errorMsg = data['message'];
         }
       })
       .add(() => {
