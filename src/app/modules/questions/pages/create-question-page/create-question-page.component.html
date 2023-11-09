@@ -24,23 +24,8 @@
         <app-card-image-render></app-card-image-render>
       </div>
 
-      <div class="col-span-2 col-start-1 mb-5 mt-5">
-        <span>What question does your question ask?</span>
-        <app-input-floating-text
-          [label]="'Title question'"
-          [prependIcon]="icons.book"
-        ></app-input-floating-text>
-      </div>
-
-      <div class="col-span-2 col-start-1 mt-5">
-        <span>Which category does your question fit into?</span>
-      </div>
-
       <div class="col-span-2">
-        <app-badge
-          *ngFor="let category of categories"
-          [label]="category.name"
-        ></app-badge>
+        <app-create-question-category></app-create-question-category>
       </div>
 
       <div class="col-span-2 col-start-1 mt-5">
@@ -48,21 +33,7 @@
       </div>
 
       <div class="col-span-1 col-start-1 mb-5">
-        <app-input-select
-          [selections]="pontuation"
-          [field]="'name'"
-          [label]="'id'"
-          [name]="'What score is your question worth?'"
-        ></app-input-select>
-      </div>
-
-      <div class="col-span-1 col-start-1 mb-5">
-        <app-input-select
-          [selections]="pontuation"
-          [field]="'name'"
-          [label]="'id'"
-          [name]="'How many alternatives will your question have?'"
-        ></app-input-select>
+        <app-create-question-score></app-create-question-score>
       </div>
 
       <div class="col-span-2 col-start-1">

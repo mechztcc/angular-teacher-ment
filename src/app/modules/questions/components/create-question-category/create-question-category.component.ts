@@ -1,15 +1,31 @@
-import { Component } from '@angular/core';
-import { IDifficulty } from 'src/app/modules/difficulties/shared/types/difficulty.interface';
+import { Component, OnInit } from '@angular/core';
+import { TopicsService } from 'src/app/modules/topics/shared/services/topics.service';
+import { ITopic } from 'src/app/modules/topics/shared/types/topic.interface';
 
 @Component({
   selector: 'app-create-question-category',
   templateUrl: './create-question-category.component.html',
   styleUrls: ['./create-question-category.component.scss'],
 })
-export class CreateQuestionCategoryComponent {
+export class CreateQuestionCategoryComponent implements OnInit {
   isLoading: boolean = false;
-  difficulties: IDifficulty[] = [];
+  topics: ITopic[] = [];
 
+  selected: ITopic;
 
-  constructor() {}
+  constructor(private topicService: TopicsService) {}
+
+  ngOnInit(): void {
+    this.find();
+  }
+
+  find() {
+    this.topicService.index().subscribe((data) => {
+      this.topics = data;
+    });
+  }
+
+  onSelect(topic: ITopic) {
+    this.selected = topic;
+  }
 }

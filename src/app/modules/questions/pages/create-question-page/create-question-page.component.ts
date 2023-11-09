@@ -40,12 +40,6 @@ export class CreateQuestionPageComponent implements OnInit {
     { name: '3', id: 3 },
   ];
 
-  pontuation = [
-    { name: '1', id: 1 },
-    { name: '2', id: 2 },
-    { name: '3', id: 3 },
-  ];
-
   categories = [
     { id: 1, name: 'Matemática' },
     { id: 2, name: 'Português' },
@@ -65,6 +59,6 @@ export class CreateQuestionPageComponent implements OnInit {
     image: faImage,
     book: faBook,
     error: faCircleXmark,
-    check: faCheckCircle
+    check: faCheckCircle,
   };
 }

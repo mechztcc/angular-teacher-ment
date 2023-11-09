@@ -16,6 +16,7 @@ import { QuestionsPageComponent } from './pages/questions-page/questions-page.co
 import { QuestionsRoutingModule } from './questions-routing.module';
 import { CreateQuestionLevelComponent } from './components/create-question-level/create-question-level.component';
 import { CreateQuestionCategoryComponent } from './components/create-question-category/create-question-category.component';
+import { CreateQuestionScoreComponent } from './components/create-question-score/create-question-score.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CreateQuestionCategoryComponent } from './components/create-question-ca
     CardImageRenderComponent,
     CreateQuestionLevelComponent,
     CreateQuestionCategoryComponent,
+    CreateQuestionScoreComponent,
   ],
   imports: [
     CommonModule,

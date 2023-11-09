@@ -1,0 +1,12 @@
+<div class="flex flex-col">
+  <span>Which category does your question fit into?</span>
+  <div class="flex">
+    <app-badge
+      *ngFor="let topic of topics"
+      [label]="topic.name"
+      [selected]="selected?.id === topic?.id"
+      (click)="onSelect(topic)"
+      class="cursor-pointer"
+    ></app-badge>
+  </div>
+</div>
