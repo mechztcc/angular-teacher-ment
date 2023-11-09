@@ -23,4 +23,8 @@ export class TeamsService {
   findDetails(id: string): Observable<ITeamDetails> {
     return this.http.get<ITeamDetails>(`${api}/details/${id}`);
   }
+
+  inviteMember(payload: { teamId: number; userId: number }): Observable<any> {
+    return this.http.post<any>(`${api}/add-member`, payload);
+  }
 }

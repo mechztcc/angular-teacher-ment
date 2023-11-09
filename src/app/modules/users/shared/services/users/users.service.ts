@@ -5,6 +5,7 @@ import { ICreateAccount } from '../../types/create-account.interface';
 import { ILoginResponse } from '../../types/login-response.interface';
 import { ILogin } from '../../types/login.interface';
 import { IFindInformationsResponse } from 'src/app/modules/home/shared/types/find-informations-response.interface';
+import { IUser } from '../../types/user.interface';
 
 const api = '/users';
 
@@ -24,5 +25,9 @@ export class UsersService {
 
   dashboardInformations(): Observable<IFindInformationsResponse> {
     return this.http.get<any>(`${api}/informations`);
+  }
+
+  findByEmail(email: string): Observable<IUser> {
+    return this.http.get<IUser>(`${api}/${email}`);
   }
 }

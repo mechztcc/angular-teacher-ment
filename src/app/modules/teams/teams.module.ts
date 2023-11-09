@@ -15,6 +15,7 @@ import { CreateTeamComponent } from './components/create-team/create-team.compon
 import { ListTeamsPageComponent } from './pages/list-teams-page/list-teams-page.component';
 import { TeamDetailsPageComponent } from './pages/team-details-page/team-details-page.component';
 import { TeamsRoutingModule } from './teams-routing.module';
+import { CardAddMemberComponent } from './components/card-add-member/card-add-member.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TeamsRoutingModule } from './teams-routing.module';
     TeamDetailsPageComponent,
     CardTeamMemberComponent,
     CardLessonRunningComponent,
+    CardAddMemberComponent,
   ],
   exports: [CreateTeamComponent],
   imports: [
