@@ -22,7 +22,7 @@
       <div class="md:col-span-6" *ngIf="teams.length == 0">
         <app-not-found-content></app-not-found-content>
       </div>
-      <div class="md:col-span-3" *ngFor="let team of teams">
+      <div class="md:col-span-6" *ngFor="let team of teams">
         <app-card-teams-list [team]="team"></app-card-teams-list>
       </div>
     </div>

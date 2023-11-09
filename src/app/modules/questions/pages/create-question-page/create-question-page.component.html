@@ -1,0 +1,96 @@
+<div class="grid grid-cols-8 md:grid-cols-8 mb-20">
+  <div class="col-span-6 col-start-2">
+    <div class="grid md:grid-cols-3 mt-20 gap-5">
+      <div class="col-span-3">
+        <h1 class="text-3xl font-semibold">Create Question</h1>
+        <span class="text-gray-500">
+          Fill in the fields below as you see fit.
+        </span>
+      </div>
+
+      <div class="col-span-1 mb-5">
+        <app-input-select
+          [selections]="howManyImages"
+          [field]="'name'"
+          [label]="'id'"
+          [name]="'How many images does your question require?'"
+        ></app-input-select>
+      </div>
+
+      <div class="col-span-1 col-start-1">
+        <app-card-image-render></app-card-image-render>
+      </div>
+      <div class="col-span-1">
+        <app-card-image-render></app-card-image-render>
+      </div>
+
+      <div class="col-span-2 col-start-1 mb-5 mt-5">
+        <span>What question does your question ask?</span>
+        <app-input-floating-text
+          [label]="'Title question'"
+          [prependIcon]="icons.book"
+        ></app-input-floating-text>
+      </div>
+
+      <div class="col-span-2 col-start-1 mt-5">
+        <span>Which category does your question fit into?</span>
+      </div>
+
+      <div class="col-span-2">
+        <app-badge
+          *ngFor="let category of categories"
+          [label]="category.name"
+        ></app-badge>
+      </div>
+
+      <div class="col-span-2 col-start-1 mt-5">
+        <app-create-question-level></app-create-question-level>
+      </div>
+
+      <div class="col-span-1 col-start-1 mb-5">
+        <app-input-select
+          [selections]="pontuation"
+          [field]="'name'"
+          [label]="'id'"
+          [name]="'What score is your question worth?'"
+        ></app-input-select>
+      </div>
+
+      <div class="col-span-1 col-start-1 mb-5">
+        <app-input-select
+          [selections]="pontuation"
+          [field]="'name'"
+          [label]="'id'"
+          [name]="'How many alternatives will your question have?'"
+        ></app-input-select>
+      </div>
+
+      <div class="col-span-2 col-start-1">
+        <span>What question does your question ask?</span>
+        <app-input-floating-text
+          [label]="'Wrong Alternative'"
+          [prependIcon]="icons.error"
+        ></app-input-floating-text>
+
+        <app-input-floating-text
+          [label]="'Wrong Alternative'"
+          [prependIcon]="icons.error"
+        ></app-input-floating-text>
+
+        <app-input-floating-text
+          [label]="'Wrong Alternative'"
+          [prependIcon]="icons.error"
+        ></app-input-floating-text>
+
+        <app-input-floating-text
+          [label]="'CORRECT Alternative'"
+          [prependIcon]="icons.check"
+        ></app-input-floating-text>
+      </div>
+
+      <div class="col-span-1 col-start-1">
+        <app-primary-button [label]="'CREATE QUESTION'"></app-primary-button>
+      </div>
+    </div>
+  </div>
+</div>

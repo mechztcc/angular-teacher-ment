@@ -1,0 +1,12 @@
+<div class="flex flex-col">
+  <span> What is the difficulty level of your question?</span>
+  <div class="flex">
+    <app-badge
+      class="cursor-pointer"
+      [selected]="selected?.id === difficulty?.id"
+      [label]="difficulty.name"
+      *ngFor="let difficulty of difficulties"
+      (click)="onSelect(difficulty)"
+    ></app-badge>
+  </div>
+</div>

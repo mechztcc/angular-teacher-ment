@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import {
+  faBook,
   faCog,
   faHand,
   faMagnifyingGlass,
@@ -25,6 +26,7 @@ export class CardTeamsListComponent {
     users: faUsers,
     hand: faHand,
     person: faPerson,
-    see: faMagnifyingGlass
+    see: faMagnifyingGlass,
+    book: faBook
   };
 }

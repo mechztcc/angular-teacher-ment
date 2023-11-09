@@ -10,6 +10,7 @@ export class BadgeComponent {
   @Input() label: string | number;
   @Input() type: string = 'default';
   @Input() icon: IconDefinition;
+  @Input() selected: boolean = true;
 
   icons = {
     bolt: faBolt,
