@@ -1,0 +1,12 @@
+<div class="flex flex-col">
+  <span>What is the title of your question?</span>
+  <form [formGroup]="form">
+    <app-input-floating-text
+      [prependIcon]="icons.book"
+      formControlName="title"
+      [formField]="formControls['title']"
+      [label]="'Title'"
+      (keyup)="validate()"
+    ></app-input-floating-text>
+  </form>
+</div>

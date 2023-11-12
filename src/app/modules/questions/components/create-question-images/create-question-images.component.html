@@ -3,6 +3,12 @@
   <div class="flex">
     <app-badge
       class="cursor-pointer"
+      [label]="0"
+      (click)="onSelect(0)"
+      [selected]="images.length == 0"
+    ></app-badge>
+    <app-badge
+      class="cursor-pointer"
       [label]="1"
       (click)="onSelect(1)"
       [selected]="images[0] == 1"

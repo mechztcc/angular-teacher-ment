@@ -19,6 +19,7 @@ import { CreateQuestionCategoryComponent } from './components/create-question-ca
 import { CreateQuestionScoreComponent } from './components/create-question-score/create-question-score.component';
 import { CreateQuestionAlternativesComponent } from './components/create-question-alternatives/create-question-alternatives.component';
 import { CreateQuestionImagesComponent } from './components/create-question-images/create-question-images.component';
+import { CreateQuestionTitleComponent } from './components/create-question-title/create-question-title.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CreateQuestionImagesComponent } from './components/create-question-imag
     CreateQuestionScoreComponent,
     CreateQuestionAlternativesComponent,
     CreateQuestionImagesComponent,
+    CreateQuestionTitleComponent,
   ],
   imports: [
     CommonModule,
