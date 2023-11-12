@@ -8,23 +8,12 @@
         </span>
       </div>
 
-      <div class="col-span-1 mb-5">
-        <app-input-select
-          [selections]="howManyImages"
-          [field]="'name'"
-          [label]="'id'"
-          [name]="'How many images does your question require?'"
-        ></app-input-select>
+      <div class="col-span-3 mb-5">
+        <app-create-question-images></app-create-question-images>
       </div>
 
-      <div class="col-span-1 col-start-1">
-        <app-card-image-render></app-card-image-render>
-      </div>
-      <div class="col-span-1">
-        <app-card-image-render></app-card-image-render>
-      </div>
 
-      <div class="col-span-2">
+      <div class="col-span-2 col-start-1">
         <app-create-question-category></app-create-question-category>
       </div>
 

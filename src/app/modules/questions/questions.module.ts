@@ -18,6 +18,7 @@ import { CreateQuestionLevelComponent } from './components/create-question-level
 import { CreateQuestionCategoryComponent } from './components/create-question-category/create-question-category.component';
 import { CreateQuestionScoreComponent } from './components/create-question-score/create-question-score.component';
 import { CreateQuestionAlternativesComponent } from './components/create-question-alternatives/create-question-alternatives.component';
+import { CreateQuestionImagesComponent } from './components/create-question-images/create-question-images.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CreateQuestionAlternativesComponent } from './components/create-questio
     CreateQuestionCategoryComponent,
     CreateQuestionScoreComponent,
     CreateQuestionAlternativesComponent,
+    CreateQuestionImagesComponent,
   ],
   imports: [
     CommonModule,
