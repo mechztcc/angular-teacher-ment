@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TopicsService } from 'src/app/modules/topics/shared/services/topics.service';
 import { ITopic } from 'src/app/modules/topics/shared/types/topic.interface';
+import { CreateQuestionService } from '../../shared/services/create-question/create-question.service';
 
 @Component({
   selector: 'app-create-question-category',
@@ -13,7 +14,10 @@ export class CreateQuestionCategoryComponent implements OnInit {
 
   selected: ITopic;
 
-  constructor(private topicService: TopicsService) {}
+  constructor(
+    private topicService: TopicsService,
+    public store: CreateQuestionService
+  ) {}
 
   ngOnInit(): void {
     this.find();
@@ -27,5 +31,6 @@ export class CreateQuestionCategoryComponent implements OnInit {
 
   onSelect(topic: ITopic) {
     this.selected = topic;
+    this.store.payload.topic = topic.id;
   }
 }

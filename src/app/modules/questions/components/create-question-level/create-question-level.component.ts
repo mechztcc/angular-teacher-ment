@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DifficultyService } from 'src/app/modules/difficulties/shared/services/difficulty.service';
 import { IDifficulty } from 'src/app/modules/difficulties/shared/types/difficulty.interface';
+import { CreateQuestionService } from '../../shared/services/create-question/create-question.service';
 
 @Component({
   selector: 'app-create-question-level',
@@ -13,7 +14,7 @@ export class CreateQuestionLevelComponent implements OnInit {
 
   selected: IDifficulty;
 
-  constructor(private difficultiesService: DifficultyService) {}
+  constructor(private difficultiesService: DifficultyService, public store: CreateQuestionService) {}
 
   ngOnInit(): void {
     this.findDifficulties();

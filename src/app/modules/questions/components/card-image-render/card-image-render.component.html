@@ -1,16 +1,17 @@
 <div class="rounded-lg shadow-md p-3 mx-2">
-  <div class="flex flex-col">
+  <div class="flex flex-col" (click)="input.click()">
     <div class="flex items-center cursor-pointer">
       <fa-icon [icon]="icons.image" [size]="'3x'"></fa-icon>
       <div class="flex flex-col ml-3">
         <span class="text-gray-500">Change Image</span>
-        <small class="text-gray-400 italic">enem-204.png, 1.5 MB</small>
+        <small class="text-gray-400 italic" *ngIf="file">{{ file.type }}, {{ fileSize }}</small>
       </div>
     </div>
     <hr class="my-2" />
     <img
-      src="https://static.todamateria.com.br/upload/en/em/enem2018edit-cke.jpg"
+      [src]="photo"
       alt=""
     />
+    <input type="file" class="hidden" #input (change)="onSelectFile(input.files.item(0))" accept="image/*" />
   </div>
 </div>
