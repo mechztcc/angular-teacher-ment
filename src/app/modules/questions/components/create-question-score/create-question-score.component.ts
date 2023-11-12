@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faBolt, faBook } from '@fortawesome/free-solid-svg-icons';
+import { CreateQuestionService } from '../../shared/services/create-question/create-question.service';
 
 @Component({
   selector: 'app-create-question-score',
@@ -12,6 +13,8 @@ export class CreateQuestionScoreComponent {
     score: faBolt,
   };
 
+  constructor(private store: CreateQuestionService) {}
+
   score: number;
 
   scores = [
@@ -22,5 +25,6 @@ export class CreateQuestionScoreComponent {
 
   onSelect(value: number) {
     this.score = value;
+    this.store.payload.pontuation = value;
   }
 }

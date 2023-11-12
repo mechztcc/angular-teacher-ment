@@ -4,6 +4,7 @@ import {
   faCheckCircle,
   faXmarkCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import { CreateQuestionService } from '../../shared/services/create-question/create-question.service';
 
 @Component({
   selector: 'app-create-question-alternatives',
@@ -27,7 +28,7 @@ export class CreateQuestionAlternativesComponent implements OnInit {
     return this.form.controls;
   }
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private store: CreateQuestionService) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -54,14 +55,26 @@ export class CreateQuestionAlternativesComponent implements OnInit {
     }
   }
 
-  setCount(value: number) {    
+  setCount(value: number) {
     this.alternativesCount = [];
     for (let index = 0; index < value; index++) {
       this.alternativesCount.push(value);
     }
   }
 
-  onSubmit() {
-    console.log(this.formControls);
+  validate() {
+    let alternatives = [
+      { title: this.formControls['wrong1'].value, isCorrect: false },
+      { title: this.formControls['wrong2'].value, isCorrect: false },
+      { title: this.formControls['wrong3'].value, isCorrect: false },
+      { title: this.formControls['wrong4'].value, isCorrect: false },
+      { title: this.formControls['correct'].value, isCorrect: true },
+    ];
+
+    this.store.payload.alternatives = alternatives.filter((el) => {
+      return el.title;
+    });
+
+    this.store.onSubmit();
   }
 }

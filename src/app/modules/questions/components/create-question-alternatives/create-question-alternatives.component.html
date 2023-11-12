@@ -28,9 +28,9 @@
       ></app-badge>
     </div>
     <app-input-floating-text
-      *ngFor="let alternative of alternativesCount"
+      *ngFor="let alternative of alternativesCount; index as i"
       [label]="'Wrong Alternative'"
-      formControlName="wrong{{ alternative }}"
+      formControlName="wrong{{ i+1 }}"
       [prependIcon]="icons.error"
     ></app-input-floating-text>
 
@@ -39,5 +39,7 @@
       [label]="'CORRECT Alternative'"
       [prependIcon]="icons.check"
     ></app-input-floating-text>
+
+    <app-primary-button [label]="'CREATE QUESTION'" (click)="validate()"></app-primary-button>
   </div>
 </form>
