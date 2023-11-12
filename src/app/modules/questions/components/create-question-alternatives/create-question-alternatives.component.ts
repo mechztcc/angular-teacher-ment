@@ -28,7 +28,7 @@ export class CreateQuestionAlternativesComponent implements OnInit {
     return this.form.controls;
   }
 
-  constructor(private fb: FormBuilder, private store: CreateQuestionService) {}
+  constructor(private fb: FormBuilder, public store: CreateQuestionService) {}
 
   ngOnInit(): void {
     this.initForm();
