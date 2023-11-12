@@ -1,0 +1,43 @@
+<form [formGroup]="form">
+  <div class="flex flex-col">
+    <span>How many WRONG alternatives will your question have?</span>
+    <div class="flex">
+      <app-badge
+        class="cursor-pointer"
+        [label]="1"
+        (click)="setCount(1)"
+        [selected]="alternativesTotal == 1 ? true : false"
+      ></app-badge>
+      <app-badge
+        class="cursor-pointer"
+        [label]="2"
+        (click)="setCount(2)"
+        [selected]="alternativesTotal == 2 ? true : false"
+      ></app-badge>
+      <app-badge
+        class="cursor-pointer"
+        [label]="3"
+        (click)="setCount(3)"
+        [selected]="alternativesTotal == 3 ? true : false"
+      ></app-badge>
+      <app-badge
+        class="cursor-pointer"
+        [label]="4"
+        (click)="setCount(4)"
+        [selected]="alternativesTotal == 4 ? true : false"
+      ></app-badge>
+    </div>
+    <app-input-floating-text
+      *ngFor="let alternative of alternativesCount"
+      [label]="'Wrong Alternative'"
+      formControlName="wrong{{ alternative }}"
+      [prependIcon]="icons.error"
+    ></app-input-floating-text>
+
+    <app-input-floating-text
+      formControlName="correct"
+      [label]="'CORRECT Alternative'"
+      [prependIcon]="icons.check"
+    ></app-input-floating-text>
+  </div>
+</form>

@@ -17,6 +17,7 @@ import { QuestionsRoutingModule } from './questions-routing.module';
 import { CreateQuestionLevelComponent } from './components/create-question-level/create-question-level.component';
 import { CreateQuestionCategoryComponent } from './components/create-question-category/create-question-category.component';
 import { CreateQuestionScoreComponent } from './components/create-question-score/create-question-score.component';
+import { CreateQuestionAlternativesComponent } from './components/create-question-alternatives/create-question-alternatives.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CreateQuestionScoreComponent } from './components/create-question-score
     CreateQuestionLevelComponent,
     CreateQuestionCategoryComponent,
     CreateQuestionScoreComponent,
+    CreateQuestionAlternativesComponent,
   ],
   imports: [
     CommonModule,
