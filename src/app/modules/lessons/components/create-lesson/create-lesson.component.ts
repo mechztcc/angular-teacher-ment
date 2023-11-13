@@ -25,6 +25,7 @@ export class CreateLessonComponent implements OnInit {
   }
 
   isLoading: boolean = false;
+  isLoadingDiff: boolean = false;
 
   availableTeams: any[] = [];
   difficulties: IDifficulty[] = [];
@@ -53,21 +54,32 @@ export class CreateLessonComponent implements OnInit {
   }
 
   findTeams() {
-    this.teamsService.index().subscribe((data) => {
-      this.availableTeams = data;
-    });
+    this.isLoading = true;
+    this.teamsService
+      .index()
+      .subscribe((data) => {
+        this.availableTeams = data;
+      })
+      .add(() => {
+        this.isLoading = false;
+      });
   }
 
   findDifficulties() {
-    this.difficultiesService.index().subscribe((data) => {
-      this.difficulties = data;
-    });
+    this.isLoadingDiff = true;
+    this.difficultiesService
+      .index()
+      .subscribe((data) => {
+        this.difficulties = data;
+      })
+      .add(() => {
+        this.isLoadingDiff = false;
+      });
   }
 
   onSubmit() {
-
     console.log(this.form);
-    
+
     if (this.form.invalid) {
       return;
     }

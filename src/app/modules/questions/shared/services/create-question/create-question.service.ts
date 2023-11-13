@@ -22,8 +22,16 @@ export class CreateQuestionService {
   ) {}
 
   onSubmit() {
-    this.isLoading = true;
+    if (
+      this.payload.alternatives.length == 0 ||
+      this.payload.pontuation == 0 ||
+      !this.payload.title ||
+      this.payload.topic == 0
+    ) {
+      return;
+    }
 
+    this.isLoading = true;
     this.questionsService
       .onCreate(this.payload)
       .subscribe(() => {

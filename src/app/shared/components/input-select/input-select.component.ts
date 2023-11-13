@@ -52,7 +52,9 @@ export class InputSelectComponent implements ControlValueAccessor {
 
   activate(event: any) {
     const index = event.target.options.selectedIndex;
-    this.value = this.selections[index][this.field];
+    
+    this.value = this.selections[index -1][this.field];
+    
     this.valueChange.emit(this.value);
     this.writeValue(this.value);
   }

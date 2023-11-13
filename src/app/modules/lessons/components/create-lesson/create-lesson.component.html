@@ -4,7 +4,7 @@
 ></app-primary-button>
 
 <ng-template #template>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isLoading && !isLoadingDiff">
     <app-input-floating-text
       [label]="'Lesson Name'"
       [prependIcon]="icons.book"
