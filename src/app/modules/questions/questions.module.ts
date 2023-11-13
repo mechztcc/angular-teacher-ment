@@ -47,5 +47,6 @@ import { CreateQuestionTitleComponent } from './components/create-question-title
     FormsModule,
     BadgeLevelModule,
   ],
+  exports: [CardQuestionComponent],
 })
 export class QuestionsModule {}

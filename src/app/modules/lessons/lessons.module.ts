@@ -13,12 +13,15 @@ import { CreateLessonComponent } from './components/create-lesson/create-lesson.
 import { LessonsRoutingModule } from './lessons-routing.module';
 import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons-page.component';
 import { BadgeLevelModule } from 'src/app/shared/components/badge-level/badge-level.module';
+import { EditLessonPageComponent } from './pages/edit-lesson-page/edit-lesson-page.component';
+import { QuestionsModule } from '../questions/questions.module';
 
 @NgModule({
   declarations: [
     ListLessonsPageComponent,
     CardLessonComponent,
     CreateLessonComponent,
+    EditLessonPageComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +36,7 @@ import { BadgeLevelModule } from 'src/app/shared/components/badge-level/badge-le
     InputSelectModule,
     NotFoundContentModule,
     BadgeLevelModule,
+    QuestionsModule
   ],
 })
 export class LessonsModule {}

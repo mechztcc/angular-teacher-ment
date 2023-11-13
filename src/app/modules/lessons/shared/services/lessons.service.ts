@@ -17,4 +17,8 @@ export class LessonsService {
   index(): Observable<any> {
     return this.http.get<ILessonInterface[]>(`${api}`);
   }
+
+  details(id: number): Observable<ILessonInterface> {
+    return this.http.get<ILessonInterface>(`${api}/${id}`);
+  }
 }

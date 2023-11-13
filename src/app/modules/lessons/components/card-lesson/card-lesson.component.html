@@ -2,10 +2,27 @@
   <div class="grid grid-cols-1 gap-2">
     <div class="col-span-1">
       <div class="flex justify-start">
-        <app-badge-level [level]="lesson.difficulty.level" [label]="lesson.difficulty.name"></app-badge-level>
-        <app-badge [icon]="icons.book" [label]="lesson.QuestionsOnLessons.length" [type]="'success'"></app-badge>
-        <app-badge [icon]="icons.lock" [label]="'Closed'" [type]="'warning'" *ngIf="!lesson.isOpened"></app-badge>
-        <app-badge [icon]="icons.open" [label]="'Running'" [type]="'purple'" *ngIf="lesson.isOpened"></app-badge>
+        <app-badge-level
+          [level]="lesson.difficulty.level"
+          [label]="lesson.difficulty.name"
+        ></app-badge-level>
+        <app-badge
+          [icon]="icons.book"
+          [label]="lesson.QuestionsOnLessons.length"
+          [type]="'success'"
+        ></app-badge>
+        <app-badge
+          [icon]="icons.lock"
+          [label]="'Closed'"
+          [type]="'warning'"
+          *ngIf="!lesson.isOpened"
+        ></app-badge>
+        <app-badge
+          [icon]="icons.open"
+          [label]="'Running'"
+          [type]="'purple'"
+          *ngIf="lesson.isOpened"
+        ></app-badge>
       </div>
     </div>
     <hr class="my-2" />
@@ -31,7 +48,7 @@
         <fa-icon [icon]="icons.calendar" class="text-gray-400 mr-2"></fa-icon>
         <span>Created at {{ lesson.createdAt | date : "dd/MM/yy" }}</span>
       </div>
-      <div class="flex">
+      <div class="flex cursor-pointer" routerLink="/lessons/{{ lesson.id }}/edit">
         <fa-icon [icon]="icons.pen" class="text-gray-400 mx-2"></fa-icon>
       </div>
     </div>

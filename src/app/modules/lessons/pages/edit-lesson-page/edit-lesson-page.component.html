@@ -1,0 +1,30 @@
+<div class="grid grid-cols-8 md:grid-cols-8 mt-10">
+  <div class="col-span-6 col-start-2">
+    <h1 class="text-3xl">Matemática aplicada</h1>
+    <app-badge
+      [label]="'Closed'"
+      [icon]="icons.lock"
+      [type]="'warning'"
+    ></app-badge>
+    <app-badge [label]="'10 Questions'" [icon]="icons.book"></app-badge>
+    <div class="col-span-6">
+      <hr class="my-3" />
+    </div>
+
+    <div class="col-span-2 col-start-4 mt-10">
+      <div class="flex justify-between">
+        <span>Questions</span>
+        <button class="rounded border px-3 py-2 font-semibold">
+          <fa-icon [icon]="icons.plus" class="text-blue-400"></fa-icon>
+          Add
+        </button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-6">
+      <div class="col-span-2">
+        <app-card-question></app-card-question>
+      </div>
+    </div>
+  </div>
+</div>
