@@ -6,4 +6,5 @@ export interface IQuestion {
   pontuation: number;
   alternatives: IAlternative[];
   QuestionImage?: [];
+  id: number;
 }

@@ -15,6 +15,8 @@ import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons
 import { BadgeLevelModule } from 'src/app/shared/components/badge-level/badge-level.module';
 import { EditLessonPageComponent } from './pages/edit-lesson-page/edit-lesson-page.component';
 import { QuestionsModule } from '../questions/questions.module';
+import { QuestionsDropZoneComponent } from './components/questions-drop-zone/questions-drop-zone.component';
+import { QuestionsDraggablesComponent } from './components/questions-draggables/questions-draggables.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { QuestionsModule } from '../questions/questions.module';
     CardLessonComponent,
     CreateLessonComponent,
     EditLessonPageComponent,
+    QuestionsDropZoneComponent,
+    QuestionsDraggablesComponent,
   ],
   imports: [
     CommonModule,

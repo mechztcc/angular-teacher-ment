@@ -1,10 +1,15 @@
-<div class="rounded shadow-md p-3 border">
+<div
+  class="rounded shadow-md p-3 border"
+  (dragstart)="onDragStart($event)"
+  (dragend)="onDragEnd()"
+  draggable="true"
+>
   <div class="flex justify-between">
     <app-badge [label]="question.pontuation" [icon]="icons.bolt"></app-badge>
     <div class="flex">
       <fa-icon [icon]="icons.image" class="text-gray-400"></fa-icon>
       <span class="font-bold text-green-400 ml-1">{{
-        question.QuestionImage.length
+        question?.QuestionImage?.length
       }}</span>
     </div>
   </div>
@@ -27,6 +32,17 @@
       <fa-icon [icon]="icons.calendar" class="text-gray-400"></fa-icon>
       Last update: 22/10/2023
     </small>
-    <fa-icon [icon]="icons.edit" class="text-gray-400 cursor-pointer"></fa-icon>
+    <fa-icon
+      [icon]="icons.edit"
+      class="text-gray-400 cursor-pointer"
+      *ngIf="isEditabble"
+    ></fa-icon>
+    <button class="bg-gray-100 px-2 py-1 shadow-md" (click)="onRemove()">
+      <fa-icon
+        [icon]="icons.delete"
+        class="text-red-400 cursor-pointer"
+        *ngIf="isDeletable"
+      ></fa-icon>
+    </button>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { IDifficulty } from 'src/app/modules/difficulties/shared/types/difficulty.interface';
+import { IQuestion } from 'src/app/modules/questions/shared/types/question';
 
 export interface ILessonInterface {
   id: number;
@@ -9,6 +10,6 @@ export interface ILessonInterface {
     id: number;
     name: string;
   };
-  QuestionsOnLessons: any[];
+  QuestionsOnLessons: IQuestion[];
   createdAt: string;
 }

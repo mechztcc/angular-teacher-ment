@@ -33,6 +33,6 @@ export class CardLessonComponent {
     pen: faPen,
     lock: faLock,
     open: faLockOpen,
-    add: faBookMedical
+    add: faBookMedical,
   };
 }

@@ -14,6 +14,20 @@ export class LessonsService {
     return this.http.post<any>(`${api}`, payload);
   }
 
+  addQuestion(payload: {
+    questionId: number;
+    lessonId: number;
+  }): Observable<any> {
+    return this.http.post<any>(`${api}/add-question`, payload);
+  }
+
+  removeQuestion(payload: {
+    questionId: number;
+    lessonId: number;
+  }): Observable<any> {
+    return this.http.put<any>(`${api}/remove-question`, payload);
+  }
+
   index(): Observable<any> {
     return this.http.get<ILessonInterface[]>(`${api}`);
   }

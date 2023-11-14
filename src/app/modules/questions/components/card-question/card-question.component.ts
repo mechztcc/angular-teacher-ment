@@ -1,11 +1,18 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import {
   faBolt,
   faCalendar,
   faImage,
   faPen,
+  faTrash,
 } from '@fortawesome/free-solid-svg-icons';
-import { ICreateQuestion } from '../../shared/types/create-question.interface';
 import { IQuestion } from '../../shared/types/question';
 
 @Component({
@@ -15,10 +22,35 @@ import { IQuestion } from '../../shared/types/question';
 })
 export class CardQuestionComponent {
   @Input() question: IQuestion;
+
+  @Input() isEditabble: boolean = false;
+
+  @Input() isDeletable: boolean = false;
+
+  @Output() emitter: EventEmitter<number> = new EventEmitter();
+
+  isDrag: boolean = false;
+
   icons = {
     bolt: faBolt,
     edit: faPen,
     calendar: faCalendar,
     image: faImage,
+    delete: faTrash,
   };
+
+  onRemove() {
+    this.emitter.emit(this.question.id);
+  }
+
+  onDragStart(event: DragEvent) {
+    this.isDrag = true;
+
+    const question = JSON.stringify(this.question);
+    event.dataTransfer.setData('text/plain', question);
+  }
+
+  onDragEnd() {
+    this.isDrag = false;
+  }
 }

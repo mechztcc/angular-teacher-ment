@@ -16,6 +16,8 @@ import { ILessonInterface } from '../../shared/types/lesson.interface';
   styleUrls: ['./edit-lesson-page.component.scss'],
 })
 export class EditLessonPageComponent implements OnInit {
+  question: string;
+
   icons = {
     calendar: faCalendar,
     clock: faClock,

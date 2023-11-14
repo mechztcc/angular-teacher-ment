@@ -7,24 +7,36 @@
       [type]="'warning'"
     ></app-badge>
     <app-badge [label]="'10 Questions'" [icon]="icons.book"></app-badge>
+    <app-badge-level [level]="3" [label]="'Hard'"></app-badge-level>
     <div class="col-span-6">
       <hr class="my-3" />
     </div>
 
     <div class="col-span-2 col-start-4 mt-10">
       <div class="flex justify-between">
-        <span>Questions</span>
-        <button class="rounded border px-3 py-2 font-semibold">
-          <fa-icon [icon]="icons.plus" class="text-blue-400"></fa-icon>
-          Add
-        </button>
+        <span>Questions in this lesson</span>
       </div>
     </div>
 
+    <app-questions-drop-zone
+      *ngIf="!isLoading"
+      [questions]="details.QuestionsOnLessons"
+    ></app-questions-drop-zone>
+
     <div class="grid grid-cols-6">
       <div class="col-span-2">
-        <app-card-question></app-card-question>
+        <button class="rounded border px-3 py-2 font-semibold mt-3">
+          <fa-icon [icon]="icons.plus" class="text-blue-400"></fa-icon>
+          Add
+        </button>
+        <br />
+
+        <span class="">
+          Drag the questions you want to add into this lesson
+        </span>
       </div>
     </div>
+
+    <app-questions-draggables></app-questions-draggables>
   </div>
 </div>
