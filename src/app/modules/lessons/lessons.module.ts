@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BadgeLevelModule } from 'src/app/shared/components/badge-level/badge-level.module';
 import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
+import { ComboboxModule } from 'src/app/shared/components/combobox/combobox.module';
 import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
 import { InputSelectModule } from 'src/app/shared/components/input-select/input-select.module';
 import { NotFoundContentModule } from 'src/app/shared/components/not-found-content/not-found-content.module';
@@ -43,6 +44,7 @@ import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons
     BadgeLevelModule,
     QuestionsModule,
     SimpleButtonModule,
+    ComboboxModule,
   ],
 })
 export class LessonsModule {}

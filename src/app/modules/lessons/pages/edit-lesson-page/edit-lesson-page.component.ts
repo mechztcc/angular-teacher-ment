@@ -50,4 +50,8 @@ export class EditLessonPageComponent implements OnInit {
         this.isLoading = false;
       });
   }
+
+  onFilter(filters: any) {
+    console.log(filters);
+  }
 }
