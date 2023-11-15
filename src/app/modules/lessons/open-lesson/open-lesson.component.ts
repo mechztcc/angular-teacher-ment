@@ -41,6 +41,11 @@ export class OpenLessonComponent implements OnInit {
     this.isLoading = true;
     const value = this.form.controls['date'].value;
 
+    const isDate = new Date(value).getDate();
+    if (!isDate) {
+      return;
+    }
+
     const { id } = this.routes.params['value'];
     const payload = {
       expiresAt: new Date(value).toISOString(),
@@ -50,7 +55,7 @@ export class OpenLessonComponent implements OnInit {
     this.lessonsService
       .openQuestion(payload)
       .subscribe((data) => {
-        this.notifier.success('Lesson has be send to team')
+        this.notifier.success('Lesson has be send to team');
         setTimeout(() => {
           window.location.reload();
         }, 2000);
