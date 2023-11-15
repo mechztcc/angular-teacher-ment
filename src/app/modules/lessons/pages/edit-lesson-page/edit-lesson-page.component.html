@@ -1,4 +1,7 @@
-<div class="grid grid-cols-8 md:grid-cols-8 mt-10">
+<div
+  class="grid grid-cols-8 md:grid-cols-8 mt-10"
+  *ngIf="!isLoading && !isLoadingQuestions && !isLoadingTopics"
+>
   <div class="col-span-6 col-start-2">
     <h1 class="text-3xl">Matemática aplicada</h1>
     <app-badge
@@ -31,7 +34,10 @@
       <div
         class="md:col-span-2 col-span-4 col-start-1 md:col-start-5 md:text-end"
       >
-        <app-combobox (emitter)="onFilter($event)"></app-combobox>
+        <app-combobox
+          (emitter)="onFilter($event)"
+          [options]="topics"
+        ></app-combobox>
         <app-simple-button [label]="'Create'"></app-simple-button>
         <br />
         <span class="">
@@ -40,6 +46,8 @@
       </div>
     </div>
 
-    <app-questions-draggables></app-questions-draggables>
+    <app-questions-draggables
+      [questions]="filteredQuestions"
+    ></app-questions-draggables>
   </div>
 </div>

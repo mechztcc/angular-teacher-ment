@@ -15,7 +15,7 @@
     <div class="flex w-full flex-wrap p-2" *ngIf="selecteds.length">
       <app-badge
         class="cursor-pointer"
-        [label]="select"
+        [label]="select.name"
         [icon]="icons.close"
         [type]="'primary'"
         [selected]="false"
@@ -34,7 +34,7 @@
         *ngFor="let option of filtered; index as i"
         (click)="onSelect(i)"
       >
-        {{ option }}
+        {{ option.name }}
       </li>
     </ol>
   </div>

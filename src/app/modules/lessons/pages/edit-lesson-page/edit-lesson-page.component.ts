@@ -9,6 +9,10 @@ import {
 import { LessonsService } from '../../shared/services/lessons.service';
 import { ActivatedRoute } from '@angular/router';
 import { ILessonInterface } from '../../shared/types/lesson.interface';
+import { TopicsService } from 'src/app/modules/topics/shared/services/topics.service';
+import { ITopic } from 'src/app/modules/topics/shared/types/topic.interface';
+import { IQuestion } from 'src/app/modules/questions/shared/types/question';
+import { QuestionsService } from 'src/app/modules/questions/shared/services/questions/questions.service';
 
 @Component({
   selector: 'app-edit-lesson-page',
@@ -28,14 +32,37 @@ export class EditLessonPageComponent implements OnInit {
 
   details: ILessonInterface;
   isLoading: boolean = false;
+  isLoadingTopics: boolean = false;
+  isLoadingQuestions: boolean = false;
+
+  topics: ITopic[] = [];
+
+  questions: IQuestion[] = [];
+  filteredQuestions: IQuestion[] = [];
 
   constructor(
     private lessonsService: LessonsService,
-    private routes: ActivatedRoute
+    private routes: ActivatedRoute,
+    private topicsService: TopicsService,
+    private questionsService: QuestionsService
   ) {}
 
   ngOnInit(): void {
     this.find();
+    this.findTopics();
+    this.findQuestions();
+  }
+
+  findTopics() {
+    this.isLoadingTopics = true;
+    this.topicsService
+      .index()
+      .subscribe((data) => {
+        this.topics = data;
+      })
+      .add(() => {
+        this.isLoadingTopics = false;
+      });
   }
 
   find() {
@@ -51,7 +78,36 @@ export class EditLessonPageComponent implements OnInit {
       });
   }
 
-  onFilter(filters: any) {
-    console.log(filters);
+  findQuestions() {
+    this.isLoadingQuestions = true;
+    this.questionsService
+      .index()
+      .subscribe((data) => {
+        this.questions = data;
+        this.filteredQuestions = data;
+      })
+      .add(() => {
+        this.isLoadingQuestions = false;
+      });
+  }
+
+  onFilter(filters: any[]) {
+    if (!filters.length) {
+      this.filteredQuestions = this.questions;
+      return;
+    }
+
+    const names = filters.map((filter) => {
+      return filter.name;
+    });
+
+    let filteredQuest = [];
+    this.questions.map((question) => {
+      if (names.includes(question.topic.name)) {
+        filteredQuest.push(question);
+      }
+    });
+
+    this.filteredQuestions = filteredQuest;
   }
 }

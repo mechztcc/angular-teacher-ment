@@ -13,17 +13,10 @@ export class ComboboxComponent implements OnInit {
 
   icons = {
     close: faClose,
-    glass: faMagnifyingGlass
+    glass: faMagnifyingGlass,
   };
 
-  options = [
-    'Matemática',
-    'História',
-    'Matemática',
-    'História',
-    'Matemática',
-    'História',
-  ];
+  @Input() options = [];
 
   filtered: any[] = [];
   selecteds = [];
@@ -45,7 +38,7 @@ export class ComboboxComponent implements OnInit {
   filter() {
     const search = this.form.controls['search'].value;
     this.filtered = this.options.filter((opt) => {
-      return opt.toLowerCase().includes(search.toLowerCase());
+      return opt.name.toLowerCase().includes(search.toLowerCase());
     });
   }
 
@@ -58,6 +51,8 @@ export class ComboboxComponent implements OnInit {
 
   onRemove(index: number) {
     this.selecteds.splice(index, 1);
+    this.emitter.emit(this.selecteds);
+
   }
 
   onLeave() {
