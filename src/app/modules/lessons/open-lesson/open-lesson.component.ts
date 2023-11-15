@@ -53,7 +53,7 @@ export class OpenLessonComponent implements OnInit {
     };
 
     this.lessonsService
-      .openQuestion(payload)
+      .openLesson(payload)
       .subscribe((data) => {
         this.notifier.success('Lesson has be send to team');
         setTimeout(() => {

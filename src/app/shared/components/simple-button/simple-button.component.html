@@ -1,6 +1,10 @@
 <button
-  class="rounded border px-4 py-2 font-semibold mt-3 mb-2 bg-blue-400 text-white hover:bg-blue-300"
+  class="rounded border px-4 py-2 font-semibold mt-3 mb-2 text-white"
   routerLink="/questions/create"
+  [ngClass]="{
+    'bg-blue-400 hover:bg-blue-300': type == 'primary',
+    'bg-red-400 hover:bg-red-300': type == 'danger'
+  }"
 >
-  {{label}}
+  {{ label }}
 </button>

@@ -22,6 +22,7 @@ import { EditLessonPageComponent } from './pages/edit-lesson-page/edit-lesson-pa
 import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons-page.component';
 import { OpenLessonComponent } from './open-lesson/open-lesson.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { CloseLessonComponent } from './close-lesson/close-lesson.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     QuestionsDropZoneComponent,
     QuestionsDraggablesComponent,
     OpenLessonComponent,
+    CloseLessonComponent,
   ],
   imports: [
     CommonModule,

@@ -36,10 +36,14 @@ export class LessonsService {
     return this.http.get<ILessonInterface>(`${api}/${id}`);
   }
 
-  openQuestion(payload: {
+  openLesson(payload: {
     lessonId: number;
     expiresAt: string;
   }): Observable<any> {
     return this.http.put<any>(`${api}/open`, payload);
+  }
+
+  closeLesson(id: number): Observable<any> {
+    return this.http.patch<any>(`${api}/close/${id}`, {});
   }
 }

@@ -35,7 +35,8 @@
     <div class="col-span-2 col-start-4 my-10">
       <div class="flex justify-between items-center">
         <span>Questions in this lesson</span>
-        <app-open-lesson></app-open-lesson>
+        <app-open-lesson *ngIf="!details.isOpened"></app-open-lesson>
+        <app-close-lesson *ngIf="details.isOpened"></app-close-lesson>
       </div>
     </div>
 
