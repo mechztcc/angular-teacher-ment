@@ -1,18 +1,14 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
   faBolt,
   faCalendar,
   faImage,
   faPen,
+  faPlusCircle,
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
+import { LessonsService } from 'src/app/modules/lessons/shared/services/lessons.service';
 import { IQuestion } from '../../shared/types/question';
 
 @Component({
@@ -22,11 +18,10 @@ import { IQuestion } from '../../shared/types/question';
 })
 export class CardQuestionComponent {
   @Input() question: IQuestion;
-
   @Input() isEditabble: boolean = false;
   @Input() isDragabble: boolean = false;
-
   @Input() isDeletable: boolean = false;
+  @Input() addClick: boolean = false;
 
   @Output() emitter: EventEmitter<number> = new EventEmitter();
 
@@ -38,7 +33,13 @@ export class CardQuestionComponent {
     calendar: faCalendar,
     image: faImage,
     delete: faTrash,
+    add: faPlusCircle
   };
+
+  constructor(
+    private routes: ActivatedRoute,
+    private lessonsService: LessonsService
+  ) {}
 
   onRemove() {
     this.emitter.emit(this.question.id);
@@ -53,5 +54,18 @@ export class CardQuestionComponent {
 
   onDragEnd() {
     this.isDrag = false;
+  }
+
+  onAddWithClick() {
+    const { id } = this.routes.params['_value'];
+
+    this.lessonsService
+      .addQuestion({
+        lessonId: Number(id),
+        questionId: this.question.id,
+      })
+      .subscribe((data) => {
+        window.location.reload();
+      });
   }
 }

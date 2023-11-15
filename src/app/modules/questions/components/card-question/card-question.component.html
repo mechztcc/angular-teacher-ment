@@ -38,11 +38,24 @@
       class="text-gray-400 cursor-pointer"
       *ngIf="isEditabble"
     ></fa-icon>
-    <button class="bg-gray-100 px-2 py-1 shadow-md" (click)="onRemove()">
+    <button
+      class="bg-gray-100 px-2 py-1 shadow-md"
+      (click)="onRemove()"
+      *ngIf="isDeletable"
+    >
       <fa-icon
         [icon]="icons.delete"
         class="text-red-400 cursor-pointer"
-        *ngIf="isDeletable"
+      ></fa-icon>
+    </button>
+    <button
+      class="bg-gray-100 px-2 py-1 shadow-md"
+      (click)="onAddWithClick()"
+      *ngIf="addClick"
+    >
+      <fa-icon
+        [icon]="icons.add"
+        class="text-green-400 cursor-pointer"
       ></fa-icon>
     </button>
   </div>
