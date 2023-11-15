@@ -5,6 +5,7 @@ import {
   faClock,
   faLock,
   faPlusCircle,
+  faPuzzlePiece,
 } from '@fortawesome/free-solid-svg-icons';
 import { LessonsService } from '../../shared/services/lessons.service';
 import { ActivatedRoute } from '@angular/router';
@@ -28,6 +29,7 @@ export class EditLessonPageComponent implements OnInit {
     lock: faLock,
     book: faBook,
     plus: faPlusCircle,
+    puzzle: faPuzzlePiece
   };
 
   details: ILessonInterface;

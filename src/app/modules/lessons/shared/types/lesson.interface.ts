@@ -12,4 +12,5 @@ export interface ILessonInterface {
   };
   QuestionsOnLessons: IQuestion[];
   createdAt: string;
+  score: number;
 }
