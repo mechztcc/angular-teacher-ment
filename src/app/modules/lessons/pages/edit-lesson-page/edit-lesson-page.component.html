@@ -1,3 +1,6 @@
+<app-loading-page
+  *ngIf="isLoading || isLoadingQuestions || isLoadingTopics"
+></app-loading-page>
 <div
   class="grid grid-cols-8 md:grid-cols-8 mt-10"
   *ngIf="!isLoading && !isLoadingQuestions && !isLoadingTopics"
@@ -5,16 +8,26 @@
   <div class="col-span-6 col-start-2">
     <h1 class="text-3xl">Matemática aplicada</h1>
     <app-badge
+      *ngIf="!details.isOpened"
       [label]="'Closed'"
       [icon]="icons.lock"
       [type]="'warning'"
+    ></app-badge>
+    <app-badge
+      *ngIf="details.isOpened"
+      [label]="'Running'"
+      [icon]="icons.unlock"
+      [type]="'purple'"
     ></app-badge>
     <app-badge
       [label]="details.QuestionsOnLessons.length + ' Questions'"
       [icon]="icons.book"
     ></app-badge>
     <app-badge-level [level]="3" [label]="'Hard'"></app-badge-level>
-    <app-badge [label]="details.score+ ' points'" [icon]="icons.puzzle"></app-badge>
+    <app-badge
+      [label]="details.score + ' points'"
+      [icon]="icons.puzzle"
+    ></app-badge>
     <div class="col-span-6">
       <hr class="my-3" />
     </div>
@@ -22,7 +35,7 @@
     <div class="col-span-2 col-start-4 my-10">
       <div class="flex justify-between items-center">
         <span>Questions in this lesson</span>
-        <app-simple-button [label]="'Send to Team'"></app-simple-button>
+        <app-open-lesson></app-open-lesson>
       </div>
     </div>
 

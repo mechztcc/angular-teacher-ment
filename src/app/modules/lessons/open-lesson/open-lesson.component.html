@@ -1,0 +1,20 @@
+<app-simple-button
+  [label]="'Send to Team'"
+  (click)="modalRender.onOpen(template, 'Send lesson to team')"
+></app-simple-button>
+
+<ng-template #template>
+  <form [formGroup]="form">
+    <span class="font-semibold">Expires at:</span>
+    <app-input-floating-text
+      [type]="'text'"
+      formControlName="date"
+      [mask]="'0000-M0-d0 hh:mm'"
+    ></app-input-floating-text>
+
+    <app-simple-button
+      [label]="'Send'"
+      (click)="onSubmit()"
+    ></app-simple-button>
+  </form>
+</ng-template>

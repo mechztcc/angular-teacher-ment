@@ -8,6 +8,7 @@ import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
 import { ComboboxModule } from 'src/app/shared/components/combobox/combobox.module';
 import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
 import { InputSelectModule } from 'src/app/shared/components/input-select/input-select.module';
+import { LoadingPageModule } from 'src/app/shared/components/loading-page/loading-page.module';
 import { NotFoundContentModule } from 'src/app/shared/components/not-found-content/not-found-content.module';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
 import { SimpleButtonModule } from 'src/app/shared/components/simple-button/simple-button.module';
@@ -19,6 +20,8 @@ import { QuestionsDropZoneComponent } from './components/questions-drop-zone/que
 import { LessonsRoutingModule } from './lessons-routing.module';
 import { EditLessonPageComponent } from './pages/edit-lesson-page/edit-lesson-page.component';
 import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons-page.component';
+import { OpenLessonComponent } from './open-lesson/open-lesson.component';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons
     EditLessonPageComponent,
     QuestionsDropZoneComponent,
     QuestionsDraggablesComponent,
+    OpenLessonComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +49,10 @@ import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons
     QuestionsModule,
     SimpleButtonModule,
     ComboboxModule,
+    LoadingPageModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
+  providers: [provideNgxMask()],
 })
 export class LessonsModule {}

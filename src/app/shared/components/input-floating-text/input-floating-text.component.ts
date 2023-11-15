@@ -27,6 +27,8 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
   @Input() prependIcon: IconDefinition = null;
   @Input() formField: any;
   @Input() disabled: boolean = false;
+  @Input() mask: string;
+  @Input() dropSpecialCharacters: boolean = false;
 
   @Input() isPass: boolean = false;
 

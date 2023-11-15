@@ -35,4 +35,11 @@ export class LessonsService {
   details(id: number): Observable<ILessonInterface> {
     return this.http.get<ILessonInterface>(`${api}/${id}`);
   }
+
+  openQuestion(payload: {
+    lessonId: number;
+    expiresAt: string;
+  }): Observable<any> {
+    return this.http.put<any>(`${api}/open`, payload);
+  }
 }
