@@ -8,15 +8,16 @@ import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
 import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
 import { NotFoundContentModule } from 'src/app/shared/components/not-found-content/not-found-content.module';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
+import { SimpleButtonModule } from 'src/app/shared/components/simple-button/simple-button.module';
+import { CardAddMemberComponent } from './components/card-add-member/card-add-member.component';
 import { CardLessonRunningComponent } from './components/card-lesson-running/card-lesson-running.component';
+import { CardMemberInfoComponent } from './components/card-member-info/card-member-info.component';
 import { CardTeamMemberComponent } from './components/card-team-member/card-team-member.component';
 import { CardTeamsListComponent } from './components/card-teams-list/card-teams-list.component';
 import { CreateTeamComponent } from './components/create-team/create-team.component';
 import { ListTeamsPageComponent } from './pages/list-teams-page/list-teams-page.component';
 import { TeamDetailsPageComponent } from './pages/team-details-page/team-details-page.component';
 import { TeamsRoutingModule } from './teams-routing.module';
-import { CardAddMemberComponent } from './components/card-add-member/card-add-member.component';
-import { CardMemberInfoComponent } from './components/card-member-info/card-member-info.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CardMemberInfoComponent } from './components/card-member-info/card-memb
     FormsModule,
     BadgeModule,
     BadgeLevelModule,
+    SimpleButtonModule,
   ],
 })
 export class TeamsModule {}

@@ -1,9 +1,7 @@
-<app-primary-button
-  class="ml-2"
-  [label]="'Create Team'"
-  [size]="'md'"
+<app-simple-button
+  [label]="'Create team'"
   (click)="modalRender.onOpen(template, 'Create team')"
-></app-primary-button>
+></app-simple-button>
 
 <ng-template #template>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">

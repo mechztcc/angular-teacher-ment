@@ -1,10 +1,14 @@
-<app-primary-button
+<app-simple-button
   [label]="'Create Lesson'"
   (click)="modalRender.onOpen(template, 'Create Lesson')"
-></app-primary-button>
+></app-simple-button>
 
 <ng-template #template>
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isLoading && !isLoadingDiff">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    *ngIf="!isLoading && !isLoadingDiff"
+  >
     <app-input-floating-text
       [label]="'Lesson Name'"
       [prependIcon]="icons.book"

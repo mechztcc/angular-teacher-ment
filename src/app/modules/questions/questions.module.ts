@@ -20,6 +20,7 @@ import { CreateQuestionScoreComponent } from './components/create-question-score
 import { CreateQuestionAlternativesComponent } from './components/create-question-alternatives/create-question-alternatives.component';
 import { CreateQuestionImagesComponent } from './components/create-question-images/create-question-images.component';
 import { CreateQuestionTitleComponent } from './components/create-question-title/create-question-title.component';
+import { SimpleButtonModule } from 'src/app/shared/components/simple-button/simple-button.module';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CreateQuestionTitleComponent } from './components/create-question-title
     ReactiveFormsModule,
     FormsModule,
     BadgeLevelModule,
+    SimpleButtonModule,
   ],
   exports: [CardQuestionComponent],
 })
