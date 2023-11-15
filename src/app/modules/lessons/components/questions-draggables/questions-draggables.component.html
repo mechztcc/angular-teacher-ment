@@ -1,8 +1,15 @@
 <div
-  class="grid grid-cols-6 md:grid-cols-6 gap-5 p-3"
-  style="max-height: 40vh; overflow: scroll"
+  class="grid grid-cols-6 md:grid-cols-6 gap-5 p-3 border-2 border-dashed overflow-auto mt-3"
+  style="max-height: 60vh"
 >
-  <div class="col-span-6 md:col-span-3 lg:col-span-2" *ngFor="let question of questions">
-    <app-card-question [question]="question" [isDragabble]="true" [addClick]="true"></app-card-question>
+  <div
+    class="col-span-6 md:col-span-3 lg:col-span-2"
+    *ngFor="let question of questions"
+  >
+    <app-card-question
+      [question]="question"
+      [isDragabble]="true"
+      [addClick]="true"
+    ></app-card-question>
   </div>
 </div>

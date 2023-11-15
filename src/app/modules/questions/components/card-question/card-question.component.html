@@ -15,7 +15,9 @@
     </div>
   </div>
   <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3">
-    <app-badge [label]="question.topic.name"></app-badge>
+    <div class="col-span-2 md:col-span-4">
+      <app-badge [label]="question.topic.name"></app-badge>
+    </div>
   </div>
 
   <h3 class="text-sm font-semibold mt-3">{{ question.title }}</h3>

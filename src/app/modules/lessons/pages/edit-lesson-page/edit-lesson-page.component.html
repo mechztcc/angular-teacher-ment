@@ -6,15 +6,19 @@
       [icon]="icons.lock"
       [type]="'warning'"
     ></app-badge>
-    <app-badge [label]="details.QuestionsOnLessons.length + ' Questions'" [icon]="icons.book"></app-badge>
+    <app-badge
+      [label]="details.QuestionsOnLessons.length + ' Questions'"
+      [icon]="icons.book"
+    ></app-badge>
     <app-badge-level [level]="3" [label]="'Hard'"></app-badge-level>
     <div class="col-span-6">
       <hr class="my-3" />
     </div>
 
-    <div class="col-span-2 col-start-4 mt-10">
-      <div class="flex justify-between">
+    <div class="col-span-2 col-start-4 my-10">
+      <div class="flex justify-between items-center">
         <span>Questions in this lesson</span>
+        <app-simple-button [label]="'Send to Team'"></app-simple-button>
       </div>
     </div>
 
@@ -23,14 +27,10 @@
       [questions]="details.QuestionsOnLessons"
     ></app-questions-drop-zone>
 
-    <div class="grid grid-cols-6">
-      <div class="col-span-2">
-        <button class="rounded border px-3 py-2 font-semibold mt-3 mb-2" routerLink="/questions/create">
-          <fa-icon [icon]="icons.plus" class="text-blue-400 mr-1"></fa-icon>
-          Create
-        </button>
+    <div class="grid grid-cols-6 md:grid-cols-6 my-5">
+      <div class="md:col-span-2 col-span-4 col-start-1 md:col-start-5 md:text-end">
+        <app-simple-button [label]="'Create'"></app-simple-button>
         <br />
-
         <span class="">
           Drag the questions you want to add into this lesson
         </span>
