@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BadgeLevelModule } from 'src/app/shared/components/badge-level/badge-level.module';
 import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
 import { InputFloatingTextModule } from 'src/app/shared/components/input-floating-text/input-floating-text.module';
+import { LoadingPageModule } from 'src/app/shared/components/loading-page/loading-page.module';
 import { NotFoundContentModule } from 'src/app/shared/components/not-found-content/not-found-content.module';
 import { PrimaryButtonModule } from 'src/app/shared/components/primary-button/primary-button.module';
 import { SimpleButtonModule } from 'src/app/shared/components/simple-button/simple-button.module';
@@ -44,6 +45,7 @@ import { TeamsRoutingModule } from './teams-routing.module';
     BadgeModule,
     BadgeLevelModule,
     SimpleButtonModule,
+    LoadingPageModule,
   ],
 })
 export class TeamsModule {}

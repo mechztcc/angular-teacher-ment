@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { faBook, faCalendar, faChartSimple, faClock, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { ILessonInterface } from 'src/app/modules/lessons/shared/types/lesson.interface';
 import { growRight } from 'src/app/shared/animations/grow-right.animation';
@@ -9,9 +9,9 @@ import { growRight } from 'src/app/shared/animations/grow-right.animation';
   styleUrls: ['./card-lesson-running.component.scss'],
   animations: [growRight]
 })
-export class CardLessonRunningComponent {
+export class CardLessonRunningComponent implements OnChanges {
   @Input() lesson: ILessonInterface;
-
+  
   icons = {
     level: faChartSimple,
     book: faBook,
@@ -19,4 +19,9 @@ export class CardLessonRunningComponent {
     users: faUsers,
     calendar: faCalendar
   };
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.lesson.ExpirationDate[0].expiresAt);
+    
+  }
 }

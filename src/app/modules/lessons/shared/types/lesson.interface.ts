@@ -13,4 +13,5 @@ export interface ILessonInterface {
   QuestionsOnLessons: IQuestion[];
   createdAt: string;
   score: number;
+  ExpirationDate: [{ id: number; expiresAt: string }];
 }

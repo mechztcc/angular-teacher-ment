@@ -17,6 +17,8 @@ export class TeamDetailsPageComponent implements OnInit {
     book: faBook,
   };
 
+  isLoading: boolean = false;
+
   constructor(
     private teamsService: TeamsService,
     private routes: ActivatedRoute
@@ -27,14 +29,15 @@ export class TeamDetailsPageComponent implements OnInit {
   }
 
   findDetails() {
+    this.isLoading = true;
     const { id } = this.routes.params['_value'];
     this.teamsService
       .findDetails(id)
       .subscribe((data) => {
-        console.log(data);
-
         this.details = data;
       })
-      .add(() => {});
+      .add(() => {
+        this.isLoading = false;
+      });
   }
 }

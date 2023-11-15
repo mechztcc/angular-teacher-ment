@@ -11,16 +11,15 @@
             [icon]="icons.book"
             [label]="lesson.QuestionsOnLessons?.length ?? 0"
           ></app-badge>
-          <app-badge [icon]="icons.clock" [label]="'End Today'"></app-badge>
-        </div>
-        <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
-          <div
-            [@growRight]
-            class="h-2 rounded-full bg-blue-400"
-            style="width: 60%"
-          ></div>
+          <app-badge
+            [icon]="icons.clock"
+            [label]="
+              lesson?.ExpirationDate[0]?.expiresAt | date : 'dd/MM/yyyy hh:mm'
+            "
+          ></app-badge>
         </div>
       </div>
+      <hr class="my-3">
     </div>
     <div class="col-span-1 md:col-span-1">
       <h3 class="font-semibold text-gray-500">Name</h3>

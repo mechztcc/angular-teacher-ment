@@ -1,4 +1,4 @@
-<div class="grid grid-cols-8 md:grid-cols-8 mt-10" *ngIf="details">
+<div class="grid grid-cols-8 md:grid-cols-8 mt-10" *ngIf="!isLoading">
   <div class="col-span-6 col-start-2">
     <div class="flex justify-between">
       <h1 class="text-3xl">{{ details.name }}</h1>
@@ -29,3 +29,5 @@
     </div>
   </div>
 </div>
+
+<app-loading-page *ngIf="isLoading"></app-loading-page>
