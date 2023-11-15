@@ -5,6 +5,11 @@
   (dragover)="onDragOver($event)"
 >
   <div class="col-span-2" *ngFor="let question of questions">
-    <app-card-question [question]="question['question']" [isDeletable]="true" (emitter)="onRemove($event)"></app-card-question>
+    <app-card-question
+      [question]="question['question']"
+      [isDeletable]="true"
+      [isDragabble]="false"
+      (emitter)="onRemove($event)"
+    ></app-card-question>
   </div>
 </div>

@@ -24,6 +24,7 @@ export class CardQuestionComponent {
   @Input() question: IQuestion;
 
   @Input() isEditabble: boolean = false;
+  @Input() isDragabble: boolean = false;
 
   @Input() isDeletable: boolean = false;
 

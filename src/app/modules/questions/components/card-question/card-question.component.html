@@ -2,7 +2,8 @@
   class="rounded shadow-md p-3 border"
   (dragstart)="onDragStart($event)"
   (dragend)="onDragEnd()"
-  draggable="true"
+  [draggable]="isDragabble"
+  [class.drag]="isDrag"
 >
   <div class="flex justify-between">
     <app-badge [label]="question.pontuation" [icon]="icons.bolt"></app-badge>
