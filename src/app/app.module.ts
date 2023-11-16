@@ -11,6 +11,7 @@ import { NotificationsDeliveryModule } from './shared/components/notifications-d
 import { SidebarModule } from './shared/components/sidebar/sidebar.module';
 import { HttpHandlerInterceptor } from './shared/interceptors/http.interceptor';
 import { NavbarModule } from './shared/components/navbar/navbar.module';
+import { BackNavegationModule } from './shared/components/back-navegation/back-navegation.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,8 @@ import { NavbarModule } from './shared/components/navbar/navbar.module';
     NotificationsDeliveryModule,
     HttpClientModule,
     ModalRenderModule,
-    NavbarModule
+    NavbarModule,
+    BackNavegationModule,
   ],
   providers: [
     {

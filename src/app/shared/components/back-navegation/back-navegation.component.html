@@ -1,0 +1,18 @@
+<div class="grid grid-cols-8 md:grid-cols-8 mt-10" *ngIf="show">
+  <div class="col-span-6 col-start-2 md:col-span-6 md:col-start-2 p-1">
+    <div class="flex items-center justify-between border p-2 rounded-lg">
+      <button
+        (click)="onBack()"
+        class="rounded-lg border py-3 px-5 hover:shadow-none shadow-md font-semibold"
+      >
+        <fa-icon [icon]="icons.back"></fa-icon>
+        Back
+      </button>
+
+      <div class="mx-2 flex items-center">
+        <app-badge [icon]="icons.users" [type]="'purple'"></app-badge>
+        <span class="mx-5 text-2xl font-semibold">Team Details</span>
+      </div>
+    </div>
+  </div>
+</div>
