@@ -13,6 +13,7 @@ import {
   faSlidersH,
 } from '@fortawesome/free-solid-svg-icons';
 import { fade } from '../../animations/fade.animation';
+import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -33,12 +34,12 @@ export class SidebarComponent {
     dark: faMoon,
     right: faArrowRight,
     house: faHouse,
-    book: faBook
+    book: faBook,
   };
 
-  isHidden: boolean = false;
+  isHidden: boolean = true;
 
-  constructor() {}
+  constructor(public sidebarService: SidebarService) {}
 
   get show() {
     const url = window.location.href.split('/');

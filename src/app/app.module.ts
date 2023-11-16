@@ -10,6 +10,7 @@ import { ModalRenderModule } from './shared/components/modal-render/modal-render
 import { NotificationsDeliveryModule } from './shared/components/notifications-delivery/notifications-delivery.module';
 import { SidebarModule } from './shared/components/sidebar/sidebar.module';
 import { HttpHandlerInterceptor } from './shared/interceptors/http.interceptor';
+import { NavbarModule } from './shared/components/navbar/navbar.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { HttpHandlerInterceptor } from './shared/interceptors/http.interceptor';
     NotificationsDeliveryModule,
     HttpClientModule,
     ModalRenderModule,
+    NavbarModule
   ],
   providers: [
     {

@@ -1,189 +1,92 @@
 <div
-  *ngIf="show && isHidden"
-  [@fade]
-  class="flex flex-col justify-start min-h-screen bg-blue-400 p-5 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px] fixed top-0 z-10"
-  style="max-width: 300px; min-width: 300px"
-  (mouseleave)="isHidden = !isHidden"
+  class="frame"
+  *ngIf="!sidebarService.isHidden"
+  (click)="sidebarService.onCloseFromView($event)"
 >
   <div
-    class="flex bg-white rounded-lg p-3 shadow-md"
-    (click)="isHidden = !isHidden"
+    [@fade]
+    class="flex flex-col justify-start min-h-screen bg-blue-400 p-5 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px] fixed top-0 right-0 z-10"
+    style="max-width: 300px; min-width: 300px"
   >
-    <button class="w-full">
-      <fa-icon [icon]="icons.left"></fa-icon>
-    </button>
-  </div>
-  <div class="flex flex-col mt-3">
-    <div class="flex justify-start mb-10">
-      <img
-        class="h-12 w-12 rounded-3xl shadow-lg border-2"
-        src="https://img.freepik.com/free-photo/3d-rendering-robotic-dog_23-2150780868.jpg"
-        alt=""
-      />
-      <div class="flex flex-col ml-3">
-        <span class="text-white font-bold self-center">Claudia Silva</span>
-        <small class="text-white">Teacher</small>
+    <div class="flex flex-col mt-3">
+      <div class="flex justify-start mb-10">
+        <img
+          class="h-12 w-12 rounded-3xl shadow-lg border-2"
+          src="https://img.freepik.com/free-photo/3d-rendering-robotic-dog_23-2150780868.jpg"
+          alt=""
+        />
+        <div class="flex flex-col ml-3">
+          <span class="text-white font-bold self-center">Claudia Silva</span>
+          <small class="text-white">Teacher</small>
+        </div>
+      </div>
+
+      <hr class="mb-10" />
+
+      <div class="flex flex-col">
+        <small class="text-white mb-3">overview</small>
+
+        <button
+          routerLink="/"
+          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
+        >
+          <fa-icon [icon]="icons.house" class="mr-3"></fa-icon>
+          Home
+        </button>
+
+        <button
+          routerLink="/teams"
+          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
+        >
+          <fa-icon [icon]="icons.teams" class="mr-3"></fa-icon>
+          Teams
+        </button>
+
+        <button
+          routerLink="/questions"
+          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+        >
+          <fa-icon [icon]="icons.questions" class="mr-3"></fa-icon>
+          Questions
+        </button>
+
+        <button
+          routerLink="/lessons"
+          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+        >
+          <fa-icon [icon]="icons.book" class="mr-3"></fa-icon>
+          Lessons
+        </button>
+
+        <button
+          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+        >
+          <fa-icon [icon]="icons.calendar" class="mr-3"></fa-icon>
+          Calendar
+        </button>
+
+        <button
+          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+        >
+          <fa-icon [icon]="icons.configuration" class="mr-3"></fa-icon>
+          Configuration
+        </button>
       </div>
     </div>
 
-    <hr class="mb-10" />
+    <hr class="my-5" />
 
     <div class="flex flex-col">
-      <small class="text-white mb-3">overview</small>
-
-      <button
-        routerLink="/"
-        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
-      >
-        <fa-icon [icon]="icons.house" class="mr-3"></fa-icon>
-        Home
-      </button>
-
-      <button
-        routerLink="/teams"
-        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
-      >
-        <fa-icon [icon]="icons.teams" class="mr-3"></fa-icon>
-        Teams
-      </button>
-
-      <button
-        routerLink="/questions"
-        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
-      >
-        <fa-icon [icon]="icons.questions" class="mr-3"></fa-icon>
-        Questions
-      </button>
-
-      <button
-        routerLink="/lessons"
-        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
-      >
-        <fa-icon [icon]="icons.book" class="mr-3"></fa-icon>
-        Lessons
-      </button>
-
-      <button
-        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
-      >
-        <fa-icon [icon]="icons.calendar" class="mr-3"></fa-icon>
-        Calendar
-      </button>
-
-      <button
-        class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
-      >
-        <fa-icon [icon]="icons.configuration" class="mr-3"></fa-icon>
-        Configuration
-      </button>
+      <app-new-features></app-new-features>
     </div>
-  </div>
 
-  <hr class="my-5" />
-
-  <div class="flex flex-col">
-    <small class="text-white">Notifications</small>
-    <app-notification-sidebar></app-notification-sidebar>
-    <app-notification-sidebar></app-notification-sidebar>
-  </div>
-
-  <hr class="my-5" />
-  <div class="flex flex-col">
-    <app-new-features></app-new-features>
-  </div>
-
-  <hr class="my-5" />
-  <div class="flex flex-col">
-    <app-light-dark-mode></app-light-dark-mode>
-    <div class="flex mt-2 cursor-pointer" routerLink="/users/login">
-      <fa-icon [icon]="icons.exit" class="text-white"></fa-icon>
-      <span class="text-white ml-3 font-bold">Exit</span>
+    <hr class="my-5" />
+    <div class="flex flex-col">
+      <app-light-dark-mode></app-light-dark-mode>
+      <div class="flex mt-2 cursor-pointer" routerLink="/users/login">
+        <fa-icon [icon]="icons.exit" class="text-white"></fa-icon>
+        <span class="text-white ml-3 font-bold">Exit</span>
+      </div>
     </div>
-  </div>
-</div>
-
-<div
-  *ngIf="!isHidden"
-  [@fade]
-  class="top-0 z-10 fixed min-h-screen bg-blue-400 p-2 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px]"
-  (mouseenter)="isHidden = !isHidden"
-  (mouseleave)="isHidden = !isHidden"
->
-  <div
-    class="flex bg-white rounded-lg p-3 shadow-mda cursor-pointer mt-3"
-    (click)="isHidden = !isHidden"
-  >
-    <button class="w-full">
-      <fa-icon [icon]="icons.right"></fa-icon>
-    </button>
-  </div>
-
-  <div class="flex flex-col mt-3">
-    <div class="flex justify-start mb-10">
-      <img
-        class="h-12 w-12 rounded-3xl shadow-lg border-2"
-        src="https://img.freepik.com/free-photo/3d-rendering-robotic-dog_23-2150780868.jpg"
-        alt=""
-      />
-    </div>
-  </div>
-
-  <hr class="mb-10" />
-
-  <div class="flex flex-col">
-    <small class="text-white mb-3">overview</small>
-
-    <button
-      routerLink="/"
-      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
-    >
-      <fa-icon [icon]="icons.house"></fa-icon>
-    </button>
-
-    <button
-      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
-    >
-      <fa-icon [icon]="icons.teams"></fa-icon>
-    </button>
-
-    <button
-      routerLink="/questions"
-      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
-    >
-      <fa-icon [icon]="icons.questions"></fa-icon>
-    </button>
-    <button
-      routerLink="/lessons"
-      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
-    >
-      <fa-icon [icon]="icons.book"></fa-icon>
-    </button>
-
-    <button
-      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
-    >
-      <fa-icon [icon]="icons.calendar"></fa-icon>
-    </button>
-
-    <button
-      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
-    >
-      <fa-icon [icon]="icons.configuration"></fa-icon>
-    </button>
-    <button
-      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
-    >
-      <fa-icon [icon]="icons.cote"></fa-icon>
-    </button>
-    <button
-      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
-    >
-      <fa-icon [icon]="icons.exit"></fa-icon>
-    </button>
-    <button
-      class="bg-blue-400 text-white flex justify-center font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
-    >
-      <fa-icon [icon]="icons.dark"></fa-icon>
-    </button>
   </div>
 </div>
