@@ -20,7 +20,7 @@
   <div class="flex justify-between items-center">
     <div class="flex">
       <fa-icon [icon]="icons.clock" class="text-gray-400"></fa-icon>
-      <span class="mx-1">{{ team.createdAt | date : "dd/MM/yyyy" }}</span>
+      <span class="mx-1">Created at {{ team.createdAt | date : "dd/MM/yyyy" }}</span>
     </div>
     <button class="rounded shadow-md border p-1">
       <fa-icon

@@ -3,15 +3,16 @@
     <div class="grid grid-cols-2">
       <div class="col-span-1">
         <h3 class="text-3xl mt-3 font-semibold">Teams</h3>
-        <span class="text-gray-500"
-          >Manage all your teams and tasks in the same place!</span
-        >
+        <span class="text-gray-500">
+          Manage all your teams and tasks in the same place!
+        </span>
       </div>
       <div class="col-span-2 md:col-span-1">
         <div class="flex justify-start md:justify-end">
           <app-input-floating-text
             [label]="'Search'"
             [prependIcon]="icons.search"
+            class="mx-2"
           ></app-input-floating-text>
           <app-create-team></app-create-team>
         </div>
