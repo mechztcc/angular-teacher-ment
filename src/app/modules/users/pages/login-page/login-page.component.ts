@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { fade } from 'src/app/shared/animations/fade.animation';
 
 @Component({
@@ -7,4 +7,8 @@ import { fade } from 'src/app/shared/animations/fade.animation';
   styleUrls: ['./login-page.component.scss'],
   animations: [fade],
 })
-export class LoginPageComponent {}
+export class LoginPageComponent implements OnInit {
+  ngOnInit(): void {
+    localStorage.clear();
+  }
+}
