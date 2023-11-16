@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { QuestionsService } from '../../shared/services/questions/questions.service';
-import { ICreateQuestion } from '../../shared/types/create-question.interface';
 import { IQuestion } from '../../shared/types/question';
 
 @Component({
@@ -10,6 +10,10 @@ import { IQuestion } from '../../shared/types/question';
 })
 export class QuestionsPageComponent implements OnInit {
   questions: IQuestion[] = [];
+
+  icons = {
+    book: faBook,
+  };
 
   constructor(private questionsService: QuestionsService) {}
 

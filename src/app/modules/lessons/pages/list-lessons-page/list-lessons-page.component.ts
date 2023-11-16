@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LessonsService } from '../../shared/services/lessons.service';
 import { ILessonInterface } from '../../shared/types/lesson.interface';
+import { faBook, faScroll } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list-lessons-page',
@@ -9,6 +10,10 @@ import { ILessonInterface } from '../../shared/types/lesson.interface';
 })
 export class ListLessonsPageComponent implements OnInit {
   lessons: ILessonInterface[] = [];
+
+  icons = {
+    book: faScroll
+  }
   constructor(private lessonsService: LessonsService) {}
 
   ngOnInit(): void {

@@ -6,6 +6,7 @@ import {
   faLock,
   faPlusCircle,
   faPuzzlePiece,
+  faScroll,
   faUnlock,
 } from '@fortawesome/free-solid-svg-icons';
 import { LessonsService } from '../../shared/services/lessons.service';
@@ -32,6 +33,7 @@ export class EditLessonPageComponent implements OnInit {
     book: faBook,
     plus: faPlusCircle,
     puzzle: faPuzzlePiece,
+    lesson: faScroll
   };
 
   details: ILessonInterface;

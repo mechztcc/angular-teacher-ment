@@ -10,6 +10,7 @@ import {
   faPerson,
   faPlusCircle,
   faPuzzlePiece,
+  faScroll,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 import { ITeam } from '../../shared/types/team.interface';
@@ -33,5 +34,6 @@ export class CardTeamsListComponent {
     book: faBook,
     clock: faCalendar,
     points: faPuzzlePiece,
+    lesson: faScroll
   };
 }

@@ -23,6 +23,7 @@ import { ListLessonsPageComponent } from './pages/list-lessons-page/list-lessons
 import { OpenLessonComponent } from './open-lesson/open-lesson.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { CloseLessonComponent } from './close-lesson/close-lesson.component';
+import { BackNavegationModule } from 'src/app/shared/components/back-navegation/back-navegation.module';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { CloseLessonComponent } from './close-lesson/close-lesson.component';
     LoadingPageModule,
     NgxMaskDirective,
     NgxMaskPipe,
+    BackNavegationModule,
   ],
   providers: [provideNgxMask()],
 })

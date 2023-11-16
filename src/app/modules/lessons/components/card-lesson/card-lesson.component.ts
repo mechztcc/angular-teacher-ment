@@ -9,6 +9,7 @@ import {
   faLockOpen,
   faMedal,
   faPen,
+  faScroll,
   faStar,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
@@ -34,5 +35,6 @@ export class CardLessonComponent {
     lock: faLock,
     open: faLockOpen,
     add: faBookMedical,
+    lessons: faScroll
   };
 }

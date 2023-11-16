@@ -21,6 +21,7 @@ import { CreateQuestionAlternativesComponent } from './components/create-questio
 import { CreateQuestionImagesComponent } from './components/create-question-images/create-question-images.component';
 import { CreateQuestionTitleComponent } from './components/create-question-title/create-question-title.component';
 import { SimpleButtonModule } from 'src/app/shared/components/simple-button/simple-button.module';
+import { BackNavegationModule } from 'src/app/shared/components/back-navegation/back-navegation.module';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { SimpleButtonModule } from 'src/app/shared/components/simple-button/simp
     FormsModule,
     BadgeLevelModule,
     SimpleButtonModule,
+    BackNavegationModule,
   ],
   exports: [CardQuestionComponent],
 })

@@ -19,6 +19,7 @@ import { CreateTeamComponent } from './components/create-team/create-team.compon
 import { ListTeamsPageComponent } from './pages/list-teams-page/list-teams-page.component';
 import { TeamDetailsPageComponent } from './pages/team-details-page/team-details-page.component';
 import { TeamsRoutingModule } from './teams-routing.module';
+import { BackNavegationModule } from 'src/app/shared/components/back-navegation/back-navegation.module';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { TeamsRoutingModule } from './teams-routing.module';
     BadgeLevelModule,
     SimpleButtonModule,
     LoadingPageModule,
+    BackNavegationModule,
   ],
 })
 export class TeamsModule {}

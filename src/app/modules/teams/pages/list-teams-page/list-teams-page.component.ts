@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamsService } from '../../shared/services/teams.service';
 import { ITeam } from '../../shared/types/team.interface';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list-teams-page',
@@ -14,6 +14,7 @@ export class ListTeamsPageComponent implements OnInit {
 
   icons = {
     search: faMagnifyingGlass,
+    users: faUsers
   };
 
   constructor(private teamsService: TeamsService) {}
