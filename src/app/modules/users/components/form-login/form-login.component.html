@@ -2,18 +2,10 @@
   [formGroup]="form"
   class="shadow-sm rounded-sm px-24 py-5 h-full w-full flex flex-col justify-center text-center"
 >
-  <div class="flex justify-center mb-10">
-    <img
-      class="h-28 w-28 rounded-3xl"
-      src="https://img.freepik.com/free-vector/wavy-letter-logo-abstract-style_1017-1306.jpg?w=826&t=st=1698676744~exp=1698677344~hmac=5f2722c7f9dc5ed64f0dccd9ef30adc9170f8b970b6239d3a58e32e17ffd911c"
-      alt=""
-    />
-  </div>
-
   <h1 class="text-5xl font-bold">Login into your account</h1>
   <span>Please! Enter your details.</span>
 
-  <button class="my-4 border-gray-300 border p-3 rounded-lg shadow-sm">
+  <button class="mb-4 mt-10 border-gray-300 border p-3 rounded-lg shadow-sm">
     <fa-icon [icon]="icons.google" class="text-red-400"></fa-icon>
     <span class="ml-3">Continue with Google</span>
   </button>
@@ -39,9 +31,15 @@
     [formField]="formControls['password']"
   ></app-input-floating-text>
 
-  <app-primary-button [label]="'Login'" (click)="onSuccess()"></app-primary-button>
+  <app-primary-button
+    [label]="'Login'"
+    (click)="onSuccess()"
+  ></app-primary-button>
 
-  <span class="mt-5 text-gray-500 text-center cursor-pointer" routerLink="/users/create-account">
+  <span
+    class="mt-5 text-gray-500 text-center cursor-pointer"
+    routerLink="/users/create-account"
+  >
     Do not have an
     <b class="text-blue-400">account? </b>
     Register

@@ -1,7 +1,15 @@
-<div class="grid grid-cols-1">
+<div class="grid grid-cols-1" *ngIf="show">
   <div class="col-span-1">
-    <div class="flex bg-white-400 shadow-md justify-end w-full p-2">
-      <button class="rounded border p-3" (click)="sidebarService.onHandle()">
+    <div class="flex bg-white-400 shadow-md justify-between w-full p-2">
+      <div class="flex flex-col justify-center items-center mx-3 bg-blue-100 rounded-lg p-1">
+        <img
+          class="img rounded-full border-2 border-blue-400"
+          src="assets/girl.jpg"
+          alt=""
+        />
+        <span class="font-bold text-blue-400">Teacher Ment</span>
+      </div>
+      <button class="rounded border py-4 px-4" (click)="sidebarService.onHandle()">
         <fa-icon
           [icon]="icons.menu"
           [size]="'2x'"

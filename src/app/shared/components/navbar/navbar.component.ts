@@ -12,5 +12,8 @@ export class NavbarComponent {
     menu: faBars,
   };
 
+  get show() {
+    return !window.location.href.split('/').includes('users')
+  }
   constructor(public sidebarService: SidebarService) {}
 }
