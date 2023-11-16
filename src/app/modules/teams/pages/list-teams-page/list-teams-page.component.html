@@ -1,33 +1,40 @@
-<app-back-navegation [label]="'Team'" [icon]="icons.users"></app-back-navegation>
+<ng-container *ngIf="!isLoading">
+  <app-back-navegation
+    [label]="'Team'"
+    [icon]="icons.users"
+  ></app-back-navegation>
 
-<div class="grid grid-cols-6 md:grid-cols-8 mt-20">
-  <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-6">
-    <div class="grid grid-cols-2">
-      <div class="col-span-1">
-        <h3 class="text-3xl mt-3 font-semibold">Teams</h3>
-        <span class="text-gray-500">
-          Manage all your teams and tasks in the same place!
-        </span>
+  <div class="grid grid-cols-6 md:grid-cols-8 mt-20">
+    <div class="col-start-2 col-span-4 md:col-start-2 md:col-span-6">
+      <div class="grid grid-cols-2">
+        <div class="col-span-1">
+          <h3 class="text-3xl mt-3 font-semibold">Teams</h3>
+          <span class="text-gray-500">
+            Manage all your teams and tasks in the same place!
+          </span>
+        </div>
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex justify-start md:justify-end">
+            <app-input-floating-text
+              [label]="'Search'"
+              [prependIcon]="icons.search"
+              class="mx-2"
+            ></app-input-floating-text>
+            <app-create-team></app-create-team>
+          </div>
+        </div>
       </div>
-      <div class="col-span-2 md:col-span-1">
-        <div class="flex justify-start md:justify-end">
-          <app-input-floating-text
-            [label]="'Search'"
-            [prependIcon]="icons.search"
-            class="mx-2"
-          ></app-input-floating-text>
-          <app-create-team></app-create-team>
+
+      <div class="grid md:grid-cols-6 gap-5 mt-10">
+        <div class="col-span-6 md:col-span-6" *ngIf="teams.length == 0">
+          <app-not-found-content></app-not-found-content>
+        </div>
+        <div class="col-span-6 md:col-span-3" *ngFor="let team of teams">
+          <app-card-teams-list [team]="team"></app-card-teams-list>
         </div>
       </div>
     </div>
-
-    <div class="grid md:grid-cols-6 gap-5 mt-10">
-      <div class="col-span-6 md:col-span-6" *ngIf="teams.length == 0">
-        <app-not-found-content></app-not-found-content>
-      </div>
-      <div class="col-span-6 md:col-span-3" *ngFor="let team of teams">
-        <app-card-teams-list [team]="team"></app-card-teams-list>
-      </div>
-    </div>
   </div>
-</div>
+</ng-container>
+
+<app-loading-page *ngIf="isLoading"></app-loading-page>

@@ -1,30 +1,33 @@
-<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-8 mt-20 gap-10">
-  <div class="col-span-1 md:col-span-1 lg:col-span-2 lg:col-start-2" *ngIf="!isLoading">
-    <app-cards-informations
-      [label]="'Lessons'"
-      [count]="informations.lessonsCount"
-      [type]="1"
-    ></app-cards-informations>
+<ng-container *ngIf="!isLoading">
+  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-8 mt-20 gap-10">
+    <div class="col-span-1 md:col-span-1 lg:col-span-2 lg:col-start-2">
+      <app-cards-informations
+        [label]="'Lessons'"
+        [count]="informations.lessonsCount"
+        [type]="1"
+      ></app-cards-informations>
+    </div>
+    <div class="col-span-1 md:col-span-1 lg:col-span-2">
+      <app-cards-informations
+        [label]="'Teams'"
+        [count]="informations.teamsCount"
+        [type]="2"
+      ></app-cards-informations>
+    </div>
+    <div class="col-span-1 md:col-span-1 lg:col-span-2">
+      <app-cards-informations
+        [label]="'Students'"
+        [count]="0"
+        [type]="3"
+      ></app-cards-informations>
+    </div>
   </div>
-  <div class="col-span-1 md:col-span-1 lg:col-span-2">
-    <app-cards-informations
-      [label]="'Teams'"
-      [count]="informations.teamsCount"
-      [type]="2"
-    ></app-cards-informations>
-  </div>
-  <div class="col-span-1 md:col-span-1 lg:col-span-2">
-    <app-cards-informations
-      [label]="'Students'"
-      [count]="0"
-      [type]="3"
-    ></app-cards-informations>
-  </div>
-</div>
 
-
-<div class="grid grid-cols-1 lg:grid-cols-8 mt-10">
-  <div class="lg:col-start-2 lg:col-span-6">
-    <app-opened-lessons></app-opened-lessons>
+  <div class="grid grid-cols-1 lg:grid-cols-8 mt-10">
+    <div class="lg:col-start-2 lg:col-span-6">
+      <app-opened-lessons></app-opened-lessons>
+    </div>
   </div>
-</div>
+</ng-container>
+
+<app-loading-page *ngIf="isLoading"></app-loading-page>

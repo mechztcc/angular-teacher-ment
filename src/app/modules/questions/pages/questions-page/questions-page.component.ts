@@ -10,6 +10,7 @@ import { IQuestion } from '../../shared/types/question';
 })
 export class QuestionsPageComponent implements OnInit {
   questions: IQuestion[] = [];
+  isLoading: boolean = false;
 
   icons = {
     book: faBook,
@@ -22,8 +23,14 @@ export class QuestionsPageComponent implements OnInit {
   }
 
   findQuestions() {
-    this.questionsService.index().subscribe((data) => {
-      this.questions = data;
-    });
+    this.isLoading = true;
+    this.questionsService
+      .index()
+      .subscribe((data) => {
+        this.questions = data;
+      })
+      .add(() => {
+        this.isLoading = false;
+      });
   }
 }

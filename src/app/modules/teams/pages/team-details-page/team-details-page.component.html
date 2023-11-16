@@ -1,59 +1,63 @@
+<ng-container *ngIf="!isLoading">
+  <app-back-navegation
+    [label]="'Team Details'"
+    [icon]="icons.users"
+  ></app-back-navegation>
 
-<app-back-navegation [label]="'Team Details'" [icon]="icons.users"></app-back-navegation>
-
-<div class="grid grid-cols-8 md:grid-cols-8 mt-10" *ngIf="!isLoading">
-  <div class="col-span-6 col-start-2">
-    <div class="grid grid-cols-6">
-      <div class="col-span-6">
-        <div class="flex justify-between">
-          <h1 class="text-3xl">{{ details.name }}</h1>
-        </div>
-      </div>
-      <div class="col-span-6 md:col-span-2 md:col-start-5">
-        <div class="rounded-lg border p-3 mt-3 shadow-md">
+  <div class="grid grid-cols-8 md:grid-cols-8 mt-10">
+    <div class="col-span-6 col-start-2">
+      <div class="grid grid-cols-6">
+        <div class="col-span-6">
           <div class="flex justify-between">
-            <span>Invite code:</span>
-            <h3 class="font-semibold text-xl">#HY37AYUU</h3>
+            <h1 class="text-3xl">{{ details.name }}</h1>
           </div>
+        </div>
+        <div class="col-span-6 md:col-span-2 md:col-start-5">
+          <div class="rounded-lg border p-3 mt-3 shadow-md">
+            <div class="flex justify-between">
+              <span>Invite code:</span>
+              <h3 class="font-semibold text-xl">#HY37AYUU</h3>
+            </div>
 
-          <div class="flex justify-end mt-3">
-            <button class="shadow-sm border p-2 rounded-lg">
-              <fa-icon [icon]="icons.copy" class="text-gray-500"></fa-icon>
-            </button>
-            <button class="shadow-sm border mx-2 p-2 rounded-lg">
-              <fa-icon [icon]="icons.share" class="text-gray-500"></fa-icon>
-            </button>
+            <div class="flex justify-end mt-3">
+              <button class="shadow-sm border p-2 rounded-lg">
+                <fa-icon [icon]="icons.copy" class="text-gray-500"></fa-icon>
+              </button>
+              <button class="shadow-sm border mx-2 p-2 rounded-lg">
+                <fa-icon [icon]="icons.share" class="text-gray-500"></fa-icon>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="flex mt-20 mb-2">
-      <fa-icon [icon]="icons.users" class="text-blue-400 mr-2"></fa-icon>
-      <h3 class="text-lgml-2">Members</h3>
-    </div>
-    <hr class="w-full my-5" />
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      <app-card-add-member></app-card-add-member>
-      <app-card-member-info
-        *ngFor="let member of details.UsersOnTeams"
-        [member]="member"
-      ></app-card-member-info>
-    </div>
+      <div class="flex mt-20 mb-2">
+        <fa-icon [icon]="icons.users" class="text-blue-400 mr-2"></fa-icon>
+        <h3 class="text-lgml-2">Members</h3>
+      </div>
+      <hr class="w-full my-5" />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <app-card-add-member></app-card-add-member>
+        <app-card-member-info
+          *ngFor="let member of details.UsersOnTeams"
+          [member]="member"
+        ></app-card-member-info>
+      </div>
 
-    <div class="flex mt-10 mb-2">
-      <fa-icon [icon]="icons.lessons" class="text-blue-400 mr-2"></fa-icon>
-      <h3 class="text-lgml-2">Running Lessons</h3>
-    </div>
-    <hr class="w-full my-5" />
+      <div class="flex mt-10 mb-2">
+        <fa-icon [icon]="icons.lessons" class="text-blue-400 mr-2"></fa-icon>
+        <h3 class="text-lgml-2">Running Lessons</h3>
+      </div>
+      <hr class="w-full my-5" />
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      <app-card-lesson-running
-        *ngFor="let lesson of details.Lesson"
-        [lesson]="lesson"
-      ></app-card-lesson-running>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <app-card-lesson-running
+          *ngFor="let lesson of details.Lesson"
+          [lesson]="lesson"
+        ></app-card-lesson-running>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>
 
 <app-loading-page *ngIf="isLoading"></app-loading-page>

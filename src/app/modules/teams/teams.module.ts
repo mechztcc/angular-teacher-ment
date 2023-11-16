@@ -48,6 +48,7 @@ import { BackNavegationModule } from 'src/app/shared/components/back-navegation/
     SimpleButtonModule,
     LoadingPageModule,
     BackNavegationModule,
+    LoadingPageModule
   ],
 })
 export class TeamsModule {}

@@ -56,6 +56,7 @@ import { BackNavegationModule } from 'src/app/shared/components/back-navegation/
     NgxMaskDirective,
     NgxMaskPipe,
     BackNavegationModule,
+    LoadingPageModule
   ],
   providers: [provideNgxMask()],
 })

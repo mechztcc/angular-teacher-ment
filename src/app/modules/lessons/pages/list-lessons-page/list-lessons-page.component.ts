@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { faScroll } from '@fortawesome/free-solid-svg-icons';
 import { LessonsService } from '../../shared/services/lessons.service';
 import { ILessonInterface } from '../../shared/types/lesson.interface';
-import { faBook, faScroll } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list-lessons-page',
@@ -11,9 +11,11 @@ import { faBook, faScroll } from '@fortawesome/free-solid-svg-icons';
 export class ListLessonsPageComponent implements OnInit {
   lessons: ILessonInterface[] = [];
 
+  isLoading: boolean = false;
+
   icons = {
-    book: faScroll
-  }
+    book: faScroll,
+  };
   constructor(private lessonsService: LessonsService) {}
 
   ngOnInit(): void {
@@ -21,8 +23,14 @@ export class ListLessonsPageComponent implements OnInit {
   }
 
   index() {
-    this.lessonsService.index().subscribe((data) => {
-      this.lessons = data;
-    });
+    this.isLoading = true;
+    this.lessonsService
+      .index()
+      .subscribe((data) => {
+        this.lessons = data;
+      })
+      .add(() => {
+        this.isLoading = false;
+      });
   }
 }
