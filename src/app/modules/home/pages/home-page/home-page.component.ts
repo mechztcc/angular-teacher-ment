@@ -10,11 +10,7 @@ import { IFindInformationsResponse } from '../../shared/types/find-informations-
   animations: [fade],
 })
 export class HomePageComponent implements OnInit {
-  informations: IFindInformationsResponse = {
-    lessonsCount: 0,
-    studentsCount: 0,
-    teamsCount: 0,
-  };
+  informations: IFindInformationsResponse;
   isLoading: boolean = false;
 
   constructor(private usersService: UsersService) {}

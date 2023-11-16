@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faHourglassStart } from '@fortawesome/free-solid-svg-icons';
 import { fade } from 'src/app/shared/animations/fade.animation';
+import { IFindInformationsResponse } from '../../shared/types/find-informations-response.interface';
 
 @Component({
   selector: 'app-opened-lessons',
@@ -9,7 +10,7 @@ import { fade } from 'src/app/shared/animations/fade.animation';
   animations: [fade],
 })
 export class OpenedLessonsComponent {
-  items = [1, 2, 3];
+  @Input() information: IFindInformationsResponse;
 
   icons = {
     timer: faHourglassStart,

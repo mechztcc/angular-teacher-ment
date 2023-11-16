@@ -1,47 +1,47 @@
-<div class="border rounded shadow-sm hover:shadow-md cursor-pointer p-3 mt-2">
-  <div class="grid grid-cols-8 w-full">
-    <div class="col-span-4">
+<div class="border rounded shadow-md cursor-pointer p-3 mt-2">
+  <div class="grid grid-cols-8 md:grid-cols-8 w-full">
+    <div class="col-span-4 md:col-span-2">
       <div class="flex flex-col">
-        <div class="flex">
-          <fa-icon
-            [icon]="icons.team"
-            [ngClass]="{ 'text-blue-400': index == 1, 'text-red-400': index == 2, 'text-purple-400': index == 3, }"
-          ></fa-icon>
-          <span class="mx-2">Team Name</span>
-        </div>
-        <div class="flex">
-          <fa-icon
-            [icon]="icons.book"
-            [ngClass]="{ 'text-blue-400': index == 1, 'text-red-400': index == 2, 'text-purple-400': index == 3, }"
-          ></fa-icon>
-          <small class="mx-2">Lesson theme</small>
-        </div>
+        <span class="mb-2">
+          <fa-icon [icon]="icons.lesson" class="text-blue-400"></fa-icon>
+          Lesson
+        </span>
+        <app-badge [label]="lesson.name"></app-badge>
       </div>
     </div>
-    <div class="col-span-4">
-      <div class="flex justify-between">
-        <span>Progress</span>
-        <div class="flex">
-          <span>60%</span>
-          <fa-icon
-            [icon]="icons.timer"
-            class="ml-1"
-            [ngClass]="{ 'text-blue-400': index == 1, 'text-red-400': index == 2, 'text-purple-400': index == 3, }"
-          ></fa-icon>
-        </div>
-      </div>
-      <div class="w-full bg-gray-200 rounded-full h-2">
-        <div
-          [@growRight]
-          class="h-2 rounded-full"
-          style="width: 60%;"
-          [ngClass]="{ 'bg-blue-400': index == 1, 'bg-red-400': index == 2, 'bg-purple-400': index == 3,}"
-        ></div>
-      </div>
 
-      <div class="flex justify-end">
-        <span class="text-gray-500">23:45 hours left</span>
+    <div class="col-span-4 md:col-span-2">
+      <div class="flex flex-col">
+        <span class="mb-2">
+          <fa-icon [icon]="icons.users" class="text-blue-400"></fa-icon>
+          Members
+        </span>
+        <app-badge [label]="lesson.team['UsersOnTeams'].length"></app-badge>
+      </div>
+    </div>
 
+    <div class="col-span-4 md:col-span-2">
+      <div class="flex flex-col">
+        <span class="mb-2">
+          <fa-icon [icon]="icons.team" class="text-blue-400"></fa-icon>
+          Team
+        </span>
+        <app-badge [label]="lesson.team.name"></app-badge>
+      </div>
+    </div>
+
+    <div class="col-span-8 md:col-span-2">
+      <div class="flex flex-col">
+        <span class="mb-2">
+          <fa-icon [icon]="icons.timer" class="text-blue-400"></fa-icon>
+          Expires at
+        </span>
+        <app-badge
+          [label]="
+            lesson.ExpirationDate[lesson.ExpirationDate.length - 1].expiresAt
+              | date : 'dd/MM/yyyy hh:mm'
+          "
+        ></app-badge>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@
 </div>
 
 <div class="mt-5">
-  <ng-container *ngFor="let item of items; index as i">
-    <app-card-lesson [index]="item"></app-card-lesson>
+  <ng-container *ngFor="let lesson of information.runningLessons; index as i">
+    <app-card-lesson [lesson]="lesson"></app-card-lesson>
   </ng-container>
 </div>
