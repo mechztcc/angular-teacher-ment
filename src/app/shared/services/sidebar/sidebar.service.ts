@@ -14,9 +14,6 @@ export class SidebarService {
 
   onCloseFromView(event: any) {
     const isFrame = Array(event.target.classList);
-
-    console.log(isFrame);
-    
     if (isFrame[0]['value'].includes('frame')) {
       this.isHidden = true;
     }

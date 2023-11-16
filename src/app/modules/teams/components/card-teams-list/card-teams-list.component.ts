@@ -1,12 +1,15 @@
 import { Component, Input } from '@angular/core';
 import {
   faBook,
+  faCalendar,
+  faClock,
   faCog,
   faHand,
   faMagnifyingGlass,
   faPen,
   faPerson,
   faPlusCircle,
+  faPuzzlePiece,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 import { ITeam } from '../../shared/types/team.interface';
@@ -18,7 +21,7 @@ import { ITeam } from '../../shared/types/team.interface';
 })
 export class CardTeamsListComponent {
   @Input() team: ITeam;
-  
+
   icons = {
     add: faPlusCircle,
     settings: faCog,
@@ -27,6 +30,8 @@ export class CardTeamsListComponent {
     hand: faHand,
     person: faPerson,
     see: faMagnifyingGlass,
-    book: faBook
+    book: faBook,
+    clock: faCalendar,
+    points: faPuzzlePiece,
   };
 }

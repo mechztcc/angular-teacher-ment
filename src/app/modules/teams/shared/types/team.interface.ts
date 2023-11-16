@@ -3,4 +3,5 @@ export interface ITeam {
   name: string;
   UsersOnTeams: [{ id: number; name: string; email: string }];
   Lesson: [];
+  createdAt: string;
 }

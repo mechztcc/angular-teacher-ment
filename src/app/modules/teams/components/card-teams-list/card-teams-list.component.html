@@ -1,6 +1,11 @@
 <div class="rounded shadow-md p-3">
-  <div class="grid grid-cols-2 md:grid-cols-4">
-    <div class="md:col-span-1">
+  <div class="grid grid-cols-2 md:grid-cols-2">
+    <div class="col-span-2 md:col-span-4">
+      <app-badge [icon]="icons.book" [label]="team.Lesson.length + ' Lessons'"></app-badge>
+      <app-badge [icon]="icons.users" [label]="team.UsersOnTeams.length + ' Members'" [type]="'purple'"></app-badge>
+      <hr class="my-3" />
+    </div>
+    <div class="md:col-span-4">
       <h3 class="font-semibold text-blue-500 mb-2">
         <div class="flex items-center">
           <app-badge [icon]="icons.person"></app-badge>
@@ -9,48 +14,20 @@
       </h3>
       <span>{{ team.name }}</span>
     </div>
-    <div class="col-span-1 md:col-span-1">
-      <h3 class="font-semibold text-blue-500 mb-2">
-        <div class="flex items-center">
-          <app-badge [icon]="icons.users"></app-badge>
-          Members
-        </div>
-      </h3>
-      <span class="mt-3">{{ team.UsersOnTeams.length }}</span>
+  </div>
+  <hr class="my-3" />
+
+  <div class="flex justify-between items-center">
+    <div class="flex">
+      <fa-icon [icon]="icons.clock" class="text-gray-400"></fa-icon>
+      <span class="mx-1">{{ team.createdAt | date : "dd/MM/yyyy" }}</span>
     </div>
-    <div class="col-span-1 md:col-span-1">
-      <h3 class="font-semibold text-blue-500 mb-2">
-        <div class="flex items-center">
-          <app-badge [icon]="icons.book"></app-badge>
-          Lessons
-        </div>
-      </h3>
-      <span class="mt-3">{{ team.Lesson.length }}</span>
-    </div>
-    <div class="col-span-1 md:col-span-1 mt-3 md:mt-0">
-      <h3 class="font-semibold text-blue-500 mb-2">
-        <div class="flex items-center">
-          <app-badge [icon]="icons.hand"></app-badge>
-          Actions
-        </div>
-      </h3>
-      <fa-icon
-        [icon]="icons.add"
-        class="text-gray-400 cursor-pointer"
-      ></fa-icon>
-      <fa-icon
-        [icon]="icons.settings"
-        class="mx-1 text-gray-400 cursor-pointer"
-      ></fa-icon>
-      <fa-icon
-        [icon]="icons.pen"
-        class="mx-1 text-gray-400 cursor-pointer"
-      ></fa-icon>
+    <button class="rounded shadow-md border p-1">
       <fa-icon
         routerLink="/teams/details/{{ team.id }}"
         [icon]="icons.see"
         class="mx-1 text-gray-400 cursor-pointer"
       ></fa-icon>
-    </div>
+    </button>
   </div>
 </div>
