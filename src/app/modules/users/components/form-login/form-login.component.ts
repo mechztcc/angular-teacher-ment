@@ -60,6 +60,9 @@ export class FormLoginComponent implements OnInit {
       .login(payload)
       .subscribe((data) => {
         this.sessionsService.save('token', data.user.token);
+        this.sessionsService.save('user', data.user.name);
+        this.sessionsService.save('role', data.user.role);
+
         this.notifier.success('Login has made with success! Redirecting...');
         this.router.navigate(['/']);
       })

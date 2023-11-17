@@ -6,7 +6,17 @@ import { Injectable } from '@angular/core';
 export class SidebarService {
   isHidden: boolean = true;
 
+  get user(): string {
+    return localStorage.getItem('user');
+  }
+
+  get role(): string {
+    return localStorage.getItem('role');
+  }
+
   constructor() {}
+
+  ngOnInit(): void {}
 
   onHandle() {
     this.isHidden = !this.isHidden;

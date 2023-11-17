@@ -1,9 +1,11 @@
-import { IProfile } from "./profile.interface";
+import { IProfile } from './profile.interface';
 
 export interface IProfileDetails {
   id: number;
   email: string;
   name: string;
   role: string;
-  profile: IProfile
+  profile: IProfile;
+  Team: [];
+  Lesson: [];
 }

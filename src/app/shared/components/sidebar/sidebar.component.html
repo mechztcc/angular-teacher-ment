@@ -5,8 +5,8 @@
 >
   <div
     [@fade]
-    class="flex flex-col justify-start min-h-screen bg-blue-400 p-5 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px] fixed top-0 right-0 z-10"
-    style="max-width: 300px; min-width: 300px"
+    class="flex flex-col justify-start min-h-screen bg-blue-400 p-5 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px] fixed top-0 right-0"
+    style="max-width: 300px; min-width: 300px; z-index: 99999999999;"
   >
     <div class="flex flex-col mt-3">
       <div class="flex justify-start mb-10 cursor-pointer" routerLink="/profile">
@@ -16,8 +16,8 @@
           alt=""
         />
         <div class="flex flex-col ml-3">
-          <span class="text-white font-bold self-center">Claudia Silva</span>
-          <small class="text-white">Teacher</small>
+          <span class="text-white font-bold self-center">{{ sidebarService.user | titlecase }}</span>
+          <small class="text-white">{{ sidebarService.role | uppercase }}</small>
         </div>
       </div>
 
@@ -72,12 +72,6 @@
           Configuration
         </button>
       </div>
-    </div>
-
-    <hr class="my-5" />
-
-    <div class="flex flex-col">
-      <app-new-features></app-new-features>
     </div>
 
     <hr class="my-5" />
