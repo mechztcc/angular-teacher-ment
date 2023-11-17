@@ -13,21 +13,7 @@
           </div>
         </div>
         <div class="col-span-6 md:col-span-2 md:col-start-5">
-          <div class="rounded-lg border p-3 mt-3 shadow-md">
-            <div class="flex justify-between">
-              <span>Invite code:</span>
-              <h3 class="font-semibold text-xl">#HY37AYUU</h3>
-            </div>
-
-            <div class="flex justify-end mt-3">
-              <button class="shadow-sm border p-2 rounded-lg">
-                <fa-icon [icon]="icons.copy" class="text-gray-500"></fa-icon>
-              </button>
-              <button class="shadow-sm border mx-2 p-2 rounded-lg">
-                <fa-icon [icon]="icons.share" class="text-gray-500"></fa-icon>
-              </button>
-            </div>
-          </div>
+          <app-invitation-code-card [code]="details.InvitationCode.code"></app-invitation-code-card>
         </div>
       </div>
 

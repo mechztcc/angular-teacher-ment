@@ -3,6 +3,9 @@ import { IUser } from 'src/app/modules/users/shared/types/user.interface';
 
 export interface ITeamDetails {
   id: number;
+  InvitationCode: {
+    code: string;
+  };
   owner: {
     id: number;
     name: string;
