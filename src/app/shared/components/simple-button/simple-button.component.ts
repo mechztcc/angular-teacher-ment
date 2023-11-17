@@ -8,5 +8,7 @@ import { Component, Input } from '@angular/core';
 export class SimpleButtonComponent {
   @Input() label: string;
 
+  @Input() full: boolean = false;
+
   @Input() type: string = 'primary';
 }

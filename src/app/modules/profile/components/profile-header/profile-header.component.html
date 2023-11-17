@@ -1,0 +1,48 @@
+<div class="grid grid-cols-2 md:grid-cols-3">
+  <div class="col-span-3 md:col-span-1">
+    <img class="img rounded-full" src="assets/guy.jpg" alt="" />
+  </div>
+
+  <div class="col-span-3 md:col-span-3 mt-5 flex flex-col">
+    <span class="font-semibold">Jéssica Smith</span>
+    <div class="flex text-gray-400 items-center">
+      <fa-icon [icon]="icons.email"></fa-icon>
+      <small class="mx-2">@jessica@email.com</small>
+    </div>
+    <div class="flex text-gray-400 items-center mb-3">
+      <fa-icon [icon]="icons.build"></fa-icon>
+      <small class="mx-2">@jessica@email.com</small>
+    </div>
+    <div class="flex flex-wrap">
+      <app-badge
+        [icon]="icons.teacher"
+        [label]="'Teacher'"
+        [type]="'purple'"
+      ></app-badge>
+      <app-badge
+        [icon]="icons.lessons"
+        [label]="'280 Questions'"
+        [type]="'purple'"
+      ></app-badge>
+      <app-badge
+        [icon]="icons.users"
+        [label]="'120 Teams'"
+        [type]="'purple'"
+      ></app-badge>
+      <app-badge
+        [icon]="icons.diamond"
+        [label]="'Premium'"
+        [type]="'primary'"
+        [selected]="false"
+      ></app-badge>
+      <app-badge
+        [icon]="icons.game"
+        [label]="'NVL 99'"
+        [type]="'primary'"
+        [selected]="false"
+      ></app-badge>
+    </div>
+
+    <hr class="my-3" />
+  </div>
+</div>

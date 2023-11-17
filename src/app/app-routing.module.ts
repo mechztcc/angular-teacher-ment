@@ -9,6 +9,11 @@ const routes: Routes = [
       import('./modules/users/users.module').then((m) => m.UsersModule),
   },
   {
+    path: 'profile',
+    loadChildren: () =>
+      import('./modules/profile/profile.module').then((m) => m.ProfileModule),
+  },
+  {
     path: 'teams',
     loadChildren: () =>
       import('./modules/teams/teams.module').then((m) => m.TeamsModule),

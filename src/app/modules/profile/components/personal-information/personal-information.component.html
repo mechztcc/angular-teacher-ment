@@ -1,0 +1,47 @@
+<div class="rounded-lg border p-3 shadow-md mt-10">
+  <h3 class="font-semibold">Personal Information</h3>
+
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+    <div class="col-span-1 md:col-span-1">
+      <app-input-floating-text
+        [label]="'Name'"
+        [prependIcon]="icons.user"
+      ></app-input-floating-text>
+    </div>
+    <div class="col-span-1 md:col-span-1">
+      <app-input-floating-text
+        [label]="'Email'"
+        [prependIcon]="icons.email"
+        [readonly]="true"
+      ></app-input-floating-text>
+    </div>
+    <div class="col-span-1 md:col-span-1">
+      <app-input-floating-text
+        [label]="'Phone'"
+        [prependIcon]="icons.phone"
+      ></app-input-floating-text>
+    </div>
+    <div class="col-span-1 md:col-span-1">
+      <app-input-floating-text
+        [label]="'Organization'"
+        [prependIcon]="icons.build"
+      ></app-input-floating-text>
+    </div>
+    <div class="col-span-1 md:col-span-1">
+      <app-input-floating-text
+        [label]="'State'"
+        [prependIcon]="icons.location"
+      ></app-input-floating-text>
+    </div>
+    <div class="col-span-1 md:col-span-1">
+      <app-input-floating-text
+        [label]="'City'"
+        [prependIcon]="icons.location"
+      ></app-input-floating-text>
+    </div>
+
+    <div class="col-span-2 md:col-span-3">
+      <app-simple-button [label]="'Save'" [full]="true"></app-simple-button>
+    </div>
+  </div>
+</div>

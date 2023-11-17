@@ -3,7 +3,8 @@
   routerLink="/questions/create"
   [ngClass]="{
     'bg-blue-400 hover:bg-blue-300': type == 'primary',
-    'bg-red-400 hover:bg-red-300': type == 'danger'
+    'bg-red-400 hover:bg-red-300': type == 'danger',
+    'w-full': full
   }"
 >
   {{ label }}

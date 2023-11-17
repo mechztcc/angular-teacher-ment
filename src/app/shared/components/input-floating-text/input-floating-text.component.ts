@@ -29,6 +29,7 @@ export class InputFloatingTextComponent implements ControlValueAccessor {
   @Input() disabled: boolean = false;
   @Input() mask: string;
   @Input() dropSpecialCharacters: boolean = false;
+  @Input() readonly: boolean = false;
 
   @Input() isPass: boolean = false;
 
