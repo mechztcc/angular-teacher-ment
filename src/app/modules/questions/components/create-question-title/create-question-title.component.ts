@@ -36,6 +36,6 @@ export class CreateQuestionTitleComponent implements OnInit {
     }
 
     this.store.payload.title = this.formControls['title'].value;
-    console.log(this.store.payload);
+    (this.store.payload);
   }
 }

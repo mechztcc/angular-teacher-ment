@@ -78,7 +78,7 @@ export class CreateLessonComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
+    (this.form);
 
     if (this.form.invalid) {
       return;

@@ -1,47 +1,110 @@
 <div class="rounded-lg border p-3 shadow-md mt-10">
   <h3 class="font-semibold">Personal Information</h3>
 
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-    <div class="col-span-1 md:col-span-1">
-      <app-input-floating-text
-        [label]="'Name'"
-        [prependIcon]="icons.user"
-      ></app-input-floating-text>
-    </div>
-    <div class="col-span-1 md:col-span-1">
-      <app-input-floating-text
-        [label]="'Email'"
-        [prependIcon]="icons.email"
-        [readonly]="true"
-      ></app-input-floating-text>
-    </div>
-    <div class="col-span-1 md:col-span-1">
-      <app-input-floating-text
-        [label]="'Phone'"
-        [prependIcon]="icons.phone"
-      ></app-input-floating-text>
-    </div>
-    <div class="col-span-1 md:col-span-1">
-      <app-input-floating-text
-        [label]="'Organization'"
-        [prependIcon]="icons.build"
-      ></app-input-floating-text>
-    </div>
-    <div class="col-span-1 md:col-span-1">
-      <app-input-floating-text
-        [label]="'State'"
-        [prependIcon]="icons.location"
-      ></app-input-floating-text>
-    </div>
-    <div class="col-span-1 md:col-span-1">
-      <app-input-floating-text
-        [label]="'City'"
-        [prependIcon]="icons.location"
-      ></app-input-floating-text>
-    </div>
+  <form [formGroup]="form">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <div class="col-span-1 md:col-span-1">
+        <div
+          class="relative mt-3 border rounded-lg flex items-center justify-between"
+        >
+          <fa-icon
+            [icon]="icons.user"
+            class="text-gray-400 ml-2 px-2 py-1"
+          ></fa-icon>
 
-    <div class="col-span-2 md:col-span-3">
-      <app-simple-button [label]="'Save'" [full]="true"></app-simple-button>
+          <input
+            type="text"
+            formControlName="name"
+            class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          />
+        </div>
+      </div>
+      <div class="col-span-1 md:col-span-1">
+        <div
+          class="relative mt-3 border rounded-lg flex items-center justify-between"
+        >
+          <fa-icon
+            [icon]="icons.email"
+            class="text-gray-400 ml-2 px-2 py-1"
+          ></fa-icon>
+
+          <input
+            type="text"
+            formControlName="email"
+            readonly
+            class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          />
+        </div>
+      </div>
+      <div class="col-span-1 md:col-span-1">
+        <div
+          class="relative mt-3 border rounded-lg flex items-center justify-between"
+        >
+          <fa-icon
+            [icon]="icons.phone"
+            class="text-gray-400 ml-2 px-2 py-1"
+          ></fa-icon>
+
+          <input
+            type="text"
+            formControlName="phone"
+            mask="(00) 0-0000-0000"
+            class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          />
+        </div>
+      </div>
+      <div class="col-span-1 md:col-span-1">
+        <div
+          class="relative mt-3 border rounded-lg flex items-center justify-between"
+        >
+          <fa-icon
+            [icon]="icons.build"
+            class="text-gray-400 ml-2 px-2 py-1"
+          ></fa-icon>
+
+          <input
+            type="text"
+            formControlName="organization"
+            class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          />
+        </div>
+      </div>
+      <div class="col-span-1 md:col-span-1">
+        <div
+          class="relative mt-3 border rounded-lg flex items-center justify-between"
+        >
+          <fa-icon
+            [icon]="icons.location"
+            class="text-gray-400 ml-2 px-2 py-1"
+          ></fa-icon>
+
+          <input
+            type="text"
+            formControlName="state"
+            class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          />
+        </div>
+      </div>
+      <div class="col-span-1 md:col-span-1">
+        <div
+          class="relative mt-3 border rounded-lg flex items-center justify-between"
+        >
+          <fa-icon
+            [icon]="icons.location"
+            class="text-gray-400 ml-2 px-2 py-1"
+          ></fa-icon>
+
+          <input
+            type="text"
+            formControlName="city"
+            class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          />
+        </div>
+      </div>
+
+      <div class="col-span-2 md:col-span-3">
+        <app-simple-button [label]="'Save'" [full]="true"></app-simple-button>
+      </div>
     </div>
-  </div>
+  </form>
 </div>

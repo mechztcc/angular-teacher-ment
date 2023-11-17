@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {
   faBuildingWheat,
   faDiamond,
@@ -9,6 +9,7 @@ import {
   faScroll,
   faUsers,
 } from '@fortawesome/free-solid-svg-icons';
+import { IProfileDetails } from '../../shared/types/profile-details.interface';
 
 @Component({
   selector: 'app-profile-header',
@@ -16,6 +17,8 @@ import {
   styleUrls: ['./profile-header.component.scss'],
 })
 export class ProfileHeaderComponent {
+  @Input() details: IProfileDetails;
+
   icons = {
     location: faLocationDot,
     teacher: faGraduationCap,

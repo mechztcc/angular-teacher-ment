@@ -1,6 +1,10 @@
-<div class="grid grid-cols-8 md:grid-cols-8 gap-5 mt-20">
-  <div class="col-span-6 col-start-2 md:col-span-6 md:col-start-2">
-    <app-profile-header></app-profile-header>
-    <app-personal-information></app-personal-information>
+<ng-container *ngIf="!isLoading">
+  <div class="grid grid-cols-8 md:grid-cols-8 gap-5 mt-20">
+    <div class="col-span-6 col-start-2 md:col-span-6 md:col-start-2">
+      <app-profile-header [details]="payload"></app-profile-header>
+      <app-personal-information [details]="payload"></app-personal-information>
+    </div>
   </div>
-</div>
+</ng-container>
+
+<app-loading-page *ngIf="isLoading"></app-loading-page>

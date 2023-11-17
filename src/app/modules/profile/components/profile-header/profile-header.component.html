@@ -4,14 +4,14 @@
   </div>
 
   <div class="col-span-3 md:col-span-3 mt-5 flex flex-col">
-    <span class="font-semibold">Jéssica Smith</span>
+    <span class="font-semibold">{{ details.name | titlecase }}</span>
     <div class="flex text-gray-400 items-center">
       <fa-icon [icon]="icons.email"></fa-icon>
-      <small class="mx-2">@jessica@email.com</small>
+      <small class="mx-2">{{ details.email }}</small>
     </div>
     <div class="flex text-gray-400 items-center mb-3">
       <fa-icon [icon]="icons.build"></fa-icon>
-      <small class="mx-2">@jessica@email.com</small>
+      <small class="mx-2">{{ details.profile.organization }}</small>
     </div>
     <div class="flex flex-wrap">
       <app-badge

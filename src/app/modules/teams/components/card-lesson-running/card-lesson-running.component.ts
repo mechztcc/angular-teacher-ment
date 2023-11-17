@@ -21,7 +21,7 @@ export class CardLessonRunningComponent implements OnChanges {
   };
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.lesson.ExpirationDate[0].expiresAt);
+    (this.lesson.ExpirationDate[0].expiresAt);
     
   }
 }
