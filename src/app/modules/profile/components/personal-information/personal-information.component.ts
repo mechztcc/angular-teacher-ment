@@ -71,11 +71,11 @@ export class PersonalInformationComponent implements OnInit, OnChanges {
   fillForm() {
     this.formControls['name'].setValue(this.details.name);
     this.formControls['email'].setValue(this.details.email);
-    this.formControls['city'].setValue(this.details.profile.city);
-    this.formControls['state'].setValue(this.details.profile.state);
-    this.formControls['phone'].setValue(this.details.profile.phone);
+    this.formControls['city'].setValue(this.details?.profile?.city);
+    this.formControls['state'].setValue(this.details?.profile?.state);
+    this.formControls['phone'].setValue(this.details?.profile?.phone);
     this.formControls['organization'].setValue(
-      this.details?.profile.organization
+      this.details?.profile?.organization
     );
 
     this.form.controls['name'];

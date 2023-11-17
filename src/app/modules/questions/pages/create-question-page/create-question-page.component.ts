@@ -16,6 +16,9 @@ import {
   styleUrls: ['./create-question-page.component.scss'],
 })
 export class CreateQuestionPageComponent implements OnInit {
+
+
+
   form: FormGroup;
   get formControls() {
     return this.form.controls;

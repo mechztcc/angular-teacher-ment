@@ -10,4 +10,8 @@ export class NotFoundContentComponent {
   icons = {
     count: faDatabase,
   };
+
+  onReload() {
+    window.location.reload();
+  }
 }

@@ -11,16 +11,15 @@ import { faClone, faCopy, faShare } from '@fortawesome/free-solid-svg-icons';
       </h3>
     </div>
 
+    <hr class="my-2" />
+
     <div class="flex justify-end mt-3">
-      <button
-        class="shadow-sm border p-2 rounded-lg"
+      <fa-icon
+        [icon]="icons.copy"
+        class="text-gray-500 cursor-pointer mx-5"
         (click)="onCopyToClipBoard()"
-      >
-        <fa-icon [icon]="icons.copy" class="text-gray-500"></fa-icon>
-      </button>
-      <button class="shadow-sm border mx-2 p-2 rounded-lg">
-        <fa-icon [icon]="icons.share" class="text-gray-500"></fa-icon>
-      </button>
+      ></fa-icon>
+      <fa-icon [icon]="icons.share" class="text-gray-500"></fa-icon>
     </div>
   </div>`,
   styleUrls: ['./invitation-code-card.component.css'],

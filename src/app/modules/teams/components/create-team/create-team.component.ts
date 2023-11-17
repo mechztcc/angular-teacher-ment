@@ -49,6 +49,10 @@ export class CreateTeamComponent implements OnInit {
         this.notifier.success('Team created with success');
         this.form.reset();
         this.modalRender.onClose();
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
       })
       .add(() => {
         this.isLoading = false;

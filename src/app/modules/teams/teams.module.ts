@@ -51,6 +51,7 @@ import { TeamsRoutingModule } from './teams-routing.module';
     LoadingPageModule,
     BackNavegationModule,
     LoadingPageModule,
+    NotFoundContentModule
   ],
 })
 export class TeamsModule {}

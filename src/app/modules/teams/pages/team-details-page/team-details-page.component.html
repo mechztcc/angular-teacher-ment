@@ -42,6 +42,9 @@
           [lesson]="lesson"
         ></app-card-lesson-running>
       </div>
+
+      <app-not-found-content *ngIf="!details.Lesson.length"></app-not-found-content>
+
     </div>
   </div>
 </ng-container>

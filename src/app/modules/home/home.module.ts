@@ -16,6 +16,7 @@ import { SearchContentComponent } from './components/search-content/search-conte
 import { HomeRoutingModule } from './home-routing.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
+import { NotFoundContentModule } from 'src/app/shared/components/not-found-content/not-found-content.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BadgeModule } from 'src/app/shared/components/badge/badge.module';
     TeamsModule,
     SimpleButtonModule,
     LoadingPageModule,
-    BadgeModule
+    BadgeModule,
+    NotFoundContentModule
   ],
   exports: [CardLessonComponent],
 })

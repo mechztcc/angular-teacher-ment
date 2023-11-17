@@ -27,6 +27,10 @@
     <div class="col-span-6 col-start-2 lg:col-start-2 lg:col-span-6">
       <app-opened-lessons [information]="informations"></app-opened-lessons>
     </div>
+    <div class="col-span-6 col-start-2 lg:col-start-2 lg:col-span-6">
+      <app-not-found-content *ngIf="!informations.runningLessons.length"></app-not-found-content>
+    </div>
+
   </div>
 </ng-container>
 

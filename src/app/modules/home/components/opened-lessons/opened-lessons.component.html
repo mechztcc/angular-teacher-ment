@@ -1,8 +1,12 @@
 <div class="flex items-center" [@fade]>
-  <fa-icon [icon]="icons.timer" [spin]="true" class="self-center text-blue-400"></fa-icon>
-  <h3 class="mx-2">
-     Lessons</h3>
+  <fa-icon
+    [icon]="icons.timer"
+    [spin]="true"
+    class="self-center text-blue-400"
+  ></fa-icon>
+  <h3 class="mx-2">Lessons</h3>
 </div>
+<hr class="my-3">
 
 <div class="mt-5">
   <ng-container *ngFor="let lesson of information.runningLessons; index as i">
