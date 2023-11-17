@@ -13,6 +13,7 @@ import { PersonalInformationComponent } from './components/personal-information/
 import { ProfileHeaderComponent } from './components/profile-header/profile-header.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { ProfileRoutingModule } from './profile-routing.module';
+import { BackNavegationModule } from 'src/app/shared/components/back-navegation/back-navegation.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ProfileRoutingModule } from './profile-routing.module';
     SimpleInputModule,
     NgxMaskDirective,
     NgxMaskPipe,
+    BackNavegationModule
   ],
   providers: [provideNgxMask()],
 })

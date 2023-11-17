@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../../shared/services/profile.service';
 import { IProfileDetails } from '../../shared/types/profile-details.interface';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-profile-page',
@@ -9,6 +10,10 @@ import { IProfileDetails } from '../../shared/types/profile-details.interface';
 })
 export class ProfilePageComponent implements OnInit {
   isLoading: boolean = false;
+
+  icons = {
+    user: faUser
+  }
 
   payload: IProfileDetails;
 
