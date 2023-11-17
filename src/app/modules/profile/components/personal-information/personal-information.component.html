@@ -1,11 +1,12 @@
-<div class="rounded-lg border p-3 shadow-md mt-10">
+<div class="rounded-lg border p-5 shadow-md mt-10">
   <h3 class="font-semibold">Personal Information</h3>
 
   <form [formGroup]="form">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-      <div class="col-span-1 md:col-span-1">
+      <div class="col-span-2 md:col-span-1">
         <div
           class="relative mt-3 border rounded-lg flex items-center justify-between"
+          [class.border-red-400]="formControls['name'].invalid"
         >
           <fa-icon
             [icon]="icons.user"
@@ -18,10 +19,14 @@
             class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           />
         </div>
+        <span class="text-red-400" *ngIf="formControls['name'].invalid">
+          Name is required
+        </span>
       </div>
-      <div class="col-span-1 md:col-span-1">
+      <div class="col-span-2 md:col-span-1">
         <div
           class="relative mt-3 border rounded-lg flex items-center justify-between"
+          [class.border-red-400]="formControls['email'].invalid"
         >
           <fa-icon
             [icon]="icons.email"
@@ -34,11 +39,15 @@
             readonly
             class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           />
+          <span class="text-red-400" *ngIf="formControls['email'].invalid">
+            Organization is required
+          </span>
         </div>
       </div>
-      <div class="col-span-1 md:col-span-1">
+      <div class="col-span-2 md:col-span-1">
         <div
           class="relative mt-3 border rounded-lg flex items-center justify-between"
+          [class.border-red-400]="formControls['phone'].invalid"
         >
           <fa-icon
             [icon]="icons.phone"
@@ -52,10 +61,14 @@
             class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           />
         </div>
+        <span class="text-red-400" *ngIf="formControls['phone'].invalid">
+          Email is required
+        </span>
       </div>
-      <div class="col-span-1 md:col-span-1">
+      <div class="col-span-2 md:col-span-1">
         <div
           class="relative mt-3 border rounded-lg flex items-center justify-between"
+          [class.border-red-400]="formControls['organization'].invalid"
         >
           <fa-icon
             [icon]="icons.build"
@@ -68,10 +81,14 @@
             class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           />
         </div>
+        <span class="text-red-400" *ngIf="formControls['organization'].invalid">
+          Organization is required
+        </span>
       </div>
-      <div class="col-span-1 md:col-span-1">
+      <div class="col-span-2 md:col-span-1">
         <div
           class="relative mt-3 border rounded-lg flex items-center justify-between"
+          [class.border-red-400]="formControls['state'].invalid"
         >
           <fa-icon
             [icon]="icons.location"
@@ -84,10 +101,14 @@
             class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           />
         </div>
+        <span class="text-red-400" *ngIf="formControls['state'].invalid">
+          State is required
+        </span>
       </div>
-      <div class="col-span-1 md:col-span-1">
+      <div class="col-span-2 md:col-span-1">
         <div
           class="relative mt-3 border rounded-lg flex items-center justify-between"
+          [class.border-red-400]="formControls['city'].invalid"
         >
           <fa-icon
             [icon]="icons.location"
@@ -100,10 +121,17 @@
             class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           />
         </div>
+        <span class="text-red-400" *ngIf="formControls['city'].invalid">
+          City is required
+        </span>
       </div>
 
       <div class="col-span-2 md:col-span-3">
-        <app-simple-button [label]="'Save'" [full]="true"></app-simple-button>
+        <app-simple-button
+          [label]="'Save'"
+          [full]="true"
+          (click)="onSubmit()"
+        ></app-simple-button>
       </div>
     </div>
   </form>

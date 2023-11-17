@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IProfileDetails } from '../types/profile-details.interface';
+import { IPersonalInformation } from '../types/personal-information.interface';
 
 const api = '/profile';
 
@@ -13,5 +14,11 @@ export class ProfileService {
 
   findDetails(): Observable<IProfileDetails> {
     return this.http.get<IProfileDetails>(`${api}`);
+  }
+
+  updateProfile(
+    payload: IPersonalInformation
+  ): Observable<IPersonalInformation> {
+    return this.http.post<IPersonalInformation>(`${api}`, payload);
   }
 }

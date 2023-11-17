@@ -5,6 +5,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {
   faBuildingWheat,
   faEnvelope,
@@ -12,9 +13,10 @@ import {
   faPhone,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { ProfileService } from '../../shared/services/profile.service';
+import { IPersonalInformation } from '../../shared/types/personal-information.interface';
 import { IProfileDetails } from '../../shared/types/profile-details.interface';
-import { IProfile } from '../../shared/types/profile.interface';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NotificationsDeliveryService } from 'src/app/shared/services/notifications-delivery.service';
 
 @Component({
   selector: 'app-personal-information',
@@ -23,6 +25,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PersonalInformationComponent implements OnInit, OnChanges {
   @Input() details: IProfileDetails;
+
+  isLoading: boolean = false;
 
   icons = {
     user: faUser,
@@ -37,7 +41,11 @@ export class PersonalInformationComponent implements OnInit, OnChanges {
     return this.form.controls;
   }
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private profileService: ProfileService,
+    private notifier: NotificationsDeliveryService
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     this.initForm();
@@ -70,6 +78,30 @@ export class PersonalInformationComponent implements OnInit, OnChanges {
       this.details?.profile.organization
     );
 
-    (this.form.controls['name']);
+    this.form.controls['name'];
+  }
+
+  onSubmit() {
+    if (this.form.invalid) {
+      return;
+    }
+
+    this.isLoading = true;
+
+    const payload: IPersonalInformation = {
+      state: this.formControls['state'].value,
+      city: this.formControls['city'].value,
+      phone: this.formControls['phone'].value,
+      organization: this.formControls['organization'].value,
+    };
+
+    this.profileService
+      .updateProfile(payload)
+      .subscribe((data) => {
+        this.notifier.success('Personal informations updated!');
+      })
+      .add(() => {
+        this.isLoading = false;
+      });
   }
 }
