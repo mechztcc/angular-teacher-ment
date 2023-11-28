@@ -97,6 +97,9 @@ export class CreateLessonComponent implements OnInit {
       .subscribe(() => {
         this.notifier.success('Lesson created with success!');
         this.form.reset();
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000)
         this.modalRender.onClose();
       })
       .add(() => {

@@ -95,6 +95,7 @@ export class CardAddMemberComponent implements OnInit {
       .inviteMember(payload)
       .subscribe((data) => {
         this.notifier.success('User has been requested to join this Team');
+        window.location.reload();
         this.form.reset();
         this.user = null;
       })
