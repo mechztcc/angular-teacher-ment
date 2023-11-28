@@ -6,18 +6,25 @@
   <div
     [@fade]
     class="flex flex-col justify-start min-h-screen bg-blue-400 p-5 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px] fixed top-0 right-0"
-    style="max-width: 300px; min-width: 300px; z-index: 99999999999;"
+    style="max-width: 300px; min-width: 300px; z-index: 99999999999"
   >
     <div class="flex flex-col mt-3">
-      <div class="flex justify-start mb-10 cursor-pointer" routerLink="/profile">
+      <div
+        class="flex justify-start mb-10 cursor-pointer"
+        routerLink="/profile"
+      >
         <img
           class="h-12 w-12 rounded-3xl shadow-lg border-2"
           src="https://img.freepik.com/free-photo/3d-rendering-robotic-dog_23-2150780868.jpg"
           alt=""
         />
         <div class="flex flex-col ml-3">
-          <span class="text-white font-bold self-center">{{ sidebarService.user | titlecase }}</span>
-          <small class="text-white">{{ sidebarService.role | uppercase }}</small>
+          <span class="text-white font-bold self-center">{{
+            sidebarService.user | titlecase
+          }}</span>
+          <small class="text-white">{{
+            sidebarService.role | uppercase
+          }}</small>
         </div>
       </div>
 
@@ -27,6 +34,7 @@
         <small class="text-white mb-3">overview</small>
 
         <button
+          (click)="sidebarService.onHandle()"
           routerLink="/"
           class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
         >
@@ -35,6 +43,7 @@
         </button>
 
         <button
+          (click)="sidebarService.onHandle()"
           routerLink="/teams"
           class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
         >
@@ -43,6 +52,7 @@
         </button>
 
         <button
+          (click)="sidebarService.onHandle()"
           routerLink="/questions"
           class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
         >
@@ -51,6 +61,7 @@
         </button>
 
         <button
+          (click)="sidebarService.onHandle()"
           routerLink="/lessons"
           class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
         >

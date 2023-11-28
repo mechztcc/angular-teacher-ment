@@ -24,6 +24,8 @@ import { OpenLessonComponent } from './open-lesson/open-lesson.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { CloseLessonComponent } from './close-lesson/close-lesson.component';
 import { BackNavegationModule } from 'src/app/shared/components/back-navegation/back-navegation.module';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { momentAdapterFactory } from 'src/app/app.module';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { BackNavegationModule } from 'src/app/shared/components/back-navegation/
     NgxMaskDirective,
     NgxMaskPipe,
     BackNavegationModule,
-    LoadingPageModule
+    LoadingPageModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: momentAdapterFactory }),
   ],
   providers: [provideNgxMask()],
 })

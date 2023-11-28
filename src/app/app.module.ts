@@ -12,6 +12,13 @@ import { SidebarModule } from './shared/components/sidebar/sidebar.module';
 import { HttpHandlerInterceptor } from './shared/interceptors/http.interceptor';
 import { NavbarModule } from './shared/components/navbar/navbar.module';
 import { BackNavegationModule } from './shared/components/back-navegation/back-navegation.module';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/moment';
+import * as moment from 'moment';
+
+export function momentAdapterFactory() {
+  return adapterFactory(moment);
+};
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +33,7 @@ import { BackNavegationModule } from './shared/components/back-navegation/back-n
     ModalRenderModule,
     NavbarModule,
     BackNavegationModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: momentAdapterFactory }),
   ],
   providers: [
     {
