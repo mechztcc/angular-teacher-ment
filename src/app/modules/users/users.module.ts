@@ -10,6 +10,7 @@ import { FormLoginComponent } from './components/form-login/form-login.component
 import { CreateAccountPageComponent } from './pages/create-account-page/create-account-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { UsersRoutingModule } from './users-routing.module';
+import { UserDetailsPageComponent } from './pages/user-details-page/user-details-page.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UsersRoutingModule } from './users-routing.module';
     FormCreateAccountComponent,
     LoginPageComponent,
     FormLoginComponent,
+    UserDetailsPageComponent,
   ],
   imports: [
     CommonModule,
