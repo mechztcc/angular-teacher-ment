@@ -4,8 +4,8 @@ import { faClone, faCopy, faShare } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-invitation-code-card',
   template: `<div class="rounded-lg hover:shadow-lg p-5 mt-3  bg-white">
-    <div class="flex justify-between">
-      <span>Invite code:</span>
+    <div class="flex flex-col justify-between">
+      <span>Código de convite:</span>
       <h3 class="font-semibold text-xl">
         {{ code }}
       </h3>
