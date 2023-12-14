@@ -3,15 +3,13 @@ import { faClone, faCopy, faShare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-invitation-code-card',
-  template: `<div class="rounded-lg border p-3 mt-3 shadow-md">
+  template: `<div class="rounded-lg hover:shadow-lg p-5 mt-3  bg-white">
     <div class="flex justify-between">
       <span>Invite code:</span>
       <h3 class="font-semibold text-xl">
         {{ code }}
       </h3>
     </div>
-
-    <hr class="my-2" />
 
     <div class="flex justify-end mt-3">
       <fa-icon
