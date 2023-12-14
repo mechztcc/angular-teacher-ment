@@ -6,12 +6,12 @@
     <h3 class="logo text-4xl text-purple-400">Peter.</h3>
     <h3 class="logo text-4xl text-blue-400" style="margin-top: -12px">Space</h3>
   </div>
-  <h1 class="text-5xl font-bold">Create an account</h1>
-  <span>Its easy! Just take a minute and provide the details.</span>
+  <h1 class="text-5xl font-bold">Criar conta</h1>
+  <span>É bem fácil! Leva apenas alguns segundos.</span>
 
   <button class="mb-4 mt-10 border-gray-300 border p-3 rounded-lg shadow-sm">
     <fa-icon [icon]="icons.google" class="text-red-400"></fa-icon>
-    <span class="ml-3">Continue with Google</span>
+    <span class="ml-3">Continar com Google</span>
   </button>
 
   <div class="grid grid-cols-3">
@@ -35,7 +35,7 @@
   ></app-input-floating-text>
 
   <app-input-floating-text
-    [label]="'Password'"
+    [label]="'Senha'"
     [type]="'password'"
     [isPass]="true"
     [prependIcon]="icons.password"
@@ -49,7 +49,7 @@
       class="self-center mx-3 text-green-400"
     ></fa-icon>
     <span class="text-blue-400 my-4">
-      Yes! I understand and agree the Terms Of Service.
+      Sim! Eu entendo e aceito os Termos de Serviço.
     </span>
   </div>
 
@@ -63,8 +63,7 @@
     class="mt-5 text-gray-500 text-center cursor-pointer"
     routerLink="/users/login"
   >
-    Already have an
-    <b class="text-blue-400">account?</b>
-    Login
+    Já possui uma conta?
+    <b class="text-blue-400">Entrar?</b>
   </span>
 </form>

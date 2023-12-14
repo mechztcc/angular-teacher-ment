@@ -1,6 +1,6 @@
-<div class="relative mt-3 border rounded-lg flex items-center justify-between z-0" >
-  <div class="ml-2" *ngIf="prependIcon">
-    <button class="rounded-lg shadow-sm bg-gray-50 px-2 py-1" type="button" (click)="onPrepend()">
+<div class="relative mt-3 border rounded-lg bg-white flex items-center justify-between z-0" >
+  <div class="ml-2 bg-white" *ngIf="prependIcon">
+    <button class="rounded-lg shadow-sm bg-white px-2 py-1" type="button" (click)="onPrepend()">
       <fa-icon [icon]="prependIcon" class="text-gray-400"></fa-icon>
     </button>
   </div>
@@ -12,7 +12,7 @@
     (keyup)="activate($event.target['value'])"
     [mask]="mask"
     [dropSpecialCharacters]="dropSpecialCharacters"
-    class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+    class="bg-white block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
   />
   <label
     for="floating_outlined"
