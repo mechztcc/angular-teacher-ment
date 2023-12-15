@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { WindowService } from './shared/services/window.service';
+import { ThemeService } from './shared/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -21,8 +22,12 @@ export class AppComponent implements OnInit {
 
   title = 'teacher-ment-front';
 
-  constructor(private windowService: WindowService) {}
+  constructor(
+    private windowService: WindowService,
+    private theme: ThemeService
+  ) {}
 
   ngOnInit(): void {
+    this.theme.onVerify();
   }
 }
