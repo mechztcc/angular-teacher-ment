@@ -4,12 +4,12 @@
   </div>
 
   <div class="col-span-3 md:col-span-3 mt-5 flex flex-col">
-    <span class="font-semibold">{{ details?.name | titlecase }}</span>
-    <div class="flex text-gray-400 items-center">
+    <span class="font-semibold dark:text-white">{{ details?.name | titlecase }}</span>
+    <div class="flex text-gray-400 items-center dark:text-white">
       <fa-icon [icon]="icons.email"></fa-icon>
       <small class="mx-2">{{ details?.email }}</small>
     </div>
-    <div class="flex text-gray-400 items-center mb-3">
+    <div class="flex text-gray-400 items-center mb-3 dark:text-white">
       <fa-icon [icon]="icons.build"></fa-icon>
       <small class="mx-2" *ngIf="details?.profile?.organization">{{ details?.profile?.organization }}</small>
       <small class="mx-2" *ngIf="!details?.profile?.organization">Não informado</small>

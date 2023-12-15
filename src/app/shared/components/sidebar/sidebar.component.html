@@ -5,7 +5,7 @@
 >
   <div
     [@fade]
-    class="flex flex-col justify-start min-h-screen bg-blue-400 p-5 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px] fixed top-0 right-0"
+    class="flex flex-col justify-start min-h-screen bg-blue-400 dark:bg-zinc-600 p-5 shadow-[rgba(0,0,15,0.5)_4px_1px_6px_0px] fixed top-0 right-0"
     style="max-width: 300px; min-width: 300px; z-index: 99999999999"
   >
     <div class="flex flex-col mt-3">
@@ -36,7 +36,7 @@
         <button
           (click)="sidebarService.onHandle()"
           routerLink="/"
-          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
+          class="bg-blue-400 dark:bg-zinc-600 dark:hover:bg-zinc-500 dark:hover:text-white text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
         >
           <fa-icon [icon]="icons.house" class="mr-3"></fa-icon>
           Home
@@ -45,7 +45,7 @@
         <button
           (click)="sidebarService.onHandle()"
           routerLink="/teams"
-          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
+          class="bg-blue-400 dark:bg-zinc-600 dark:hover:bg-zinc-500 dark:hover:text-white text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400 shadow-sm"
         >
           <fa-icon [icon]="icons.teams" class="mr-3"></fa-icon>
           Teams
@@ -54,7 +54,7 @@
         <button
           (click)="sidebarService.onHandle()"
           routerLink="/questions"
-          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+          class="bg-blue-400 dark:bg-zinc-600 dark:hover:bg-zinc-500 dark:hover:text-white text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
         >
           <fa-icon [icon]="icons.questions" class="mr-3"></fa-icon>
           Questions
@@ -63,21 +63,21 @@
         <button
           (click)="sidebarService.onHandle()"
           routerLink="/lessons"
-          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+          class="bg-blue-400 dark:bg-zinc-600 dark:hover:bg-zinc-500 dark:hover:text-white text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
         >
           <fa-icon [icon]="icons.book" class="mr-3"></fa-icon>
           Lessons
         </button>
 
         <button
-          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+          class="bg-blue-400 dark:bg-zinc-600 dark:hover:bg-zinc-500 dark:hover:text-white text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
         >
           <fa-icon [icon]="icons.calendar" class="mr-3"></fa-icon>
           Calendar
         </button>
 
         <button
-          class="bg-blue-400 text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
+          class="bg-blue-400 dark:bg-zinc-600 dark:hover:bg-zinc-500 dark:hover:text-white text-white text-start font-bold rounded-lg p-2 hover:bg-white hover:text-blue-400"
         >
           <fa-icon [icon]="icons.configuration" class="mr-3"></fa-icon>
           Configuration
