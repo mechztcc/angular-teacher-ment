@@ -88,7 +88,11 @@
     <hr class="my-5" />
     <div class="flex flex-col">
       <app-light-dark-mode></app-light-dark-mode>
-      <div class="flex mt-2 cursor-pointer" routerLink="/users/login">
+      <div
+        class="flex mt-2 cursor-pointer"
+        (click)="sidebarService.onHandle()"
+        routerLink="/users/login"
+      >
         <fa-icon [icon]="icons.exit" class="text-white"></fa-icon>
         <span class="text-white ml-3 font-bold">Exit</span>
       </div>

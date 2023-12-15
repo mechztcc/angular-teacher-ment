@@ -1,6 +1,6 @@
 <div class="relative" (mouseleave)="onLeave()">
   <div
-    class="relative mt-3 border rounded-lg flex flex-col items-center justify-between"
+    class="relative mt-3 bg-white rounded-lg flex flex-col items-center justify-between"
   >
     <form [formGroup]="form" class="w-full flex items-center">
       <fa-icon [icon]="icons.glass" class="px-2 text-gray-400"></fa-icon>
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div
-    class="w-full bg-gray-50 z-20 absolute rounded-lg text-center"
+    class="w-full bg-white z-20 absolute rounded-lg shadow-lg text-center"
     *ngIf="filtered.length"
   >
     <ol>

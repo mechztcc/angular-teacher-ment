@@ -1,9 +1,9 @@
-<div class="grid grid-cols-1 text-center shadow-md mt-5">
+<div class="grid grid-cols-1 text-center mt-5">
   <div class="col-span-1">
-    <div class="flex flex-col rounded border p-3">
+    <div class="flex flex-col rounded-lg p-3 bg-white">
       <fa-icon [icon]="icons.count" class="text-blue-400"></fa-icon>
-      <span class="text-gray-500 font-semibold">Any data has found!</span>
-      <app-simple-button [label]="'Reload page'" (click)="onReload()"></app-simple-button>
+      <span class="text-gray-500 font-semibold">Nenhum dado foi encontrado!</span>
+      <app-simple-button [label]="'Recarregar'" (click)="onReload()"></app-simple-button>
     </div>
   </div>
 </div>

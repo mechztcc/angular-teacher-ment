@@ -1,6 +1,6 @@
 <form [formGroup]="form">
   <div class="flex flex-col">
-    <span>How many WRONG alternatives will your question have?</span>
+    <span>Quantas alternativas ERRADAS você precisa?</span>
     <div class="flex">
       <app-badge
         class="cursor-pointer"
@@ -29,19 +29,19 @@
     </div>
     <app-input-floating-text
       *ngFor="let alternative of alternativesCount; index as i"
-      [label]="'Wrong Alternative'"
+      [label]="'Alternativa ERRADA'"
       formControlName="wrong{{ i + 1 }}"
       [prependIcon]="icons.error"
     ></app-input-floating-text>
 
     <app-input-floating-text
       formControlName="correct"
-      [label]="'CORRECT Alternative'"
+      [label]="'Alternativa CORRETA'"
       [prependIcon]="icons.check"
     ></app-input-floating-text>
 
     <app-primary-button
-      [label]="'CREATE QUESTION'"
+      [label]="'CRIAR QUESTÃO'"
       (click)="validate()"
       [isLoading]="store.isLoading"
     ></app-primary-button>
