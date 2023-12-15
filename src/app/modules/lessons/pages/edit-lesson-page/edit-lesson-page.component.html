@@ -10,7 +10,7 @@
   *ngIf="!isLoading && !isLoadingQuestions && !isLoadingTopics"
 >
   <div class="col-span-6 col-start-2">
-    <h1 class="text-3xl">{{ details.name | titlecase }}</h1>
+    <h1 class="text-3xl dark:text-white">{{ details.name | titlecase }}</h1>
     <app-badge
       *ngIf="!details.isOpened"
       [label]="'Closed'"
@@ -38,7 +38,7 @@
 
     <div class="col-span-2 col-start-4 my-10">
       <div class="flex justify-between items-center">
-        <span>Questões nessa Atividade</span>
+        <span class="dark:text-white">Questões nessa Atividade</span>
         <app-open-lesson *ngIf="!details.isOpened"></app-open-lesson>
         <app-close-lesson *ngIf="details.isOpened"></app-close-lesson>
       </div>
@@ -59,7 +59,7 @@
         ></app-combobox>
         <app-simple-button [label]="'Create'"></app-simple-button>
         <br />
-        <span class="">
+        <span class="dark:text-white">
           Arraste as Questões que você deseja adicionar a sua Atividade
         </span>
       </div>
