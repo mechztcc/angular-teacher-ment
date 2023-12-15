@@ -4,9 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ThemeService {
-  constructor() {}
-
-  toggle() {
-    document.documentElement.classList.add('dark');
+  onToggle() {
+    const html = document.querySelector('html').classList;
+    if (!html.contains('dark')) {
+      html.add('dark');
+    } else {
+      html.remove('dark');
+    }
   }
 }
