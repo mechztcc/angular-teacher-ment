@@ -60,8 +60,8 @@ export class PersonalInformationComponent implements OnInit, OnChanges {
   initForm() {
     this.form = this.fb.group({
       name: ['', Validators.required],
-      email: ['', Validators.required],
-      phone: ['', Validators.required],
+      email: ['', ],
+      phone: ['', ],
       organization: ['', Validators.required],
       state: ['', Validators.required],
       city: ['', Validators.required],
@@ -98,6 +98,7 @@ export class PersonalInformationComponent implements OnInit, OnChanges {
     this.profileService
       .updateProfile(payload)
       .subscribe((data) => {
+        scroll(0,0)
         this.notifier.success('Personal informations updated!');
       })
       .add(() => {

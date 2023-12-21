@@ -1,15 +1,15 @@
 <div class="relative" (mouseleave)="onLeave()">
   <div
-    class="relative mt-3 bg-white rounded-lg flex flex-col items-center justify-between"
+    class="relative mt-3 bg-white dark:bg-zinc-600 dark:text-white rounded-lg flex flex-col items-center justify-between"
   >
     <form [formGroup]="form" class="w-full flex items-center">
-      <fa-icon [icon]="icons.glass" class="px-2 text-gray-400"></fa-icon>
+      <fa-icon [icon]="icons.glass" class="px-2 text-gray-400 dark:text-white"></fa-icon>
       <input
         type="text"
         [placeholder]="label"
         formControlName="search"
         (keyup)="filter()"
-        class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-gray-600 text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        class="block px-2.5 pb-2.5 pt-4 w-full text-sm dark:text-white text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
       />
     </form>
     <div class="flex w-full flex-wrap p-2" *ngIf="selecteds.length">
@@ -25,12 +25,12 @@
     </div>
   </div>
   <div
-    class="w-full bg-white dark:bg-zinc-700 z-20 absolute rounded-lg shadow-lg text-center"
+    class="w-full bg-white dark:bg-zinc-600 dark:text-white z-20 absolute rounded-lg shadow-lg text-center"
     *ngIf="filtered.length"
   >
     <ol>
       <li
-        class="my-1 p-1 hover:bg-gray-100 cursor-pointer"
+        class="my-1 p-1 hover:bg-gray-100 dark:hover:bg-zinc-500 cursor-pointer"
         *ngFor="let option of filtered; index as i"
         (click)="onSelect(i)"
       >
